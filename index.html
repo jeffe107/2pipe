@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2Pipe - Metagenomics Pipeline Recommender</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <button id="theme-toggle" class="theme-toggle" title="Toggle theme">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <div class="container">
+        <div id="intro-section" class="intro-section">
+            <h1>Welcome to 2Pipe</h1>
+            <p>This interactive questionnaire will help you to identify the most suitable metagenomics pipeline for your analysis.</p>
+            <p>Each question will help us tailor our suggestions to your specific requirements.</p>
+            <div class="intro-buttons">
+                <button id="start-btn" class="start-btn">Get Started</button>
+                <button id="gallery-btn" class="gallery-btn">Pipeline Gallery</button>
+                <button id="table-btn" class="table-btn">Pipeline Comparison</button>
+            </div>
+        </div>
+        
+        <div id="question-section" class="question-section" style="display: none;">
+            <div class="progress-container">
+                <div class="progress-bar"></div>
+            </div>
+            
+            <div class="question-container">
+                <div class="question-content">
+                    <h2 id="question-text"></h2>
+                    <div id="options-container"></div>
+                </div>
+                
+                <div class="navigation">
+                    <button id="back-to-intro-btn" class="back-btn">Back to Introduction</button>
+                    <div class="nav-buttons">
+                        <button id="prev-btn" class="nav-btn" disabled>Previous</button>
+                        <button id="next-btn" class="nav-btn">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery Section -->
+    <div id="gallery-section" class="gallery-section" style="display: none;">
+        <div class="gallery-header">
+            <h2>Pipeline Gallery</h2>
+            <button id="close-gallery-btn" class="close-btn">×</button>
+        </div>
+        <div id="gallery-container" class="gallery-container"></div>
+    </div>
+
+    <!-- Table Section -->
+    <div id="table-section" class="table-section" style="display: none;">
+        <div class="table-header">
+            <h2>Pipeline Comparison</h2>
+            <button id="close-table-btn" class="close-btn">×</button>
+        </div>
+        <div id="table-container" class="table-container"></div>
+    </div>
+
+    <script src="pipelineObjects.js"></script>
+    <script src="gallery.js"></script>
+    <script src="table.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
