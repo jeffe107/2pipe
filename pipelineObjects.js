@@ -18,12 +18,10 @@ const preLoadedObjects = [
             Conda: ["No"],
             Docker: ["No"],
             Singularity: ["No"],
-            CommunitySupport: ["Weak"],
             taxonomicProfiling: ["No"],
             metabolicModeling: ["No"],
             ancientDNA: ["Yes"],
-            eukaryoticViralMAGs: ["No"],
-            invertedAssemblyBinning: ["No"]
+            eukaryoticViralMAGs: ["No"]
         },
         description: "Pipeline tailored for reconstructing MAGs from ancient metagenomic DNA. It accounts for DNA damage, fragmentation, and contamination, enabling reliable recovery and authentication of ancient microbial genomes. Optimized for degraded samples, it supports damage profiling and taxonomic validation, making it ideal for paleogenomic microbiome studies.",
         url: "https://www.biorxiv.org/content/10.1101/2024.09.18.613623v2.full"
@@ -46,14 +44,12 @@ const preLoadedObjects = [
             Conda: ["Yes"],
             Docker: ["No"],
             Singularity: ["No"],
-            CommunitySupport: ["Strong"],
             taxonomicProfiling: ["No"],
             metabolicModeling: ["No"],
             ancientDNA: ["No"],
             eukaryoticViralMAGs: ["Yes"],
-            invertedAssemblyBinning: ["No"]
         },
-        description: "Anvi’o is an advanced platform for metagenomic data analysis and MAG refinement, offering interactive tools for the manual curation, visualization, and annotation of genome bins. While it relies on external tools for initial processing, anvi’o excels at refining MAGs, exploring coverage and composition, and generating rich, interactive visualizations. It is ideal for users seeking high-resolution insights and customizable analysis beyond automated pipelines.",
+        description: "Anvi'o is an advanced platform for metagenomic data analysis and MAG refinement, offering interactive tools for the manual curation, visualization, and annotation of genome bins. While it relies on external tools for initial processing, anvi'o excels at refining MAGs, exploring coverage and composition, and generating rich, interactive visualizations. It is ideal for users seeking high-resolution insights and customizable analysis beyond automated pipelines.",
         url: "https://anvio.org/help/main/workflows/metagenomics/"
     },
     {
@@ -74,14 +70,12 @@ const preLoadedObjects = [
             Conda: ["Yes"],
             Docker: ["No"],
             Singularity: ["No"],
-            CommunitySupport: ["Strong"],
             taxonomicProfiling: ["No"],
             metabolicModeling: ["No"],
             ancientDNA: ["No"],
             eukaryoticViralMAGs: ["No"],
-            invertedAssemblyBinning: ["No"]
         },
-        description: "	Aviary is an end to end genome-centric metagenomics workflow. Novel and established methods are used assemble long read, short read or hybrid sequence datasets. Resulting contigs are binned using a large suite of primary metagenomic binners (including Rosella) and ensemble binning. Finalized bins are also assessed for quality using CheckM, and assigned taxonomic ranks using GTDB-tk.",
+        description: "Aviary is an end to end genome-centric metagenomics workflow. Novel and established methods are used assemble long read, short read or hybrid sequence datasets. Resulting contigs are binned using a large suite of primary metagenomic binners (including Rosella) and ensemble binning. Finalized bins are also assessed for quality using CheckM, and assigned taxonomic ranks using GTDB-tk.",
         url: "https://rhysnewell.github.io/aviary/installation"
     },
     {
@@ -102,12 +96,10 @@ const preLoadedObjects = [
             Conda: ["No"],
             Docker: ["No"],
             Singularity: ["No"],
-            CommunitySupport: ["Strong"],
             taxonomicProfiling: ["Yes"],
             metabolicModeling: ["No"],
             ancientDNA: ["No"],
             eukaryoticViralMAGs: ["No"],
-            invertedAssemblyBinning: ["No"]
         },
         description: "BV-BRC offers a user-friendly, web-based service for metagenomic binning and MAG reconstruction, enabling researchers to process raw reads through quality control, assembly, binning, and annotation. Designed for accessibility, it supports multiple binning tools and provides taxonomic and functional insights via an intuitive interface, without requiring advanced computational infrastructure.",
         url: "https://www.bv-brc.org/docs/tutorial/metagenomic_binning/metagenomic_binning.html"
@@ -130,12 +122,10 @@ const preLoadedObjects = [
             Conda: ["No"],
             Docker: ["No"],
             Singularity: ["No"],
-            CommunitySupport: ["Weak"],
             taxonomicProfiling: ["No"],
             metabolicModeling: ["No"],
             ancientDNA: ["No"],
-            eukaryoticViralMAGs: ["No"],
-            invertedAssemblyBinning: ["Yes"]
+            eukaryoticViralMAGs: ["No"]
         },
         description: "DATMA (Distributed AuTomatic Metagenomic Assembly and annotation framework) is an automated and comprehensive bioinformatics pipeline designed for rapid analysis of metagenomic data, leveraging distributed computing for efficiency. It processes raw sequencing reads through quality control, 16S rRNA removal and classification, read binning using CLAME, de novo assembly with MEGAHIT.",
         url: "https://peerj.com/articles/9762/"
@@ -158,12 +148,10 @@ const preLoadedObjects = [
             Conda: ["Yes"],
             Docker: ["No"],
             Singularity: ["No"],
-            CommunitySupport: ["Medium"],
             taxonomicProfiling: ["No"],
             metabolicModeling: ["No"],
             ancientDNA: ["No"],
             eukaryoticViralMAGs: ["No"],
-            invertedAssemblyBinning: ["No"]
         },
         description: "EasyMetagenome is a web-based pipeline for automated metagenomic analysis and MAG reconstruction, designed for ease of use without requiring coding skills. It performs quality control, assembly, binning, and annotation through an intuitive interface, making it accessible to non-specialists while supporting high-throughput, reproducible workflows for microbial community analysis.",
         url: "https://onlinelibrary.wiley.com/doi/10.1002/imt2.70001"
@@ -186,12 +174,10 @@ const preLoadedObjects = [
             Conda: ["Yes"],
             Docker: ["No"],
             Singularity: ["Yes"],
-            CommunitySupport: ["Weak"],
             taxonomicProfiling: ["Yes"],
             metabolicModeling: ["No"],
             ancientDNA: ["No"],
             eukaryoticViralMAGs: ["No"],
-            invertedAssemblyBinning: ["No"]
         },
         description: "EasyNanoMeta is a pipeline designed for Nanopore long-read metagenomic analysis, facilitating both assembly-based and assembly-free strategies. It encompasses steps from quality control and host sequence removal to assembly, polishing, binning, and annotation, supporting hybrid assemblies with short reads. EasyNanoMeta is containerized via Singularity, ensuring reproducibility and ease of deployment across diverse computing environments.",
         url: "https://github.com/P-kai/EasyNanoMeta"
@@ -214,12 +200,10 @@ const preLoadedObjects = [
             Conda: ["No"],
             Docker: ["No"],
             Singularity: ["No"],
-            CommunitySupport: ["Strong"],
             taxonomicProfiling: ["Yes"],
             metabolicModeling: ["No"],
             ancientDNA: ["No"],
             eukaryoticViralMAGs: ["No"],
-            invertedAssemblyBinning: ["No"]
         },
         description: "Galaxy offers a flexible, web-based environment for running customizable metagenomics workflows, including pipelines for MAG reconstruction. Users can perform quality control, assembly, binning, and annotation using integrated tools such as MEGAHIT, MetaBAT2, and Prokka. With a graphical interface and built-in resource management, Galaxy enables accessible, reproducible analyses without coding.",
         url: "https://usegalaxy.org/published/workflow?id=33d90e718ce500ef"
@@ -242,12 +226,10 @@ const preLoadedObjects = [
             Conda: ["Yes"],
             Docker: ["No"],
             Singularity: ["Yes"],
-            CommunitySupport: ["Medium"],
             taxonomicProfiling: ["No"],
             metabolicModeling: ["Yes"],
             ancientDNA: ["No"],
             eukaryoticViralMAGs: ["No"],
-            invertedAssemblyBinning: ["No"]
         },
         description: "GEN-ERA Toolbox is a comprehensive suite of reproducible workflows tailored for microbial genomics and metagenomics. It encompasses pipelines for genome assembly, binning, quality assessment, and taxonomic annotation.",
         url: "https://academic.oup.com/gigascience/article/doi/10.1093/gigascience/giad022/7111624"
@@ -270,12 +252,10 @@ const preLoadedObjects = [
             Conda: ["Yes"],
             Docker: ["No"],
             Singularity: ["No"],
-            CommunitySupport: ["Strong"],
             taxonomicProfiling: ["No"],
             metabolicModeling: ["No"],
             ancientDNA: ["No"],
             eukaryoticViralMAGs: ["No"],
-            invertedAssemblyBinning: ["No"]
         },
         description: "HiFi-MAG-Pipeline is a Snakemake-based workflow developed by PacBio for reconstructing high-quality MAGs from HiFi long-read metagenomic assemblies. It employs a completeness-aware strategy to prioritize long, near-complete contigs, integrates binning tools like MetaBAT2 and SemiBin2, and performs quality assessment with CheckM2, facilitating the recovery of complete, circular MAGs.",
         url: "https://github.com/PacificBiosciences/pb-metagenomics-tools/blob/master/docs/Tutorial-HiFi-MAG-Pipeline.md"
@@ -298,12 +278,10 @@ const preLoadedObjects = [
             Conda: ["Yes"],
             Docker: ["No"],
             Singularity: ["No"],
-            CommunitySupport: ["Weak"],
             taxonomicProfiling: ["No"],
             metabolicModeling: ["No"],
             ancientDNA: ["No"],
             eukaryoticViralMAGs: ["No"],
-            invertedAssemblyBinning: ["No"]
         },
         description: "MAGNETO is an automated workflow dedicated to MAG reconstruction, which includes a fully-automated coassembly step informed by optimal clustering of metagenomic distances, and implements complementary genome binning strategies, for improving MAG recovery.",
         url: "https://journals.asm.org/doi/10.1128/msystems.00432-22"
@@ -326,12 +304,10 @@ const preLoadedObjects = [
             Conda: ["Yes"],
             Docker: ["No"],
             Singularity: ["No"],
-            CommunitySupport: ["Medium"],
             taxonomicProfiling: ["Yes"],
             metabolicModeling: ["Yes"],
             ancientDNA: ["No"],
             eukaryoticViralMAGs: ["Yes"],
-            invertedAssemblyBinning: ["No"]
         },
         description: "metaGEM pipeline takes metagenome-assembled genomes (MAGs) as input and aims to generate genome-scale metabolic models (GEMs) for each reconstructed genome. It typically involves steps such as gene prediction on the MAGs, followed by functional annotation of the predicted genes using databases like KEGG, MetaCyc, and EggNOG.",
         url: "https://academic.oup.com/nar/article/49/21/e126/6382386"
@@ -354,12 +330,10 @@ const preLoadedObjects = [
             Conda: ["No"],
             Docker: ["No"],
             Singularity: ["Yes"],
-            CommunitySupport: ["Weak"],
             taxonomicProfiling: ["No"],
             metabolicModeling: ["No"],
             ancientDNA: ["No"],
             eukaryoticViralMAGs: ["No"],
-            invertedAssemblyBinning: ["No"]
         },
         description: "MetaGenePipe is a portable, scalable pipeline for functional and taxonomic analysis of metagenomic contigs. Written in WDL and containerized with Singularity, it supports both co-assembly and single-sample workflows. The pipeline integrates tools for assembly, gene prediction, and annotation, facilitating reproducible characterization of prokaryotic communities from shotgun metagenomic data.",
         url: "https://joss.theoj.org/papers/10.21105/joss.04851"
@@ -382,12 +356,10 @@ const preLoadedObjects = [
             Conda: ["Yes"],
             Docker: ["No"],
             Singularity: ["No"],
-            CommunitySupport: ["Strong"],
             taxonomicProfiling: ["No"],
             metabolicModeling: ["No"],
             ancientDNA: ["No"],
             eukaryoticViralMAGs: ["No"],
-            invertedAssemblyBinning: ["No"]
         },
         description: "Metagenome-Atlas is an end-to-end, Snakemake-based pipeline designed for the reconstruction and annotation of MAGs from metagenomic data. It supports Illumina short reads and provides modular workflows covering all major steps.",
         url: "https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-020-03585-4"
@@ -410,12 +382,10 @@ const preLoadedObjects = [
             Conda: ["Yes"],
             Docker: ["No"],
             Singularity: ["No"],
-            CommunitySupport: ["Medium"],
             taxonomicProfiling: ["No"],
             metabolicModeling: ["No"],
             ancientDNA: ["No"],
             eukaryoticViralMAGs: ["No"],
-            invertedAssemblyBinning: ["No"]
         },
         description: "Metaphor is a bioinformatics pipeline designed for the comprehensive analysis of metagenomic data, emphasizing functional annotation and metabolic pathway reconstruction. It processes raw sequencing reads through quality control, assembly, and gene prediction.",
         url: "https://academic.oup.com/gigascience/article/doi/10.1093/gigascience/giad055/7233990"
@@ -438,12 +408,10 @@ const preLoadedObjects = [
             Conda: ["No"],
             Docker: ["No"],
             Singularity: ["Yes"],
-            CommunitySupport: ["Weak"],
             taxonomicProfiling: ["No"],
             metabolicModeling: ["No"],
             ancientDNA: ["No"],
             eukaryoticViralMAGs: ["No"],
-            invertedAssemblyBinning: ["No"]
         },
         description: "metaWGS is a bioinformatics pipeline designed for the analysis of whole-genome shotgun (WGS) metagenomic data, focusing on microbial community profiling and functional analysis. It typically encompasses steps for quality control of raw reads, assembly of metagenomic sequences, gene prediction on the assembled contigs, taxonomic classification of both reads and contigs, and functional annotation of the predicted genes.",
         url: "https://www.biorxiv.org/content/10.1101/2024.09.13.612854v1"
@@ -466,12 +434,10 @@ const preLoadedObjects = [
             Conda: ["Yes"],
             Docker: ["Yes"],
             Singularity: ["No"],
-            CommunitySupport: ["Strong"],
             taxonomicProfiling: ["Yes"],
             metabolicModeling: ["No"],
             ancientDNA: ["No"],
             eukaryoticViralMAGs: ["No"],
-            invertedAssemblyBinning: ["No"]
         },
         description: "MetaWRAP is a versatile and modular pipeline tailored for metagenomic data analysis and MAG recovery, with strong support for Illumina short-read data. Built primarily as a command-line framework with a focus on flexibility and user control, MetaWRAP consists of individual modules that can be run independently or combined into custom workflows.",
         url: "https://microbiomejournal.biomedcentral.com/articles/10.1186/s40168-018-0541-1"
@@ -494,14 +460,12 @@ const preLoadedObjects = [
             Conda: ["No"],
             Docker: ["No"],
             Singularity: ["No"],
-            CommunitySupport: ["Strong"],
             taxonomicProfiling: ["Yes"],
             metabolicModeling: ["No"],
             ancientDNA: ["No"],
             eukaryoticViralMAGs: ["No"],
-            invertedAssemblyBinning: ["No"]
         },
-        description: "​MGnify provides a web-based pipeline for metagenomic assembly and binning, enabling users to analyze raw sequencing reads through quality control, assembly, binning, and annotation. The platform supports user-submitted data and offers an intuitive interface, making it accessible for researchers without extensive computational resources.",
+        description: "MGnify provides a web-based pipeline for metagenomic assembly and binning, enabling users to analyze raw sequencing reads through quality control, assembly, binning, and annotation. The platform supports user-submitted data and offers an intuitive interface, making it accessible for researchers without extensive computational resources.",
         url: "https://docs.mgnify.org/src/docs/analysis.html"
     },
     {
@@ -522,12 +486,10 @@ const preLoadedObjects = [
             Conda: ["Yes"],
             Docker: ["No"],
             Singularity: ["No"],
-            CommunitySupport: ["Medium"],
             taxonomicProfiling: ["No"],
             metabolicModeling: ["No"],
             ancientDNA: ["No"],
             eukaryoticViralMAGs: ["No"],
-            invertedAssemblyBinning: ["No"]
         },
         description: "MUFFIN, is a reproducible and user-friendly metagenomic pipeline, built with Nextflow, that excels in hybrid assembly by integrating both short-read (Illumina) and long-read (nanopore) sequencing data. The pipeline progresses through assembly and binning, employing differential coverage binning to improve the quality and completeness of metagenome-assembled genomes (MAGs). ",
         url: "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008716"
@@ -550,14 +512,12 @@ const preLoadedObjects = [
             Conda: ["Yes"],
             Docker: ["No"],
             Singularity: ["No"],
-            CommunitySupport: ["Weak"],
             taxonomicProfiling: ["No"],
             metabolicModeling: ["No"],
             ancientDNA: ["No"],
             eukaryoticViralMAGs: ["No"],
-            invertedAssemblyBinning: ["No"]
         },
-        description: "​NanoPhase is a pipeline designed for reconstructing high-quality MAGs from complex metagenomes using Nanopore long reads or hybrid sequencing strategies. It integrates assembly, binning, polishing, and annotation steps, facilitating the recovery of complete genomes and mobile genetic elements from diverse microbial communities.",
+        description: "NanoPhase is a pipeline designed for reconstructing high-quality MAGs from complex metagenomes using Nanopore long reads or hybrid sequencing strategies. It integrates assembly, binning, polishing, and annotation steps, facilitating the recovery of complete genomes and mobile genetic elements from diverse microbial communities.",
         url: "https://microbiomejournal.biomedcentral.com/articles/10.1186/s40168-022-01415-8"
     },
     {
@@ -578,12 +538,10 @@ const preLoadedObjects = [
             Conda: ["Yes"],
             Docker: ["Yes"],
             Singularity: ["Yes"],
-            CommunitySupport: ["Strong"],
             taxonomicProfiling: ["Yes"],
             metabolicModeling: ["No"],
             ancientDNA: ["Yes"],
             eukaryoticViralMAGs: ["No"],
-            invertedAssemblyBinning: ["No"]
         },
         description: "nf-core/mag is a robust and reproducible pipeline developed within the nf-core framework for the assembly and binning of metagenomes, supporting both short-read and hybrid data. Built using Nextflow, it leverages modular design and containerization (Docker/Singularity), ensuring portability across different computing environments, including HPC and cloud systems.",
         url: "https://nf-co.re/mag"
@@ -606,12 +564,10 @@ const preLoadedObjects = [
             Conda: ["Yes"],
             Docker: ["No"],
             Singularity: ["No"],
-            CommunitySupport: ["Weak"],
             taxonomicProfiling: ["No"],
             metabolicModeling: ["No"],
             ancientDNA: ["No"],
             eukaryoticViralMAGs: ["No"],
-            invertedAssemblyBinning: ["No"]
         },
         description: "SnakeMAGs is a Snakemake-powered, fully automated pipeline designed for the end-to-end reconstruction and annotation of MAGs from metagenomic datasets, with native support for short-read Illumina data. SnakeMAGs emphasizes reproducibility, scalability, and transparency, offering out-of-the-box compatibility with HPC systems and Conda environments.",
         url: "https://f1000research.com/articles/11-1522"
@@ -634,14 +590,12 @@ const preLoadedObjects = [
             Conda: ["Yes"],
             Docker: ["No"],
             Singularity: ["No"],
-            CommunitySupport: ["Weak"],
             taxonomicProfiling: ["Yes"],
             metabolicModeling: ["No"],
             ancientDNA: ["No"],
             eukaryoticViralMAGs: ["No"],
-            invertedAssemblyBinning: ["No"]
         },
-        description: "SnakeWRAP is a Snakemake-based implementation of the popular MetaWRAP pipeline, designed to bring automation, reproducibility, and workflow management to the modular tools of MetaWRAP. By wrapping MetaWRAP’s modules into a well-structured Snakemake workflow.",
+        description: "SnakeWRAP is a Snakemake-based implementation of the popular MetaWRAP pipeline, designed to bring automation, reproducibility, and workflow management to the modular tools of MetaWRAP. By wrapping MetaWRAP's modules into a well-structured Snakemake workflow.",
         url: "https://f1000research.com/articles/11-265"
     },
     {
@@ -662,12 +616,10 @@ const preLoadedObjects = [
             Conda: ["Yes"],
             Docker: ["No"],
             Singularity: ["No"],
-            CommunitySupport: ["Strong"],
             taxonomicProfiling: ["Yes"],
             metabolicModeling: ["No"],
             ancientDNA: ["No"],
             eukaryoticViralMAGs: ["No"],
-            invertedAssemblyBinning: ["No"]
         },
         description: "SqueezeMeta is a comprehensive and user-friendly bioinformatics pipeline designed for the assembly, annotation, and analysis of metagenomic and metatranscriptomic datasets. It streamlines the entire process, starting from raw reads and progressing through quality control, assembly (using multiple assemblers), gene prediction, taxonomic and functional annotation.",
         url: "https://www.frontiersin.org/journals/microbiology/articles/10.3389/fmicb.2018.03349/full"
@@ -690,12 +642,10 @@ const preLoadedObjects = [
             Conda: ["Yes"],
             Docker: ["Yes"],
             Singularity: ["No"],
-            CommunitySupport: ["Medium"],
             taxonomicProfiling: ["Yes"],
             metabolicModeling: ["No"],
             ancientDNA: ["No"],
             eukaryoticViralMAGs: ["No"],
-            invertedAssemblyBinning: ["No"]
         },
         description: "Sunbeam is a modular and extensible bioinformatics pipeline built using Snakemake for the analysis of metagenomic sequencing experiments. It automates various steps, starting from raw reads and including quality control (adapter trimming, host read removal, quality filtering), taxonomic assignment of reads (using Kraken), de novo assembly of reads into contigs (using Megahit), and contig annotation (using BLAST and Diamond).",
         url: "https://microbiomejournal.biomedcentral.com/articles/10.1186/s40168-019-0658-x"
@@ -718,12 +668,10 @@ const preLoadedObjects = [
             Conda: ["Yes"],
             Docker: ["No"],
             Singularity: ["No"],
-            CommunitySupport: ["Medium"],
             taxonomicProfiling: ["No"],
             metabolicModeling: ["No"],
             ancientDNA: ["No"],
             eukaryoticViralMAGs: ["Yes"],
-            invertedAssemblyBinning: ["No"]
         },
         description: "VEBA is a modular, end-to-end metagenomics pipeline designed to recover and analyze genomes from prokaryotic, microeukaryotic, and viral organisms. It employs an iterative binning strategy and supports both single- and multi-sample workflows, facilitating comprehensive genome recovery across diverse microbial communities. VEBA integrates quality assessment, taxonomic classification, and dereplication, providing a unified framework for genome-resolved metagenomic analyses.",
         url: "https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-022-04973-8"

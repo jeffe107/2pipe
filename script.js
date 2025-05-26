@@ -102,43 +102,28 @@ const questions = [
         ]
     },
     {
-        text: "15. What level of community support do you need?",
-        options: [
-            "Strong",
-            "Medium",
-            "Weak"
-        ]
-    },
-    {
-        text: "16. Do you want to perform read-based taxonomic profiling?",
+        text: "15. Do you want to perform read-based taxonomic profiling?",
         options: [
             "Yes",
             "No"
         ]
     },
     {
-        text: "17. Do you want to obtain genome-scale metabolic models?",
+        text: "16. Do you want to obtain genome-scale metabolic models?",
         options: [
             "Yes",
             "No"
         ]
     },
     {
-        text: "18. Are you working with ancient DNA?",
+        text: "17. Are you working with ancient DNA?",
         options: [
             "Yes",
             "No"
         ]
     },
     {
-        text: "19. Do you need eukaryotic/viral MAGs?",
-        options: [
-            "Yes",
-            "No"
-        ]
-    },
-    {
-        text: "20. Do you need a pipeline with inverted assembly/binning?",
+        text: "18. Do you need eukaryotic/viral MAGs?",
         options: [
             "Yes",
             "No"
@@ -162,12 +147,10 @@ const attributeWeights = {
     Docker: 1,
     Singularity: 1,
     externalComputationalResources: 5,
-    CommunitySupport: 1,
     taxonomicProfiling: 1,
     metabolicModeling: 1,
     ancientDNA: 1,
-    eukaryoticViralMAGs: 1,
-    invertedAssemblyBinning: 1
+    eukaryoticViralMAGs: 1
 };
 
 // State management
@@ -311,12 +294,10 @@ function getUserAnswers() {
         Docker: questions[11].options[answers[11]],
         Singularity: questions[12].options[answers[12]],
         externalComputationalResources: questions[13].options[answers[13]],
-        CommunitySupport: questions[14].options[answers[14]],
-        taxonomicProfiling: questions[15].options[answers[15]],
-        metabolicModeling: questions[16].options[answers[16]],
-        ancientDNA: questions[17].options[answers[17]],
-        eukaryoticViralMAGs: questions[18].options[answers[18]],
-        invertedAssemblyBinning: questions[19].options[answers[19]]
+        taxonomicProfiling: questions[14].options[answers[14]],
+        metabolicModeling: questions[15].options[answers[15]],
+        ancientDNA: questions[16].options[answers[16]],
+        eukaryoticViralMAGs: questions[17].options[answers[17]]
     };
 }
 
@@ -368,12 +349,10 @@ function findBestMatch(userAnswers) {
         checkAttribute('Docker', attributeWeights.Docker);
         checkAttribute('Singularity', attributeWeights.Singularity);
         checkAttribute('externalComputationalResources', attributeWeights.externalComputationalResources);
-        checkAttribute('CommunitySupport', attributeWeights.CommunitySupport);
         checkAttribute('taxonomicProfiling', attributeWeights.taxonomicProfiling);
         checkAttribute('metabolicModeling', attributeWeights.metabolicModeling);
         checkAttribute('ancientDNA', attributeWeights.ancientDNA);
         checkAttribute('eukaryoticViralMAGs', attributeWeights.eukaryoticViralMAGs);
-        checkAttribute('invertedAssemblyBinning', attributeWeights.invertedAssemblyBinning);
 
         matches.push({
             object: obj,
@@ -436,12 +415,10 @@ const featureLabels = {
     Docker: "Docker Support",
     Singularity: "Singularity Support",
     externalComputationalResources: "External Computational Resources",
-    CommunitySupport: "Community Support",
     taxonomicProfiling: "Taxonomic Profiling",
     metabolicModeling: "Metabolic Modeling",
     ancientDNA: "Ancient DNA Support",
-    eukaryoticViralMAGs: "Eukaryotic/Viral MAGs",
-    invertedAssemblyBinning: "Inverted Assembly/Binning"
+    eukaryoticViralMAGs: "Eukaryotic/Viral MAGs"
 };
 
 function handleCompletion() {

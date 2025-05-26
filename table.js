@@ -5,7 +5,7 @@ const tableBtn = document.getElementById('table-btn');
 const closeTableBtn = document.getElementById('close-table-btn');
 
 // Configuration
-const COLUMNS_PER_PAGE = 6; // Number of columns to show per page
+const COLUMNS_PER_PAGE = 7; // Number of columns to show per page (including pipeline name)
 let currentPage = 0;
 
 // Function to create table
@@ -35,12 +35,10 @@ function createTable() {
         { header: 'Docker', attribute: 'Docker' },
         { header: 'Singularity', attribute: 'Singularity' },
         { header: 'External Resources', attribute: 'externalComputationalResources' },
-        { header: 'Community Support', attribute: 'CommunitySupport' },
         { header: 'Taxonomic Profiling', attribute: 'taxonomicProfiling' },
         { header: 'Metabolic Modeling', attribute: 'metabolicModeling' },
         { header: 'Ancient DNA', attribute: 'ancientDNA' },
-        { header: 'Eukaryotic/Viral MAGs', attribute: 'eukaryoticViralMAGs' },
-        { header: 'Inverted Assembly/Binning', attribute: 'invertedAssemblyBinning' }
+        { header: 'Eukaryotic/Viral MAGs', attribute: 'eukaryoticViralMAGs' }
     ];
     
     // Create navigation controls
