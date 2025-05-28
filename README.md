@@ -148,3 +148,7 @@ Before submitting your work, please check the current number of pipelines in the
    - Verify your pipeline's score calculation
    - Check the comparison table filtering
    - Test the pipeline gallery navigation
+
+## Citation
+
+If you find BIgMAG/MAGFlow useful, please cite our paper (Upcoming 🚀) or share this tool through platforms such as X and LinkedIn.
