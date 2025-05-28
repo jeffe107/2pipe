@@ -119,37 +119,6 @@ Welcome to the 2Pipe! This application helps researchers find the perfect metage
 - Keep descriptions clear and concise (2-3 sentences recommended)
 - Ensure your workflow diagram is clear and readable at the recommended size
 
-### ✅ Example Pipeline Object
-
-```javascript
-{
-    id: "pipeline31"
-    name: "Metagenome-Atlas",
-    attributes: {
-        shortReads: ["Yes"],
-        PacBio: ["No"],
-        OxfordNanopore: ["No"],
-        hybridAssembly: ["No"],
-        multiSample: ["Yes"],
-        coAssemblyCoBinning: ["Yes"],
-        GUI: ["No"],
-        Cloud: ["Yes"],
-        workflowManager: ["Yes"],
-        binRefinement: ["Yes"],
-        Conda: ["Yes"],
-        Docker: ["Yes"],
-        Singularity: ["Yes"],
-        externalComputationalResources: ["No"],
-        taxonomicProfiling: ["Yes"],
-        metabolicModeling: ["No"],
-        ancientDNA: ["No"],
-        eukaryoticViralMAGs: ["Yes"]
-    },
-    url: "https://github.com/metagenome-atlas/metagenome-atlas",
-    description: "A Snakemake-based pipeline for metagenomic analysis. It performs assembly, binning, and annotation of metagenomic data, with a focus on reproducibility and ease of use."
-}
-```
-
 ### 🧪 Testing Your Addition
 
 1. **Image Testing**:
@@ -170,60 +139,6 @@ Welcome to the 2Pipe! This application helps researchers find the perfect metage
    - Check the comparison table filtering
    - Test the pipeline gallery navigation
 
-### 🆘 Need Help?
-
-If you need assistance or have questions about:
-- Setting up your development environment
-- Forking and creating pull requests
-- Creating workflow diagrams
-- Adding pipeline objects
-- Testing your addition
-- Understanding the scoring system
-- Troubleshooting integration issues
-
-Please:
-1. Check the existing documentation
-2. Look at previous pull requests for examples
-3. Open an issue in the repository
-4. Contact the maintainers
-
-### 🎯 Best Practices
-
-1. **Workflow Diagrams**:
-   - Use clear, professional diagrams
-   - Include key steps and data flow
-   - Use consistent colors and symbols
-   - Keep text readable at the recommended size
-   - Use standard bioinformatics workflow symbols
-
-2. **Pipeline Descriptions**:
-   - Start with the main purpose
-   - Highlight key features
-   - Mention target users
-   - Keep it concise but informative
-   - Use clear, technical language
-
-3. **Attribute Selection**:
-   - Be accurate and honest
-   - Consider edge cases
-   - Document any assumptions
-   - Keep up to date with pipeline changes
-   - Test all features before marking as "Yes"
-
-Remember: Your pipeline's information helps researchers make informed decisions. Accuracy and clarity are crucial! 🎯 
-
-## Usage
-
-1. Click "Get Started" to begin the pipeline recommendation process
-2. Answer the questions about your metagenomics project
-3. Receive personalized pipeline recommendations based on your needs
-4. Use the "Pipeline Gallery" to explore all available pipelines
-5. Use the "Compare Pipelines" feature to see detailed comparisons
-
 ## Important Note
 
-Before submitting your work, please check the current number of pipelines in the "Pipeline Gallery" or "Compare Pipelines" section. This number should be included in your submission to ensure you're referencing the correct pipeline version. The pipeline numbers are displayed in the format "Pipeline X" where X is the current pipeline number.
-
-## Features
-
-// ... existing code ... 
+Before submitting your work, please check the current number of pipelines in the "Pipeline Gallery" or "Compare Pipelines" section. This number should be included in your submission to ensure you're referencing the correct pipeline version. The pipeline numbers are displayed in the format "PipelineX" where X is the current pipeline number.
