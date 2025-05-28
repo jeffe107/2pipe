@@ -123,6 +123,12 @@ Welcome to the 2Pipe! This application helps researchers find the perfect metage
 - Keep descriptions clear and concise (2-3 sentences recommended)
 - Ensure your workflow diagram is clear and readable at the recommended size
 
+#### Numbering your pipeline
+
+Before submitting your work, please check the current number of pipelines in the "Pipeline Gallery" or "Compare Pipelines" section. This number should be included in your submission to ensure you're referencing the correct pipeline version. The pipeline numbers are displayed in the format "PipelineX" where X is the current pipeline number.
+
+
+
 ### 🧪 Testing Your Addition
 
 1. **Image Testing**:
@@ -142,7 +148,3 @@ Welcome to the 2Pipe! This application helps researchers find the perfect metage
    - Verify your pipeline's score calculation
    - Check the comparison table filtering
    - Test the pipeline gallery navigation
-
-## Important Note
-
-Before submitting your work, please check the current number of pipelines in the "Pipeline Gallery" or "Compare Pipelines" section. This number should be included in your submission to ensure you're referencing the correct pipeline version. The pipeline numbers are displayed in the format "PipelineX" where X is the current pipeline number.
