@@ -1,7 +1,7 @@
 # 2Pipe: It starts with a question
 
 <p align="center">
-    <img src="images/2Pipe_logo_black.png" alt="2Pipe" width="50%">
+    <img src="images/2Pipe_logo_black.png" alt="2Pipe" width="25%">
 </p>
 
 Welcome to the 2Pipe! This application helps researchers find the perfect metagenomic pipeline for their needs through an interactive questionnaire, pipeline gallery, and comparison table.
