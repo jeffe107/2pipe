@@ -10,8 +10,8 @@
     --bg-color: #1a1a1a;
     --container-bg: #2d2d2d;
     --text-color: #ffffff;
-    --accent-color: #4CAF50;
-    --hover-color: #45a049;
+    --accent-color: #068f99;
+    --hover-color: #057a82;
     --border-color: #404040;
     --option-bg: #3d3d3d;
     --option-hover: #4d4d4d;
@@ -21,8 +21,8 @@
     --bg-color: #f5f7fa;
     --container-bg: #ffffff;
     --text-color: #333333;
-    --accent-color: #4CAF50;
-    --hover-color: #45a049;
+    --accent-color: #068f99;
+    --hover-color: #057a82;
     --border-color: #e0e0e0;
     --option-bg: #f8f9fa;
     --option-hover: #e9ecef;
@@ -52,6 +52,17 @@ body {
     padding: 2rem 0;
 }
 
+.logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
 .intro-section h1 {
     color: var(--text-color);
     margin-bottom: 1.5rem;
@@ -78,9 +89,12 @@ body {
     font-size: 1.1rem;
     cursor: pointer;
     transition: all 0.3s ease;
-    min-width: 200px;
+    min-width: 220px;
     flex: 1;
-    max-width: 200px;
+    max-width: 220px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .start-btn {
@@ -149,7 +163,7 @@ body {
 
 .progress-bar {
     height: 100%;
-    background: linear-gradient(90deg, var(--accent-color), #8BC34A);
+    background: linear-gradient(90deg, var(--accent-color), #0aa8b3);
     width: 0;
     transition: width 0.5s ease;
     border-radius: 10px;
@@ -526,6 +540,10 @@ h2 {
         padding: 1.5rem;
     }
     
+    .logo {
+        width: 120px;
+    }
+    
     .intro-section h1 {
         font-size: 1.5rem;
     }
@@ -582,7 +600,8 @@ h2 {
     
     .start-btn, .gallery-btn, .table-btn {
         width: 100%;
-        max-width: 300px;
+        max-width: 250px;
+        min-width: 250px;
     }
     
     .theme-toggle {

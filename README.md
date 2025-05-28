@@ -211,3 +211,19 @@ Please:
    - Test all features before marking as "Yes"
 
 Remember: Your pipeline's information helps researchers make informed decisions. Accuracy and clarity are crucial! 🎯 
+
+## Usage
+
+1. Click "Get Started" to begin the pipeline recommendation process
+2. Answer the questions about your metagenomics project
+3. Receive personalized pipeline recommendations based on your needs
+4. Use the "Pipeline Gallery" to explore all available pipelines
+5. Use the "Compare Pipelines" feature to see detailed comparisons
+
+## Important Note
+
+Before submitting your work, please check the current number of pipelines in the "Pipeline Gallery" or "Compare Pipelines" section. This number should be included in your submission to ensure you're referencing the correct pipeline version. The pipeline numbers are displayed in the format "Pipeline X" where X is the current pipeline number.
+
+## Features
+
+// ... existing code ... 

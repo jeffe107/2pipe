@@ -73,7 +73,7 @@ const preLoadedObjects = [
             taxonomicProfiling: ["No"],
             metabolicModeling: ["No"],
             ancientDNA: ["No"],
-            eukaryoticViralMAGs: ["No"],
+            eukaryoticViralMAGs: ["No"]
         },
         description: "Aviary is an end to end genome-centric metagenomics workflow. Novel and established methods are used assemble long read, short read or hybrid sequence datasets. Resulting contigs are binned using a large suite of primary metagenomic binners (including Rosella) and ensemble binning. Finalized bins are also assessed for quality using CheckM, and assigned taxonomic ranks using GTDB-tk.",
         url: "https://rhysnewell.github.io/aviary/installation"
@@ -177,13 +177,39 @@ const preLoadedObjects = [
             taxonomicProfiling: ["Yes"],
             metabolicModeling: ["No"],
             ancientDNA: ["No"],
-            eukaryoticViralMAGs: ["No"],
+            eukaryoticViralMAGs: ["No"]
         },
         description: "EasyNanoMeta is a pipeline designed for Nanopore long-read metagenomic analysis, facilitating both assembly-based and assembly-free strategies. It encompasses steps from quality control and host sequence removal to assembly, polishing, binning, and annotation, supporting hybrid assemblies with short reads. EasyNanoMeta is containerized via Singularity, ensuring reproducibility and ease of deployment across diverse computing environments.",
         url: "https://github.com/P-kai/EasyNanoMeta"
     },
     {
         id: "pipeline8",
+        name: "Eukfinder",
+        attributes: {
+            shortReads: ["Yes"],
+            PacBio: ["Yes"],
+            OxfordNanopore: ["Yes"],
+            hybridAssembly: ["No"],
+            multiSample: ["No"],
+            coAssemblyCoBinning: ["No"],
+            GUI: ["No"],
+            Cloud: ["No"],
+            workflowManager: ["None"],
+            binRefinement: ["No"],
+            externalComputationalResources: ["No"],
+            Conda: ["Yes"],
+            Docker: ["No"],
+            Singularity: ["No"],
+            taxonomicProfiling: ["Yes"],
+            metabolicModeling: ["No"],
+            ancientDNA: ["No"],
+            eukaryoticViralMAGs: ["Yes"],
+        },
+        description: "Eukfinder is a specialized bioinformatics pipeline designed to recover microbial eukaryotic genomes, including both nuclear and mitochondrial DNA, from whole-genome shotgun (WGS) metagenomic datasets. Recognizing the complexity and underrepresentation of eukaryotic genomes in metagenomics, Eukfinder offers two tailored workflows: one for Illumina short reads (Eukfinder_short) and another for assembled contigs or long-read data (Eukfinder_long).",
+        url: "https://github.com/RogerLab/Eukfinder"
+    },
+    {
+        id: "pipeline9",
         name: "Galaxy-metagenomics",
         attributes: {
             shortReads: ["Yes"],
@@ -209,7 +235,7 @@ const preLoadedObjects = [
         url: "https://usegalaxy.org/published/workflow?id=33d90e718ce500ef"
     },
     {
-        id: "pipeline9",
+        id: "pipeline10",
         name: "GEN-ERA",
         attributes: {
             shortReads: ["Yes"],
@@ -235,7 +261,7 @@ const preLoadedObjects = [
         url: "https://academic.oup.com/gigascience/article/doi/10.1093/gigascience/giad022/7111624"
     },
     {
-        id: "pipeline10",
+        id: "pipeline11",
         name: "HiFi-MAG",
         attributes: {
             shortReads: ["No"],
@@ -261,7 +287,33 @@ const preLoadedObjects = [
         url: "https://github.com/PacificBiosciences/pb-metagenomics-tools/blob/master/docs/Tutorial-HiFi-MAG-Pipeline.md"
     },
     {
-        id: "pipeline11",
+        id: "pipeline12",
+        name: "KBase",
+        attributes: {
+            shortReads: ["Yes"],
+            PacBio: ["Yes"],
+            OxfordNanopore: ["Yes"],
+            hybridAssembly: ["Yes"],
+            multiSample: ["Yes"],
+            coAssemblyCoBinning: ["Yes"],
+            GUI: ["Yes"],
+            Cloud: ["No"],
+            workflowManager: ["None"],
+            binRefinement: ["Yes"],
+            externalComputationalResources: ["Yes"],
+            Conda: ["No"],
+            Docker: ["No"],
+            Singularity: ["No"],
+            taxonomicProfiling: ["Yes"],
+            metabolicModeling: ["Yes"],
+            ancientDNA: ["No"],
+            eukaryoticViralMAGs: ["No"],
+        },
+        description: "KBase (The Department of Energy Systems Biology Knowledgebase) is a collaborative, web-based platform that enables researchers to perform comprehensive metagenomics analyses through its interactive Narrative Interface. Users can build reproducible workflows for quality control, assembly (e.g., metaSPAdes, MEGAHIT), binning (e.g., MetaBAT2), annotation (e.g., RASTtk, DRAM), and metabolic modeling using ModelSEED.",
+        url: "https://www.kbase.us/"
+    },
+    {
+        id: "pipeline13",
         name: "MAGNETO",
         attributes: {
             shortReads: ["Yes"],
@@ -287,7 +339,7 @@ const preLoadedObjects = [
         url: "https://journals.asm.org/doi/10.1128/msystems.00432-22"
     },
     {
-        id: "pipeline12",
+        id: "pipeline14",
         name: "metaGEM",
         attributes: {
             shortReads: ["Yes"],
@@ -313,7 +365,7 @@ const preLoadedObjects = [
         url: "https://academic.oup.com/nar/article/49/21/e126/6382386"
     },
     {
-        id: "pipeline13",
+        id: "pipeline15",
         name: "MetaGenePipe",
         attributes: {
             shortReads: ["Yes"],
@@ -339,7 +391,7 @@ const preLoadedObjects = [
         url: "https://joss.theoj.org/papers/10.21105/joss.04851"
     },
     {
-        id: "pipeline14",
+        id: "pipeline16",
         name: "Metagenome-Atlas",
         attributes: {
             shortReads: ["Yes"],
@@ -365,7 +417,7 @@ const preLoadedObjects = [
         url: "https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-020-03585-4"
     },
     {
-        id: "pipeline15",
+        id: "pipeline17",
         name: "Metaphor",
         attributes: {
             shortReads: ["Yes"],
@@ -391,7 +443,7 @@ const preLoadedObjects = [
         url: "https://academic.oup.com/gigascience/article/doi/10.1093/gigascience/giad055/7233990"
     },
     {
-        id: "pipeline16",
+        id: "pipeline18",
         name: "metaWGS",
         attributes: {
             shortReads: ["Yes"],
@@ -417,7 +469,7 @@ const preLoadedObjects = [
         url: "https://www.biorxiv.org/content/10.1101/2024.09.13.612854v1"
     },
     {
-        id: "pipeline17",
+        id: "pipeline19",
         name: "MetaWRAP",
         attributes: {
             shortReads: ["Yes"],
@@ -443,7 +495,7 @@ const preLoadedObjects = [
         url: "https://microbiomejournal.biomedcentral.com/articles/10.1186/s40168-018-0541-1"
     },
     {
-        id: "pipeline18",
+        id: "pipeline20",
         name: "MGnify",
         attributes: {
             shortReads: ["Yes"],
@@ -463,13 +515,39 @@ const preLoadedObjects = [
             taxonomicProfiling: ["Yes"],
             metabolicModeling: ["No"],
             ancientDNA: ["No"],
-            eukaryoticViralMAGs: ["No"],
+            eukaryoticViralMAGs: ["No"]
         },
         description: "MGnify provides a web-based pipeline for metagenomic assembly and binning, enabling users to analyze raw sequencing reads through quality control, assembly, binning, and annotation. The platform supports user-submitted data and offers an intuitive interface, making it accessible for researchers without extensive computational resources.",
         url: "https://docs.mgnify.org/src/docs/analysis.html"
     },
     {
-        id: "pipeline19",
+        id: "pipeline21",
+        name: "MOSHPIT",
+        attributes: {
+            shortReads: ["Yes"],
+            PacBio: ["No"],
+            OxfordNanopore: ["No"],
+            hybridAssembly: ["No"],
+            multiSample: ["Yes"],
+            coAssemblyCoBinning: ["No"],
+            GUI: ["No"],
+            Cloud: ["No"],
+            workflowManager: ["None"],
+            binRefinement: ["Yes"],
+            externalComputationalResources: ["No"],
+            Conda: ["Yes"],
+            Docker: ["No"],
+            Singularity: ["No"],
+            taxonomicProfiling: ["Yes"],
+            metabolicModeling: ["No"],
+            ancientDNA: ["No"],
+            eukaryoticViralMAGs: ["No"],
+        },
+        description: "MOSHPIT (MOdular SHotgun metagenome Pipelines with Integrated provenance Tracking) is a toolkit of plugins for whole metagenome assembly, annotation, and analysis built on the microbiome multi-omics data science framework QIIME 2. MOSHPIT enables flexible, modular, fully reproducible workflows for read-based or assembly-based analysis of metagenome data.",
+        url: "https://bokulich-lab.github.io/moshpit-docs/intro.html"
+    },
+    {
+        id: "pipeline22",
         name: "MUFFIN",
         attributes: {
             shortReads: ["No"],
@@ -495,7 +573,7 @@ const preLoadedObjects = [
         url: "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008716"
     },
     {
-        id: "pipeline20",
+        id: "pipeline23",
         name: "NanoPhase",
         attributes: {
             shortReads: ["No"],
@@ -521,7 +599,7 @@ const preLoadedObjects = [
         url: "https://microbiomejournal.biomedcentral.com/articles/10.1186/s40168-022-01415-8"
     },
     {
-        id: "pipeline21",
+        id: "pipeline24",
         name: "nf-core/mag",
         attributes: {
             shortReads: ["Yes"],
@@ -541,13 +619,39 @@ const preLoadedObjects = [
             taxonomicProfiling: ["Yes"],
             metabolicModeling: ["No"],
             ancientDNA: ["Yes"],
-            eukaryoticViralMAGs: ["No"],
+            eukaryoticViralMAGs: ["No"]
         },
         description: "nf-core/mag is a robust and reproducible pipeline developed within the nf-core framework for the assembly and binning of metagenomes, supporting both short-read and hybrid data. Built using Nextflow, it leverages modular design and containerization (Docker/Singularity), ensuring portability across different computing environments, including HPC and cloud systems.",
         url: "https://nf-co.re/mag"
     },
     {
-        id: "pipeline22",
+        id: "pipeline25",
+        name: "ngs-preprocess-MpGAp-Bacannot",
+        attributes: {
+            shortReads: ["Yes"],
+            PacBio: ["Yes"],
+            OxfordNanopore: ["Yes"],
+            hybridAssembly: ["Yes"],
+            multiSample: ["Yes"],
+            coAssemblyCoBinning: ["No"],
+            GUI: ["No"],
+            Cloud: ["Yes"],
+            workflowManager: ["Nextflow"],
+            binRefinement: ["No"],
+            externalComputationalResources: ["No"],
+            Conda: ["Yes"],
+            Docker: ["Yes"],
+            Singularity: ["Yes"],
+            taxonomicProfiling: ["No"],
+            metabolicModeling: ["No"],
+            ancientDNA: ["No"],
+            eukaryoticViralMAGs: ["No"],
+        },
+        description: "These pipelines consist of three parts: quality control, de novo genome assembly, and bacterial genome annotation. In particular, the genome annotation pipeline provides a comprehensive overview of the genome, including standard gene prediction and functional inference, as well as predictions relevant to clinical applications.",
+        url: "https://f1000research.com/articles/12-1205/v1"
+    },
+    {
+        id: "pipeline26",
         name: "SnakeMAGs",
         attributes: {
             shortReads: ["Yes"],
@@ -573,7 +677,7 @@ const preLoadedObjects = [
         url: "https://f1000research.com/articles/11-1522"
     },
     {
-        id: "pipeline23",
+        id: "pipeline27",
         name: "SnakeWRAP",
         attributes: {
             shortReads: ["Yes"],
@@ -599,7 +703,7 @@ const preLoadedObjects = [
         url: "https://f1000research.com/articles/11-265"
     },
     {
-        id: "pipeline24",
+        id: "pipeline28",
         name: "SqueezeMeta",
         attributes: {
             shortReads: ["Yes"],
@@ -625,7 +729,7 @@ const preLoadedObjects = [
         url: "https://www.frontiersin.org/journals/microbiology/articles/10.3389/fmicb.2018.03349/full"
     },
     {
-        id: "pipeline25",
+        id: "pipeline29",
         name: "Sunbeam",
         attributes: {
             shortReads: ["Yes"],
@@ -651,7 +755,7 @@ const preLoadedObjects = [
         url: "https://microbiomejournal.biomedcentral.com/articles/10.1186/s40168-019-0658-x"
     },
     {
-        id: "pipeline26",
+        id: "pipeline30",
         name: "VEBA",
         attributes: {
             shortReads: ["Yes"],
@@ -668,13 +772,17 @@ const preLoadedObjects = [
             Conda: ["Yes"],
             Docker: ["No"],
             Singularity: ["No"],
+            CommunitySupport: ["Medium"],
             taxonomicProfiling: ["No"],
             metabolicModeling: ["No"],
             ancientDNA: ["No"],
             eukaryoticViralMAGs: ["Yes"],
+            invertedAssemblyBinning: ["No"]
         },
         description: "VEBA is a modular, end-to-end metagenomics pipeline designed to recover and analyze genomes from prokaryotic, microeukaryotic, and viral organisms. It employs an iterative binning strategy and supports both single- and multi-sample workflows, facilitating comprehensive genome recovery across diverse microbial communities. VEBA integrates quality assessment, taxonomic classification, and dereplication, providing a unified framework for genome-resolved metagenomic analyses.",
         url: "https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-022-04973-8"
     },
-
+    
+    
+    
 ]; 

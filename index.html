@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2Pipe - Metagenomics Pipeline Recommender</title>
+    <link rel="icon" type="image/png" href="images/2Pipe.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -14,14 +15,14 @@
 
     <div class="container">
         <div id="intro-section" class="intro-section">
+            <img src="images/2Pipe.png" alt="2Pipe Logo" class="logo">
             <h1>Welcome to 2Pipe:</h1>
             <h2> It starts with a question!</h2>
             <p>This interactive questionnaire will help you to identify the most suitable metagenomics pipeline for your analysis.</p>
-            <p>Each question will help us tailor our suggestions to your specific requirements.</p>
             <div class="intro-buttons">
                 <button id="start-btn" class="start-btn">Get Started</button>
                 <button id="gallery-btn" class="gallery-btn">Pipeline Gallery</button>
-                <button id="table-btn" class="table-btn">Pipeline Comparison</button>
+                <button id="table-btn" class="table-btn">Compare Pipelines</button>
             </div>
         </div>
         
@@ -59,7 +60,7 @@
     <!-- Table Section -->
     <div id="table-section" class="table-section" style="display: none;">
         <div class="table-header">
-            <h2>Pipeline Comparison</h2>
+            <h2>Compare Pipelines</h2>
             <button id="close-table-btn" class="close-btn">×</button>
         </div>
         <div id="table-container" class="table-container"></div>
