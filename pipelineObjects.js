@@ -210,7 +210,7 @@ const preLoadedObjects = [
     },
     {
         id: "pipeline9",
-        name: "Galaxy-metagenomics",
+        name: "Galaxy",
         attributes: {
             shortReads: ["Yes"],
             PacBio: ["No"],

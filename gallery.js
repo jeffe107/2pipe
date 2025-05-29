@@ -16,7 +16,7 @@ function createGalleryItems() {
                 <div class="gallery-content">
                     <h3>${pipeline.name}</h3>
                     <p>${pipeline.description}</p>
-                    <a href="${pipeline.url}" target="_blank" class="pipeline-link">Check Pipeline</a>
+                    <a href="${pipeline.url}" target="_blank" class="pipeline-link">Match me with ${pipeline.name}</a>
                 </div>
             </div>
         `;
