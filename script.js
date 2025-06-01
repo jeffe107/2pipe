@@ -439,7 +439,7 @@ function handleCompletion() {
                         ${matchResult.bestMatch.matchDetails.map(detail => `<li>${featureLabels[detail]}</li>`).join('')}
                     </ul>
                 </div>
-                <a href="${matchResult.bestMatch.object.url}" target="_blank" class="pipeline-link">Check ${matchResult.bestMatch.object.name} Pipeline</a>
+                <a href="${matchResult.bestMatch.object.url}" target="_blank" class="pipeline-link">Match me with ${matchResult.bestMatch.object.name}</a>
             </div>
             <div class="recommendation-card secondary">
                 <h3>${matchResult.secondBest.object.name}</h3>
@@ -451,7 +451,7 @@ function handleCompletion() {
                         ${matchResult.secondBest.matchDetails.map(detail => `<li>${featureLabels[detail]}</li>`).join('')}
                     </ul>
                 </div>
-                <a href="${matchResult.secondBest.object.url}" target="_blank" class="pipeline-link">Check ${matchResult.secondBest.object.name} Pipeline</a>
+                <a href="${matchResult.secondBest.object.url}" target="_blank" class="pipeline-link">Match me with ${matchResult.secondBest.object.name}</a>
             </div>
             <div class="restart-container">
                 <button id="restart-btn" class="restart-btn">Start Over</button>

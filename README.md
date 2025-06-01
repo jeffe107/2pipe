@@ -8,6 +8,8 @@ Welcome to the 2Pipe! This application helps researchers find the perfect metage
 
 ## 🤝 Contributing a New Pipeline
 
+You can use submit your pipeline through this [form](https://form.jotform.com/jeffe10789/2pipe-form) or follow the instructions below to do it with a pull request. 
+
 ### 🔄 Contribution Workflow
 
 1. **Fork the Repository**:
@@ -151,4 +153,4 @@ Before submitting your work, please check the current number of pipelines in the
 
 ## Citation
 
-If you find BIgMAG/MAGFlow useful, please cite our paper (Upcoming 🚀) or share this tool through platforms such as X and LinkedIn.
+If you find 2Pipe useful, please cite our paper (Upcoming 🚀) or share this tool through platforms such as X and LinkedIn.
