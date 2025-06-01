@@ -6,9 +6,9 @@
 
 Welcome to the 2Pipe! This application helps researchers find the perfect metagenomic pipeline for their needs through an interactive questionnaire, pipeline gallery, and comparison table.
 
-## 🤝 Contributing a New Pipeline
+## 🤝 Adding a New Pipeline
 
-You can use submit your pipeline through this [form](https://form.jotform.com/jeffe10789/2pipe-form) or follow the instructions below to do it with a pull request. 
+🗃️ You can request to add your pipeline through this [form](https://form.jotform.com/jeffe10789/2pipe-form) or follow the instructions below to do it with a pull request. 
 
 ### 🔄 Contribution Workflow
 
