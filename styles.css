@@ -531,8 +531,9 @@ h2 {
     margin-bottom: 1.5rem;
     line-height: 1.6;
     flex-grow: 1;
-    text-align: left;
-    justify-content: center;
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
 }
 
 @media (max-width: 480px) {

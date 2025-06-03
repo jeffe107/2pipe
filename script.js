@@ -102,32 +102,19 @@ const questions = [
         ]
     },
     {
-        text: "15. Do you want to perform read-based taxonomic profiling?",
+        text: "15. Which special options do you need? (Select all that apply)",
         options: [
-            "Yes",
-            "No"
-        ]
-    },
-    {
-        text: "16. Do you want to obtain genome-scale metabolic models?",
-        options: [
-            "Yes",
-            "No"
-        ]
-    },
-    {
-        text: "17. Are you working with ancient DNA?",
-        options: [
-            "Yes",
-            "No"
-        ]
-    },
-    {
-        text: "18. Do you need eukaryotic/viral MAGs?",
-        options: [
-            "Yes",
-            "No"
-        ]
+            "Taxonomic profiling",
+            "Metabolic modeling",
+            "Ancient DNA",
+            "Eukaryotic MAGs",
+            "Viral MAGs",
+            "Inverted assembly/binning",
+            "Adaptable resource allocation",
+            "RNA-seq transcriptome analysis",
+            "Plasmid assembly"
+        ],
+        multiSelect: true
     }
 ];
 
@@ -147,10 +134,7 @@ const attributeWeights = {
     Docker: 1,
     Singularity: 1,
     externalComputationalResources: 5,
-    taxonomicProfiling: 1,
-    metabolicModeling: 1,
-    ancientDNA: 1,
-    eukaryoticViralMAGs: 1
+    specialOptions: 1  // Each matching option will add 1 point
 };
 
 // State management
@@ -214,7 +198,18 @@ function displayQuestion(index) {
     question.options.forEach((option, i) => {
         const optionElement = document.createElement('div');
         optionElement.className = 'option';
-        if (answers[index] === i) optionElement.classList.add('selected');
+        
+        // Handle both single and multi-select cases
+        if (question.multiSelect) {
+            if (answers[index] && answers[index].includes(i)) {
+                optionElement.classList.add('selected');
+            }
+        } else {
+            if (answers[index] === i) {
+                optionElement.classList.add('selected');
+            }
+        }
+        
         optionElement.textContent = option;
         optionElement.addEventListener('click', () => selectOption(i));
         optionsContainer.appendChild(optionElement);
@@ -223,23 +218,49 @@ function displayQuestion(index) {
     // Update navigation buttons
     prevBtn.disabled = index === 0;
     nextBtn.textContent = index === questions.length - 1 ? 'Finish' : 'Next';
-    nextBtn.disabled = answers[index] === null;
+    
+    // For multi-select, next button is always enabled
+    if (!question.multiSelect) {
+        nextBtn.disabled = answers[index] === null;
+    }
     
     // Show/hide back button based on question index
     backToIntroBtn.style.display = index === 0 ? 'block' : 'none';
 }
 
 function selectOption(optionIndex) {
-    // Remove previous selection
-    const options = optionsContainer.querySelectorAll('.option');
-    options.forEach(option => option.classList.remove('selected'));
+    const question = questions[currentQuestionIndex];
     
-    // Add new selection
-    options[optionIndex].classList.add('selected');
-    answers[currentQuestionIndex] = optionIndex;
-    
-    // Enable next button if an option is selected
-    nextBtn.disabled = false;
+    if (question.multiSelect) {
+        // For multi-select questions, toggle the selection
+        const options = optionsContainer.querySelectorAll('.option');
+        const isSelected = options[optionIndex].classList.contains('selected');
+        
+        if (isSelected) {
+            options[optionIndex].classList.remove('selected');
+            // Remove from answers array if it exists
+            if (answers[currentQuestionIndex]) {
+                answers[currentQuestionIndex] = answers[currentQuestionIndex].filter(i => i !== optionIndex);
+            }
+        } else {
+            options[optionIndex].classList.add('selected');
+            // Initialize array if it doesn't exist
+            if (!answers[currentQuestionIndex]) {
+                answers[currentQuestionIndex] = [];
+            }
+            answers[currentQuestionIndex].push(optionIndex);
+        }
+        
+        // For multi-select, next button is always enabled
+        nextBtn.disabled = false;
+    } else {
+        // Original single-select logic
+        const options = optionsContainer.querySelectorAll('.option');
+        options.forEach(option => option.classList.remove('selected'));
+        options[optionIndex].classList.add('selected');
+        answers[currentQuestionIndex] = optionIndex;
+        nextBtn.disabled = false;
+    }
 }
 
 function showPreviousQuestion() {
@@ -294,10 +315,7 @@ function getUserAnswers() {
         Docker: questions[11].options[answers[11]],
         Singularity: questions[12].options[answers[12]],
         externalComputationalResources: questions[13].options[answers[13]],
-        taxonomicProfiling: questions[14].options[answers[14]],
-        metabolicModeling: questions[15].options[answers[15]],
-        ancientDNA: questions[16].options[answers[16]],
-        eukaryoticViralMAGs: questions[17].options[answers[17]]
+        specialOptions: answers[14] ? answers[14].map(index => questions[14].options[index]) : []
     };
 }
 
@@ -312,6 +330,20 @@ function findBestMatch(userAnswers) {
         const checkAttribute = (attr, weight) => {
             const userValue = userAnswers[attr];
             const objValues = obj.attributes[attr];
+            
+            // Special handling for specialOptions
+            if (attr === 'specialOptions') {
+                if (userValue && objValues) {
+                    // Count how many user selections match the pipeline's options
+                    const matchingOptions = userValue.filter(option => objValues.includes(option));
+                    if (matchingOptions.length > 0) {
+                        // Add 1 point for each matching option
+                        score += matchingOptions.length * weight;
+                        matchDetails.push(`${attr}: ${matchingOptions.join(', ')}`);
+                    }
+                }
+                return true;
+            }
             
             // For Yes/No questions
             if (userValue === "Yes" || userValue === "No") {
@@ -349,10 +381,7 @@ function findBestMatch(userAnswers) {
         checkAttribute('Docker', attributeWeights.Docker);
         checkAttribute('Singularity', attributeWeights.Singularity);
         checkAttribute('externalComputationalResources', attributeWeights.externalComputationalResources);
-        checkAttribute('taxonomicProfiling', attributeWeights.taxonomicProfiling);
-        checkAttribute('metabolicModeling', attributeWeights.metabolicModeling);
-        checkAttribute('ancientDNA', attributeWeights.ancientDNA);
-        checkAttribute('eukaryoticViralMAGs', attributeWeights.eukaryoticViralMAGs);
+        checkAttribute('specialOptions', attributeWeights.specialOptions);
 
         matches.push({
             object: obj,
@@ -415,20 +444,29 @@ const featureLabels = {
     Docker: "Docker Support",
     Singularity: "Singularity Support",
     externalComputationalResources: "External Computational Resources",
-    taxonomicProfiling: "Taxonomic Profiling",
-    metabolicModeling: "Metabolic Modeling",
-    ancientDNA: "Ancient DNA Support",
-    eukaryoticViralMAGs: "Eukaryotic/Viral MAGs"
+    specialOptions: "Special Options"
 };
 
 function handleCompletion() {
     const userAnswers = getUserAnswers();
     const matchResult = findBestMatch(userAnswers);
     
+    // Helper function to format match details
+    const formatMatchDetails = (details) => {
+        return details.map(detail => {
+            if (detail.startsWith('specialOptions:')) {
+                // Extract just the matching options from the specialOptions string
+                const options = detail.replace('specialOptions: ', '');
+                return `Special Options: ${options}`;
+            }
+            return featureLabels[detail] || detail;
+        });
+    };
+    
     // Clear the container and show results
     questionContainer.innerHTML = `
         <div class="question-content">
-            <h2>Recommended Metagenomic Pipelines</h2>
+            <h2>Recommended pipelines for MAG reconstruction</h2>
             <div class="recommendation-card">
                 <h3>${matchResult.bestMatch.object.name}</h3>
                 <p>${matchResult.bestMatch.object.description}</p>
@@ -436,7 +474,7 @@ function handleCompletion() {
                     <p>Match Score: ${matchResult.bestMatch.score}</p>
                     <p>Matching Features:</p>
                     <ul>
-                        ${matchResult.bestMatch.matchDetails.map(detail => `<li>${featureLabels[detail]}</li>`).join('')}
+                        ${formatMatchDetails(matchResult.bestMatch.matchDetails).map(detail => `<li>${detail}</li>`).join('')}
                     </ul>
                 </div>
                 <a href="${matchResult.bestMatch.object.url}" target="_blank" class="pipeline-link">Match me with ${matchResult.bestMatch.object.name}</a>
@@ -448,7 +486,7 @@ function handleCompletion() {
                     <p>Match Score: ${matchResult.secondBest.score}</p>
                     <p>Matching Features:</p>
                     <ul>
-                        ${matchResult.secondBest.matchDetails.map(detail => `<li>${featureLabels[detail]}</li>`).join('')}
+                        ${formatMatchDetails(matchResult.secondBest.matchDetails).map(detail => `<li>${detail}</li>`).join('')}
                     </ul>
                 </div>
                 <a href="${matchResult.secondBest.object.url}" target="_blank" class="pipeline-link">Match me with ${matchResult.secondBest.object.name}</a>

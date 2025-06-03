@@ -35,10 +35,7 @@ function createTable() {
         { header: 'Docker', attribute: 'Docker' },
         { header: 'Singularity', attribute: 'Singularity' },
         { header: 'External Resources', attribute: 'externalComputationalResources' },
-        { header: 'Taxonomic Profiling', attribute: 'taxonomicProfiling' },
-        { header: 'Metabolic Modeling', attribute: 'metabolicModeling' },
-        { header: 'Ancient DNA', attribute: 'ancientDNA' },
-        { header: 'Eukaryotic/Viral MAGs', attribute: 'eukaryoticViralMAGs' }
+        { header: 'Special Options', attribute: 'specialOptions' }
     ];
     
     // Create navigation controls
@@ -64,20 +61,26 @@ function createTable() {
     
     tableContainer.appendChild(navigationControls);
     
-    // Add headers with filter inputs
+    // Create header cells with filter inputs
     columnDefinitions.forEach((col, index) => {
         const th = document.createElement('th');
-        th.textContent = col.header;
         th.dataset.columnIndex = index;
         
-        // Add filter input for each column
-        const filterInput = document.createElement('input');
-        filterInput.type = 'text';
-        filterInput.placeholder = 'Filter...';
-        filterInput.className = 'filter-input';
-        filterInput.addEventListener('input', () => filterTable());
+        // Create header text
+        const headerText = document.createElement('div');
+        headerText.textContent = col.header;
+        th.appendChild(headerText);
         
-        th.appendChild(filterInput);
+        // Add filter input for all columns except pipeline name
+        if (col.attribute !== null) {
+            const filterInput = document.createElement('input');
+            filterInput.type = 'text';
+            filterInput.className = 'filter-input';
+            filterInput.placeholder = 'Filter...';
+            filterInput.addEventListener('input', filterTable);
+            th.appendChild(filterInput);
+        }
+        
         headerRow.appendChild(th);
     });
     
@@ -103,9 +106,15 @@ function createTable() {
                 nameLink.target = '_blank';
                 nameLink.textContent = pipeline.name;
                 cell.appendChild(nameLink);
+            } else if (col.attribute === 'specialOptions') {
+                // Special handling for specialOptions to show all options
+                const value = pipeline.attributes[col.attribute] ? 
+                    pipeline.attributes[col.attribute].join(', ') : 'None';
+                cell.textContent = value;
             } else {
-                // Attribute columns
-                const value = pipeline.attributes[col.attribute] ? pipeline.attributes[col.attribute][0] : 'No';
+                // Regular attribute columns
+                const value = pipeline.attributes[col.attribute] ? 
+                    pipeline.attributes[col.attribute][0] : 'No';
                 cell.textContent = value;
             }
             
