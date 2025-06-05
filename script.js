@@ -1,108 +1,87 @@
 // Questions data
 const questions = [
     {
-        text: "1. Do you want to assemble only short reads?",
+        text: "1. Which types of reads do you want to assemble? (Select all that apply)",
+        options: [
+            "Short reads",
+            "Hi-Fi (PacBio) reads",
+            "Oxford Nanopore (ONT) reads",
+            "Hybrid",
+            "I don't know/It doesn't matter"
+        ],
+        multiSelect: true
+    },
+    {
+        text: "2. Do you want to handle multi-sample?",
         options: [
             "Yes",
-            "No"
+            "No",
+            "I don't know/It doesn't matter"
         ]
     },
     {
-        text: "2. Do you want to assemble only Hi-Fi (PacBio) reads?",
+        text: "3. Do you need a pipeline with the ability to perform co-assembly/co-binning?",
         options: [
             "Yes",
-            "No"
+            "No",
+            "I don't know/It doesn't matter"
         ]
     },
     {
-        text: "3. Do you want to assemble only Oxford Nanopore (ONT) reads?",
+        text: "4. Are you looking for a pipeline with Graphical User Interface (GUI)?",
         options: [
             "Yes",
-            "No"
+            "No",
+            "I don't know/It doesn't matter"
         ]
     },
     {
-        text: "4. Do you want to perform hybrid assembly?",
+        text: "5. Do you need a pipeline with native Cloud computing features (i.e. AWS, Azure)?",
         options: [
             "Yes",
-            "No"
+            "No",
+            "I don't know/It doesn't matter"
         ]
     },
     {
-        text: "5. Do you want to handle multi-sample?",
-        options: [
-            "Yes",
-            "No"
-        ]
-    },
-    {
-        text: "6. Do you need a pipeline with the ability to perform co-assembly/co-binning?",
-        options: [
-            "Yes",
-            "No"
-        ]
-    },
-    {
-        text: "7. Are you looking for a pipeline with Graphical User Interface (GUI)?",
-        options: [
-            "Yes",
-            "No"
-        ]
-    },
-    {
-        text: "8. Do you need a pipeline with native Cloud computing features?",
-        options: [
-            "Yes",
-            "No"
-        ]
-    },
-    {
-        text: "9. Which workflow manager do you prefer?",
+        text: "6. Which workflow manager do you prefer?",
         options: [
             "Nextflow",
             "Snakemake",
             "COMP Superscalar",
             "Workflow Definition Language (WDL)",
-            "None"
+            "I don't know/It doesn't matter"
         ]
     },
     {
-        text: "10. Do you need a pipeline with bin refinement?",
+        text: "7. Do you need a pipeline with bin refinement?",
         options: [
             "Yes",
-            "No"
+            "No",
+            "I don't know/It doesn't matter"
         ]
     },
     {
-        text: "11. Do you want to run the pipeline with Conda?",
+        text: "8. Which execution options do you need? (Select all that apply)",
+        options: [
+            "Conda",
+            "Docker",
+            "Singularity",
+            "Other",
+            "I don't know/It doesn't matter"
+        ],
+        multiSelect: true
+    },
+    {
+        text: "9. Do you want to use external computational resources?",
         options: [
             "Yes",
-            "No"
+            "No",
+            "I don't know/It doesn't matter"
         ]
     },
     {
-        text: "12. Do you want to run the pipeline with Docker?",
-        options: [
-            "Yes",
-            "No"
-        ]
-    },
-    {
-        text: "13. Do you want to run the pipeline with Singularity?",
-        options: [
-            "Yes",
-            "No"
-        ]
-    },
-    {
-        text: "14. Do you want to use external computational resources?",
-        options: [
-            "Yes",
-            "No"
-        ]
-    },
-    {
-        text: "15. Which special options do you need? (Select all that apply)",
+        text: "10. Which special options do you need? (Select all that apply)",
         options: [
             "Taxonomic profiling",
             "Metabolic modeling",
@@ -112,7 +91,9 @@ const questions = [
             "Inverted assembly/binning",
             "Adaptable resource allocation",
             "RNA-seq transcriptome analysis",
-            "Plasmid assembly"
+            "Plasmid assembly",
+            "Genotype recovery",
+            "I don't know/It doesn't matter"
         ],
         multiSelect: true
     }
@@ -120,21 +101,16 @@ const questions = [
 
 // Weight configuration for attributes
 const attributeWeights = {
-    shortReads: 1,
-    PacBio: 5,           // High importance
-    OxfordNanopore: 5,   // High importance
-    hybridAssembly: 1,
+    readTypes: 2,           // High importance for read type matches
     multiSample: 1,
     coAssemblyCoBinning: 1,
-    GUI: 5,              // High importance
+    GUI: 3,                 // High importance
     Cloud: 1,
-    workflowManager: 2,
+    workflowManager: 1,
     binRefinement: 1,
-    Conda: 1,
-    Docker: 1,
-    Singularity: 1,
-    externalComputationalResources: 5,
-    specialOptions: 1  // Each matching option will add 1 point
+    executionOptions: 1,    // Each matching option will add 1 point
+    externalComputationalResources: 3,
+    specialOptions: 1      // Each matching option will add 1 point
 };
 
 // State management
@@ -300,22 +276,18 @@ function updateProgressBar() {
 }
 
 function getUserAnswers() {
+    const readTypeAnswers = answers[0] ? answers[0].map(index => questions[0].options[index]) : [];
     return {
-        shortReads: questions[0].options[answers[0]],
-        PacBio: questions[1].options[answers[1]],
-        OxfordNanopore: questions[2].options[answers[2]],
-        hybridAssembly: questions[3].options[answers[3]],
-        multiSample: questions[4].options[answers[4]],
-        coAssemblyCoBinning: questions[5].options[answers[5]],
-        GUI: questions[6].options[answers[6]],
-        Cloud: questions[7].options[answers[7]],
-        workflowManager: questions[8].options[answers[8]],
-        binRefinement: questions[9].options[answers[9]],
-        Conda: questions[10].options[answers[10]],
-        Docker: questions[11].options[answers[11]],
-        Singularity: questions[12].options[answers[12]],
-        externalComputationalResources: questions[13].options[answers[13]],
-        specialOptions: answers[14] ? answers[14].map(index => questions[14].options[index]) : []
+        readTypes: readTypeAnswers,
+        multiSample: questions[1].options[answers[1]],
+        coAssemblyCoBinning: questions[2].options[answers[2]],
+        GUI: questions[3].options[answers[3]],
+        Cloud: questions[4].options[answers[4]],
+        workflowManager: questions[5].options[answers[5]],
+        binRefinement: questions[6].options[answers[6]],
+        executionOptions: answers[7] ? answers[7].map(index => questions[7].options[index]) : [],
+        externalComputationalResources: questions[8].options[answers[8]],
+        specialOptions: answers[9] ? answers[9].map(index => questions[9].options[index]) : []
     };
 }
 
@@ -331,11 +303,16 @@ function findBestMatch(userAnswers) {
             const userValue = userAnswers[attr];
             const objValues = obj.attributes[attr];
             
-            // Special handling for specialOptions
-            if (attr === 'specialOptions') {
+            // Special handling for multi-select options (readTypes, executionOptions, and specialOptions)
+            if (attr === 'readTypes' || attr === 'executionOptions' || attr === 'specialOptions') {
                 if (userValue && objValues) {
+                    // Skip "Don't know/Doesn't matter" option in scoring
+                    const validUserValues = userValue.filter(v => v !== "Don't know/Doesn't matter");
+                    if (validUserValues.length === 0) return true;
+
                     // Count how many user selections match the pipeline's options
-                    const matchingOptions = userValue.filter(option => objValues.includes(option));
+                    const matchingOptions = validUserValues.filter(option => objValues.includes(option));
+
                     if (matchingOptions.length > 0) {
                         // Add 1 point for each matching option
                         score += matchingOptions.length * weight;
@@ -345,8 +322,12 @@ function findBestMatch(userAnswers) {
                 return true;
             }
             
-            // For Yes/No questions
-            if (userValue === "Yes" || userValue === "No") {
+            // For Yes/No/Don't know questions
+            if (userValue === "Yes" || userValue === "No" || userValue === "Don't know/Doesn't matter") {
+                if (userValue === "Don't know/Doesn't matter") {
+                    // Don't add or subtract points for "Don't know/Doesn't matter"
+                    return true;
+                }
                 if (objValues && objValues.includes(userValue)) {
                     if (userValue === "Yes") {
                         score += weight;
@@ -367,19 +348,14 @@ function findBestMatch(userAnswers) {
         };
 
         // Check each attribute with its weight
-        checkAttribute('shortReads', attributeWeights.shortReads);
-        checkAttribute('PacBio', attributeWeights.PacBio);
-        checkAttribute('OxfordNanopore', attributeWeights.OxfordNanopore);
-        checkAttribute('hybridAssembly', attributeWeights.hybridAssembly);
+        checkAttribute('readTypes', attributeWeights.readTypes);
         checkAttribute('multiSample', attributeWeights.multiSample);
         checkAttribute('coAssemblyCoBinning', attributeWeights.coAssemblyCoBinning);
         checkAttribute('GUI', attributeWeights.GUI);
         checkAttribute('Cloud', attributeWeights.Cloud);
         checkAttribute('workflowManager', attributeWeights.workflowManager);
         checkAttribute('binRefinement', attributeWeights.binRefinement);
-        checkAttribute('Conda', attributeWeights.Conda);
-        checkAttribute('Docker', attributeWeights.Docker);
-        checkAttribute('Singularity', attributeWeights.Singularity);
+        checkAttribute('executionOptions', attributeWeights.executionOptions);
         checkAttribute('externalComputationalResources', attributeWeights.externalComputationalResources);
         checkAttribute('specialOptions', attributeWeights.specialOptions);
 
@@ -430,19 +406,14 @@ function findBestMatch(userAnswers) {
 
 // Feature labels mapping
 const featureLabels = {
-    shortReads: "Short Reads Assembly",
-    PacBio: "Hi-Fi (PacBio) Reads Assembly",
-    OxfordNanopore: "Oxford Nanopore Reads Assembly",
-    hybridAssembly: "Hybrid Assembly",
+    readTypes: "Read Types",
     multiSample: "Multi-Sample Support",
     coAssemblyCoBinning: "Co-Assembly/Co-Binning",
     GUI: "Graphical User Interface (GUI)",
     Cloud: "Cloud Computing Support",
     workflowManager: "Workflow Manager",
     binRefinement: "Bin Refinement",
-    Conda: "Conda Support",
-    Docker: "Docker Support",
-    Singularity: "Singularity Support",
+    executionOptions: "Execution Options",
     externalComputationalResources: "External Computational Resources",
     specialOptions: "Special Options"
 };
@@ -458,6 +429,16 @@ function handleCompletion() {
                 // Extract just the matching options from the specialOptions string
                 const options = detail.replace('specialOptions: ', '');
                 return `Special Options: ${options}`;
+            }
+            if (detail.startsWith('executionOptions:')) {
+                // Extract just the matching options from the executionOptions string
+                const options = detail.replace('executionOptions: ', '');
+                return `Execution Options: ${options}`;
+            }
+            if (detail.startsWith('readTypes:')) {
+                // Extract just the matching options from the readTypes string
+                const options = detail.replace('readTypes: ', '');
+                return `Read Types: ${options}`;
             }
             return featureLabels[detail] || detail;
         });

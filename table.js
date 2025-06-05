@@ -7,6 +7,7 @@ const closeTableBtn = document.getElementById('close-table-btn');
 // Configuration
 const COLUMNS_PER_PAGE = 7; // Number of columns to show per page (including pipeline name)
 let currentPage = 0;
+const filterValues = {}; // Store filter values for each column
 
 // Function to create table
 function createTable() {
@@ -20,21 +21,17 @@ function createTable() {
     
     // Define headers and their corresponding attributes
     const columnDefinitions = [
+        { header: 'Number', attribute: 'index', noFilter: true },
         { header: 'Pipeline Name', attribute: null },
-        { header: 'Short Reads', attribute: 'shortReads' },
-        { header: 'PacBio', attribute: 'PacBio' },
-        { header: 'Oxford Nanopore', attribute: 'OxfordNanopore' },
-        { header: 'Hybrid Assembly', attribute: 'hybridAssembly' },
+        { header: 'Read Types', attribute: 'readTypes' },
         { header: 'Multi Sample', attribute: 'multiSample' },
         { header: 'Co-assembly/Co-binning', attribute: 'coAssemblyCoBinning' },
         { header: 'GUI', attribute: 'GUI' },
         { header: 'Cloud', attribute: 'Cloud' },
         { header: 'Workflow Manager', attribute: 'workflowManager' },
         { header: 'Bin Refinement', attribute: 'binRefinement' },
-        { header: 'Conda', attribute: 'Conda' },
-        { header: 'Docker', attribute: 'Docker' },
-        { header: 'Singularity', attribute: 'Singularity' },
         { header: 'External Resources', attribute: 'externalComputationalResources' },
+        { header: 'Execution Options', attribute: 'executionOptions' },
         { header: 'Special Options', attribute: 'specialOptions' }
     ];
     
@@ -71,8 +68,8 @@ function createTable() {
         headerText.textContent = col.header;
         th.appendChild(headerText);
         
-        // Add filter input for all columns except pipeline name
-        if (col.attribute !== null) {
+        // Add filter input for all columns except pipeline name and index
+        if (col.attribute !== null && !col.noFilter) {
             const filterInput = document.createElement('input');
             filterInput.type = 'text';
             filterInput.className = 'filter-input';
@@ -91,30 +88,38 @@ function createTable() {
     const tbody = document.createElement('tbody');
     
     // Add rows for each pipeline
-    preLoadedObjects.forEach(pipeline => {
+    preLoadedObjects.forEach((pipeline, index) => {
         const row = document.createElement('tr');
         
         // Add cells for each column
-        columnDefinitions.forEach((col, index) => {
+        columnDefinitions.forEach((col, colIndex) => {
             const cell = document.createElement('td');
-            cell.dataset.columnIndex = index;
+            cell.dataset.columnIndex = colIndex;
             
-            if (col.attribute === null) {
+            if (col.attribute === 'index') {
+                // Index column
+                cell.textContent = index + 1;
+            } else if (col.attribute === null) {
                 // Pipeline name column
                 const nameLink = document.createElement('a');
                 nameLink.href = pipeline.url;
                 nameLink.target = '_blank';
                 nameLink.textContent = pipeline.name;
                 cell.appendChild(nameLink);
-            } else if (col.attribute === 'specialOptions') {
-                // Special handling for specialOptions to show all options
-                const value = pipeline.attributes[col.attribute] ? 
-                    pipeline.attributes[col.attribute].join(', ') : 'None';
+            } else if (col.attribute === 'specialOptions' || col.attribute === 'executionOptions' || col.attribute === 'readTypes') {
+                // Special handling for multi-select options
+                const value = pipeline.attributes[col.attribute] && pipeline.attributes[col.attribute].length > 0 ? 
+                    pipeline.attributes[col.attribute].join(', ') : '';
+                cell.textContent = value;
+            } else if (col.attribute === 'workflowManager') {
+                // Special handling for workflow manager
+                const value = pipeline.attributes[col.attribute] && pipeline.attributes[col.attribute].length > 0 ? 
+                    pipeline.attributes[col.attribute].join(', ') : '';
                 cell.textContent = value;
             } else {
-                // Regular attribute columns
-                const value = pipeline.attributes[col.attribute] ? 
-                    pipeline.attributes[col.attribute][0] : 'No';
+                // Regular attribute columns (binary options)
+                const value = pipeline.attributes[col.attribute] && pipeline.attributes[col.attribute].length > 0 ? 
+                    pipeline.attributes[col.attribute][0] : '';
                 cell.textContent = value;
             }
             
@@ -134,33 +139,41 @@ function createTable() {
 // Function to change page
 function changePage(delta) {
     const totalColumns = document.querySelectorAll('.pipeline-table th').length;
-    const totalPages = Math.ceil(totalColumns / COLUMNS_PER_PAGE);
+    const totalPages = Math.ceil((totalColumns - 2) / (COLUMNS_PER_PAGE - 2)); // Subtract 2 for pipeline name and index columns
     
-    currentPage = (currentPage + delta + totalPages) % totalPages;
+    currentPage = Math.max(0, Math.min(currentPage + delta, totalPages - 1));
     updatePageDisplay();
 }
 
 // Function to update page display
 function updatePageDisplay() {
     const totalColumns = document.querySelectorAll('.pipeline-table th').length;
-    const totalPages = Math.ceil(totalColumns / COLUMNS_PER_PAGE);
+    const totalPages = Math.ceil((totalColumns - 2) / (COLUMNS_PER_PAGE - 2)); // Subtract 2 for pipeline name and index columns
     
     // Update page info
     const pageInfo = document.querySelector('.page-info');
     pageInfo.textContent = `Page ${currentPage + 1} of ${totalPages}`;
     
     // Show/hide columns based on current page
-    const startCol = currentPage * COLUMNS_PER_PAGE;
-    const endCol = Math.min(startCol + COLUMNS_PER_PAGE, totalColumns);
+    const startCol = currentPage * (COLUMNS_PER_PAGE - 2); // Subtract 2 for pipeline name and index columns
+    const endCol = Math.min(startCol + (COLUMNS_PER_PAGE - 2), totalColumns - 1); // Subtract 2 for pipeline name and index columns
     
-    // Always show first column (pipeline name)
+    // Always show first two columns (index and pipeline name)
     document.querySelectorAll('.pipeline-table th, .pipeline-table td').forEach(element => {
         const colIndex = parseInt(element.dataset.columnIndex);
-        if (colIndex === 0) {
+        if (colIndex <= 1) {
             element.style.display = '';
-        } else if (colIndex > startCol && colIndex <= endCol) {
+        } else if (colIndex > startCol + 1 && colIndex <= endCol + 1) {
             element.style.display = '';
+            // Restore filter value if it exists
+            if (element.classList.contains('filter-input')) {
+                element.value = filterValues[colIndex] || '';
+            }
         } else {
+            // Save filter value before hiding
+            if (element.classList.contains('filter-input')) {
+                filterValues[colIndex] = element.value;
+            }
             element.style.display = 'none';
         }
     });
@@ -175,16 +188,29 @@ function updatePageDisplay() {
 
 // Function to filter table
 function filterTable() {
-    const filters = Array.from(document.querySelectorAll('.filter-input')).map(input => input.value.toLowerCase());
     const rows = document.querySelectorAll('.pipeline-table tbody tr');
+    const allColumns = Array.from(document.querySelectorAll('.pipeline-table th'))
+        .map(th => parseInt(th.dataset.columnIndex));
+    
+    // Get filter values for all columns, not just visible ones
+    const filters = allColumns.map(colIndex => {
+        const filterInput = document.querySelector(`.pipeline-table th[data-column-index="${colIndex}"] .filter-input`);
+        if (filterInput) {
+            filterValues[colIndex] = filterInput.value; // Store the filter value
+            return filterInput.value.toLowerCase();
+        }
+        return filterValues[colIndex] ? filterValues[colIndex].toLowerCase() : '';
+    });
     
     rows.forEach(row => {
         const cells = Array.from(row.cells);
         let show = true;
         
-        cells.forEach((cell, index) => {
+        // Check all columns, not just visible ones
+        allColumns.forEach((colIndex, filterIndex) => {
+            const cell = cells[colIndex];
             const cellText = cell.textContent.toLowerCase();
-            const filterText = filters[index];
+            const filterText = filters[filterIndex];
             
             if (filterText && !cellText.includes(filterText)) {
                 show = false;
