@@ -926,4 +926,31 @@ h2 {
     .unifr-logo {
         height: 16px; /* Slightly smaller on mobile */
     }
+}
+
+.insufficient-input-message {
+    background: var(--option-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 600px;
+    text-align: center;
+}
+
+.insufficient-input-message h2 {
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.insufficient-input-message p {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+.insufficient-input-message .restart-container {
+    margin-top: 2rem;
 } 

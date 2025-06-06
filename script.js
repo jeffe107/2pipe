@@ -293,6 +293,28 @@ function getUserAnswers() {
 
 function findBestMatch(userAnswers) {
     let matches = [];
+    let totalScore = 0;
+    let meaningfulAnswers = 0;
+
+    // Helper function to check if an answer is meaningful (not "I don't know/It doesn't matter")
+    const isMeaningfulAnswer = (answer) => {
+        if (Array.isArray(answer)) {
+            return answer.some(a => a !== "I don't know/It doesn't matter");
+        }
+        return answer !== "I don't know/It doesn't matter";
+    };
+
+    // Count meaningful answers
+    Object.values(userAnswers).forEach(answer => {
+        if (isMeaningfulAnswer(answer)) {
+            meaningfulAnswers++;
+        }
+    });
+
+    // If less than 3 meaningful answers, return null to trigger the message
+    if (meaningfulAnswers < 3) {
+        return null;
+    }
 
     preLoadedObjects.forEach(obj => {
         let score = 0;
@@ -307,7 +329,7 @@ function findBestMatch(userAnswers) {
             if (attr === 'readTypes' || attr === 'executionOptions' || attr === 'specialOptions') {
                 if (userValue && objValues) {
                     // Skip "Don't know/Doesn't matter" option in scoring
-                    const validUserValues = userValue.filter(v => v !== "Don't know/Doesn't matter");
+                    const validUserValues = userValue.filter(v => v !== "I don't know/It doesn't matter");
                     if (validUserValues.length === 0) return true;
 
                     // Count how many user selections match the pipeline's options
@@ -323,8 +345,8 @@ function findBestMatch(userAnswers) {
             }
             
             // For Yes/No/Don't know questions
-            if (userValue === "Yes" || userValue === "No" || userValue === "Don't know/Doesn't matter") {
-                if (userValue === "Don't know/Doesn't matter") {
+            if (userValue === "Yes" || userValue === "No" || userValue === "I don't know/It doesn't matter") {
+                if (userValue === "I don't know/It doesn't matter") {
                     // Don't add or subtract points for "Don't know/Doesn't matter"
                     return true;
                 }
@@ -369,13 +391,6 @@ function findBestMatch(userAnswers) {
     // Sort matches by score in descending order
     matches.sort((a, b) => b.score - a.score);
 
-    // Log all matches for debugging
-    console.log('All matches before sorting:', matches.map(m => ({
-        name: m.object.name,
-        score: m.score,
-        matches: m.matchDetails.length
-    })));
-
     // Ensure we have at least two matches
     if (matches.length < 2) {
         return {
@@ -383,20 +398,6 @@ function findBestMatch(userAnswers) {
             secondBest: matches[0]
         };
     }
-
-    // Log the top two matches for debugging
-    console.log('Top two matches:', {
-        first: {
-            name: matches[0].object.name,
-            score: matches[0].score,
-            matches: matches[0].matchDetails.length
-        },
-        second: {
-            name: matches[1].object.name,
-            score: matches[1].score,
-            matches: matches[1].matchDetails.length
-        }
-    });
 
     return {
         bestMatch: matches[0],
@@ -447,34 +448,45 @@ function handleCompletion() {
     // Clear the container and show results
     questionContainer.innerHTML = `
         <div class="question-content">
-            <h2>Recommended pipelines for MAG reconstruction</h2>
-            <div class="recommendation-card">
-                <h3>${matchResult.bestMatch.object.name}</h3>
-                <p>${matchResult.bestMatch.object.description}</p>
-                <div class="match-details">
-                    <p>Match Score: ${matchResult.bestMatch.score}</p>
-                    <p>Matching Features:</p>
-                    <ul>
-                        ${formatMatchDetails(matchResult.bestMatch.matchDetails).map(detail => `<li>${detail}</li>`).join('')}
-                    </ul>
+            ${matchResult === null ? `
+                <div class="insufficient-input-message">
+                    <h2>More information is required</h2>
+                    <p>For us to provide accurate pipeline recommendations, we need more information about your needs.</p>
+                    <p>Please answer at least 3 questions with specific requirements.</p>
+                    <div class="restart-container">
+                        <button id="restart-btn" class="restart-btn">Start Over</button>
+                    </div>
                 </div>
-                <a href="${matchResult.bestMatch.object.url}" target="_blank" class="pipeline-link">Match me with ${matchResult.bestMatch.object.name}</a>
-            </div>
-            <div class="recommendation-card secondary">
-                <h3>${matchResult.secondBest.object.name}</h3>
-                <p>${matchResult.secondBest.object.description}</p>
-                <div class="match-details">
-                    <p>Match Score: ${matchResult.secondBest.score}</p>
-                    <p>Matching Features:</p>
-                    <ul>
-                        ${formatMatchDetails(matchResult.secondBest.matchDetails).map(detail => `<li>${detail}</li>`).join('')}
-                    </ul>
+            ` : `
+                <h2>Recommended pipelines for MAG reconstruction</h2>
+                <div class="recommendation-card">
+                    <h3>${matchResult.bestMatch.object.name}</h3>
+                    <p>${matchResult.bestMatch.object.description}</p>
+                    <div class="match-details">
+                        <p>Match Score: ${matchResult.bestMatch.score}</p>
+                        <p>Matching Features:</p>
+                        <ul>
+                            ${formatMatchDetails(matchResult.bestMatch.matchDetails).map(detail => `<li>${detail}</li>`).join('')}
+                        </ul>
+                    </div>
+                    <a href="${matchResult.bestMatch.object.url}" target="_blank" class="pipeline-link">Match me with ${matchResult.bestMatch.object.name}</a>
                 </div>
-                <a href="${matchResult.secondBest.object.url}" target="_blank" class="pipeline-link">Match me with ${matchResult.secondBest.object.name}</a>
-            </div>
-            <div class="restart-container">
-                <button id="restart-btn" class="restart-btn">Start Over</button>
-            </div>
+                <div class="recommendation-card secondary">
+                    <h3>${matchResult.secondBest.object.name}</h3>
+                    <p>${matchResult.secondBest.object.description}</p>
+                    <div class="match-details">
+                        <p>Match Score: ${matchResult.secondBest.score}</p>
+                        <p>Matching Features:</p>
+                        <ul>
+                            ${formatMatchDetails(matchResult.secondBest.matchDetails).map(detail => `<li>${detail}</li>`).join('')}
+                        </ul>
+                    </div>
+                    <a href="${matchResult.secondBest.object.url}" target="_blank" class="pipeline-link">Match me with ${matchResult.secondBest.object.name}</a>
+                </div>
+                <div class="restart-container">
+                    <button id="restart-btn" class="restart-btn">Start Over</button>
+                </div>
+            `}
         </div>
     `;
 
