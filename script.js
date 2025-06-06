@@ -391,17 +391,29 @@ function findBestMatch(userAnswers) {
     // Sort matches by score in descending order
     matches.sort((a, b) => b.score - a.score);
 
-    // Ensure we have at least two matches
-    if (matches.length < 2) {
-        return {
-            bestMatch: matches[0],
-            secondBest: matches[0]
-        };
+    // If no matches, return null
+    if (matches.length === 0) {
+        return null;
     }
 
+    // Get the best score
+    const bestScore = matches[0].score;
+    
+    // Find all matches that share the best score
+    const bestMatches = matches.filter(match => match.score === bestScore);
+    
+    // If we have more than one best match, return all of them
+    if (bestMatches.length > 1) {
+        return {
+            bestMatches: bestMatches,
+            hasTies: true
+        };
+    }
+    
+    // If we have only one best match, return it along with the second best
     return {
-        bestMatch: matches[0],
-        secondBest: matches[1]
+        bestMatches: [matches[0], matches[1] || matches[0]],
+        hasTies: false
     };
 }
 
@@ -427,17 +439,14 @@ function handleCompletion() {
     const formatMatchDetails = (details) => {
         return details.map(detail => {
             if (detail.startsWith('specialOptions:')) {
-                // Extract just the matching options from the specialOptions string
                 const options = detail.replace('specialOptions: ', '');
                 return `Special Options: ${options}`;
             }
             if (detail.startsWith('executionOptions:')) {
-                // Extract just the matching options from the executionOptions string
                 const options = detail.replace('executionOptions: ', '');
                 return `Execution Options: ${options}`;
             }
             if (detail.startsWith('readTypes:')) {
-                // Extract just the matching options from the readTypes string
                 const options = detail.replace('readTypes: ', '');
                 return `Read Types: ${options}`;
             }
@@ -459,30 +468,24 @@ function handleCompletion() {
                 </div>
             ` : `
                 <h2>Recommended pipelines for MAG reconstruction</h2>
-                <div class="recommendation-card">
-                    <h3>${matchResult.bestMatch.object.name}</h3>
-                    <p>${matchResult.bestMatch.object.description}</p>
-                    <div class="match-details">
-                        <p>Match Score: ${matchResult.bestMatch.score}</p>
-                        <p>Matching Features:</p>
-                        <ul>
-                            ${formatMatchDetails(matchResult.bestMatch.matchDetails).map(detail => `<li>${detail}</li>`).join('')}
-                        </ul>
+                ${matchResult.hasTies ? 
+                    `<p class="tie-message">We found ${matchResult.bestMatches.length} pipelines that equally match your requirements!</p>` :
+                    `<p class="recommendation-message">Here are the best matching pipelines for your needs:</p>`
+                }
+                ${matchResult.bestMatches.map((match, index) => `
+                    <div class="recommendation-card ${!matchResult.hasTies && index === 1 ? 'secondary' : ''}">
+                        <h3>${match.object.name}</h3>
+                        <p>${match.object.description}</p>
+                        <div class="match-details">
+                            <p>Match Score: ${match.score}</p>
+                            <p>Matching Features:</p>
+                            <ul>
+                                ${formatMatchDetails(match.matchDetails).map(detail => `<li>${detail}</li>`).join('')}
+                            </ul>
+                        </div>
+                        <a href="${match.object.url}" target="_blank" class="pipeline-link">Match me with ${match.object.name}</a>
                     </div>
-                    <a href="${matchResult.bestMatch.object.url}" target="_blank" class="pipeline-link">Match me with ${matchResult.bestMatch.object.name}</a>
-                </div>
-                <div class="recommendation-card secondary">
-                    <h3>${matchResult.secondBest.object.name}</h3>
-                    <p>${matchResult.secondBest.object.description}</p>
-                    <div class="match-details">
-                        <p>Match Score: ${matchResult.secondBest.score}</p>
-                        <p>Matching Features:</p>
-                        <ul>
-                            ${formatMatchDetails(matchResult.secondBest.matchDetails).map(detail => `<li>${detail}</li>`).join('')}
-                        </ul>
-                    </div>
-                    <a href="${matchResult.secondBest.object.url}" target="_blank" class="pipeline-link">Match me with ${matchResult.secondBest.object.name}</a>
-                </div>
+                `).join('')}
                 <div class="restart-container">
                     <button id="restart-btn" class="restart-btn">Start Over</button>
                 </div>
@@ -495,11 +498,11 @@ function handleCompletion() {
     
     // Log the results for debugging
     console.log('User Answers:', userAnswers);
-    console.log('Best Matches:', matchResult);
-    console.log('Best Match Score:', matchResult.bestMatch.score);
-    console.log('Second Best Score:', matchResult.secondBest.score);
-    console.log('Best Match Details:', matchResult.bestMatch.matchDetails);
-    console.log('Second Best Details:', matchResult.secondBest.matchDetails);
+    console.log('Match Results:', matchResult);
+    if (matchResult) {
+        console.log('Best Matches:', matchResult.bestMatches);
+        console.log('Has Ties:', matchResult.hasTies);
+    }
 }
 
 function restartQuestionnaire() {
