@@ -20,8 +20,8 @@ Welcome to the 2Pipe! This application helps researchers find the perfect metage
 
 2. **Clone Your Fork**:
    ```bash
-   git clone https://github.com/YOUR-USERNAME/metagenomic-pipeline-recommender.git
-   cd metagenomic-pipeline-recommender
+   git clone https://github.com/YOUR-USERNAME/2Pipe.git
+   cd 2Pipe
    ```
 
 3. **Create a New Branch**:
