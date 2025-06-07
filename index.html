@@ -23,6 +23,7 @@
                 <button id="start-btn" class="start-btn">Get Started</button>
                 <button id="gallery-btn" class="gallery-btn">Pipeline Gallery</button>
                 <button id="table-btn" class="table-btn">Compare Pipelines</button>
+                <button id="workflow-btn" class="workflow-btn">Workflows</button>
             </div>
             <div class="resource-buttons">
                 <a href="https://github.com/jeffe107/2pipe" target="_blank" class="resource-btn docs-btn">
@@ -80,9 +81,36 @@
         <div id="table-container" class="table-container"></div>
     </div>
 
+    <!-- Workflow Section -->
+    <div id="workflow-section" class="workflow-section" style="display: none;">
+        <div class="workflow-header">
+            <h2>Pipeline Workflows</h2>
+            <button id="close-workflow-btn" class="close-btn">×</button>
+        </div>
+        <div class="workflow-container">
+            <div class="workflow-selector">
+                <div class="workflow-selector-content">
+                    <div class="selector-left">
+                        <label for="pipeline-select">Select a Pipeline:</label>
+                        <select id="pipeline-select" class="pipeline-select">
+                            <option value="">Choose a pipeline...</option>
+                        </select>
+                    </div>
+                    <button id="back-to-gallery-btn" class="back-to-gallery-btn">
+                        <i class="fas fa-arrow-left"></i> Go to Gallery
+                    </button>
+                </div>
+            </div>
+            <div id="workflow-display" class="workflow-display">
+                <!-- Workflow content will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
     <script src="pipelineObjects.js"></script>
     <script src="gallery.js"></script>
     <script src="table.js"></script>
+    <script src="workflow.js"></script>
     <script src="script.js"></script>
 
     <div class="signature">

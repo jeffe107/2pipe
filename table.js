@@ -41,12 +41,12 @@ function createTable() {
     
     const prevButton = document.createElement('button');
     prevButton.className = 'nav-control-btn';
-    prevButton.textContent = '← Previous Columns';
+    prevButton.textContent = '← Previous Features';
     prevButton.addEventListener('click', () => changePage(-1));
     
     const nextButton = document.createElement('button');
     nextButton.className = 'nav-control-btn';
-    nextButton.textContent = 'Next Columns →';
+    nextButton.textContent = 'More Features →';
     nextButton.addEventListener('click', () => changePage(1));
     
     const pageInfo = document.createElement('span');

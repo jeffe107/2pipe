@@ -1,8 +1,10 @@
 # 2Pipe: It starts with a question
 
 <p align="center">
-    <img src="images/2Pipe_logo_black.png" alt="2Pipe" width="25%">
+    <img src="images/2Pipe.png" alt="2Pipe" width="25%">
 </p>
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15608773.svg)](https://doi.org/10.5281/zenodo.15608773)
 
 Welcome to the 2Pipe! This application helps researchers find the perfect metagenomic pipeline for their needs through an interactive questionnaire, pipeline gallery, and comparison table.
 
@@ -46,39 +48,33 @@ Welcome to the 2Pipe! This application helps researchers find the perfect metage
 
 1. **Pipeline Object**: Add your pipeline details to `pipelineObjects.js`
 2. **Workflow Image**: Add your pipeline's workflow diagram to the `assets/` directory
-   - Image format: PNG or JPG
+   - Image format: PNG
    - Recommended size: 800x600 pixels
    - Naming convention: `pipelineN.png` (use lowercase)
-   - Example: `pipeline31.png`
+   - Example: `pipeline32.png`
 
 ### 📋 Pipeline Object Template
 
 ```javascript
 {
-    id: "pipelineN"
-    name: "Your Pipeline Name",
-    attributes: {
-        shortReads: ["Yes/No"],
-        PacBio: ["Yes/No"],
-        OxfordNanopore: ["Yes/No"],
-        hybridAssembly: ["Yes/No"],
-        multiSample: ["Yes/No"],
-        coAssemblyCoBinning: ["Yes/No"],
-        GUI: ["Yes/No"],
-        Cloud: ["Yes/No"],
-        workflowManager: ["Yes/No"],
-        binRefinement: ["Yes/No"],
-        Conda: ["Yes/No"],
-        Docker: ["Yes/No"],
-        Singularity: ["Yes/No"],
-        externalComputationalResources: ["Yes/No"],
-        taxonomicProfiling: ["Yes/No"],
-        metabolicModeling: ["Yes/No"],
-        ancientDNA: ["Yes/No"],
-        eukaryoticViralMAGs: ["Yes/No"]
-    },
-    url: "https://github.com/your-pipeline-repo",
-    description: "A clear, concise description of your pipeline..."
+        id: "pipeline32",
+        name: "metaWGS",
+        attributes: {
+            readTypes: ["Short reads"],
+            multiSample: ["Yes/No"],
+            coAssemblyCoBinning: ["Yes/No"],
+            GUI: ["Yes/No"],
+            Cloud: ["Yes/No"],
+            workflowManager: ["Nextflow/Snakemake..."],
+            binRefinement: ["Yes/No"],
+            externalComputationalResources: ["Yes/No"],
+            executionOptions: ["Docker/Singularity/Conda..."],
+            specialOptions: []
+        },
+        description: "This brief description...",
+        url: "https://mypipeline.com",
+        details: "This detail description of the workflow...",
+        category: "Select the appropiate category..."
 }
 ```
 
@@ -128,8 +124,6 @@ Welcome to the 2Pipe! This application helps researchers find the perfect metage
 #### Numbering your pipeline
 
 Before submitting your work, please check the current number of pipelines in the "Pipeline Gallery" or "Compare Pipelines" section. This number should be included in your submission to ensure you're referencing the correct pipeline version. The pipeline numbers are displayed in the format "PipelineX" where X is the current pipeline number.
-
-
 
 ### 🧪 Testing Your Addition
 
