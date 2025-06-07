@@ -58,7 +58,7 @@ Welcome to the 2Pipe! This application helps researchers find the perfect metage
 ```javascript
 {
         id: "pipeline32",
-        name: "metaWGS",
+        name: "my-pipeline",
         attributes: {
             readTypes: ["Short reads"],
             multiSample: ["Yes/No"],
