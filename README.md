@@ -6,7 +6,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15608773.svg)](https://doi.org/10.5281/zenodo.15608773)
 
-Welcome to the 2Pipe! This application helps researchers find the perfect metagenomic pipeline for their needs through an interactive questionnaire, pipeline gallery, and comparison table.
+Welcome to the 2Pipe! This application helps researchers find the most suitable pipeline for MAG reconstruction according to their needs through an interactive questionnaire. The application also includes a page with detailed descriptions for each workflow, a pipeline gallery and a comparison table.
 
 ## 🤝 Adding a New Pipeline
 
