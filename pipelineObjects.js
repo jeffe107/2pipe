@@ -202,7 +202,7 @@ const preLoadedObjects = [
     },
     {
         id: "pipeline11",
-        name: "HiFi-MAG",
+        name: "HiFi-MAG-Pipeline",
         attributes: {
             readTypes: ["Hi-Fi (PacBio) reads"],
             multiSample: ["Yes"],
