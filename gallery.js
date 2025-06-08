@@ -4,6 +4,36 @@ const galleryContainer = document.getElementById('gallery-container');
 const galleryBtn = document.getElementById('gallery-btn');
 const closeGalleryBtn = document.getElementById('close-gallery-btn');
 
+// Create back to top button
+const backToTopBtn = document.createElement('button');
+backToTopBtn.className = 'back-to-top-btn';
+backToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+backToTopBtn.style.display = 'none';
+gallerySection.appendChild(backToTopBtn);
+
+// Function to handle scroll event
+function handleScroll() {
+    if (gallerySection.scrollTop > 300) {
+        backToTopBtn.style.display = 'block';
+    } else {
+        backToTopBtn.style.display = 'none';
+    }
+}
+
+// Function to scroll to top
+function scrollToTop() {
+    gallerySection.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+// Add scroll event listener to gallery section
+gallerySection.addEventListener('scroll', handleScroll);
+
+// Add click event listener to back to top button
+backToTopBtn.addEventListener('click', scrollToTop);
+
 // Define the order of categories
 const categoryOrder = [
     "Short-read centered pipelines",

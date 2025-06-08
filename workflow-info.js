@@ -49,6 +49,21 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p class= "text-workflow">Annotation of genes, prediction of metabolic pathways, and analysis of functional potential.</p>
                 </div>
             </div>
+
+            <div class="workflow-video">
+                <h2>Watch the MAG Reconstruction Process</h2>
+                <div class="video-container">
+                    <iframe 
+                        width="560" 
+                        height="315" 
+                        src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
+                        title="MAG Reconstruction Process" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
         </div>
     `;
 

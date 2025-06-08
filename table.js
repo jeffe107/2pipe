@@ -11,6 +11,39 @@ const filterValues = {}; // Store filter values for each column
 
 // Function to create table
 function createTable() {
+    // Clear existing content
+    tableContainer.innerHTML = '';
+    
+    // Create back to top button
+    const backToTopBtn = document.createElement('button');
+    backToTopBtn.className = 'back-to-top-btn';
+    backToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+    backToTopBtn.style.display = 'none';
+    tableSection.appendChild(backToTopBtn);
+
+    // Function to handle scroll event
+    function handleTableScroll() {
+        if (tableSection.scrollTop > 300) {
+            backToTopBtn.style.display = 'block';
+        } else {
+            backToTopBtn.style.display = 'none';
+        }
+    }
+
+    // Function to scroll to top
+    function scrollTableToTop() {
+        tableSection.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+
+    // Add scroll event listener to table section
+    tableSection.addEventListener('scroll', handleTableScroll);
+
+    // Add click event listener to back to top button
+    backToTopBtn.addEventListener('click', scrollTableToTop);
+
     // Create table header
     const table = document.createElement('table');
     table.className = 'pipeline-table';
