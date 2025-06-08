@@ -102,8 +102,24 @@ function createTable() {
             } else if (col.attribute === null) {
                 // Pipeline name column
                 const nameLink = document.createElement('a');
-                nameLink.href = pipeline.url;
-                nameLink.target = '_blank';
+                nameLink.href = '#';
+                nameLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    // Hide table section
+                    hideTable();
+                    
+                    // Show workflow section
+                    const workflowSection = document.getElementById('workflow-section');
+                    workflowSection.style.display = 'block';
+                    
+                    // Select the pipeline in the dropdown
+                    const pipelineSelect = document.getElementById('pipeline-select');
+                    pipelineSelect.value = pipeline.id;
+                    
+                    // Trigger the change event to display the workflow
+                    const event = new Event('change');
+                    pipelineSelect.dispatchEvent(event);
+                });
                 nameLink.textContent = pipeline.name;
                 cell.appendChild(nameLink);
             } else if (col.attribute === 'specialOptions' || col.attribute === 'executionOptions' || col.attribute === 'readTypes') {

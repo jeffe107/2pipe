@@ -3,6 +3,7 @@ const workflowBtn = document.getElementById('workflow-btn');
 const workflowSection = document.getElementById('workflow-section');
 const closeWorkflowBtn = document.getElementById('close-workflow-btn');
 const backToGalleryBtn = document.getElementById('back-to-gallery-btn');
+const backToComparisonBtn = document.getElementById('back-to-comparison-btn')
 const pipelineSelect = document.getElementById('pipeline-select');
 const workflowDisplay = document.getElementById('workflow-display');
 
@@ -23,6 +24,10 @@ function initWorkflowSection() {
     backToGalleryBtn.addEventListener('click', () => {
         hideWorkflowSection();
         showGallery();
+    });
+    backToComparisonBtn.addEventListener('click', () => {
+        hideWorkflowSection();
+        showTable();
     });
 
     // Prevent event propagation to avoid triggering other sections
