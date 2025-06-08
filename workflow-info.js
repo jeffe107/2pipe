@@ -8,6 +8,36 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
     }
 
+    // Create back to top button
+    const backToTopBtn = document.createElement('button');
+    backToTopBtn.className = 'back-to-top-btn';
+    backToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+    backToTopBtn.style.display = 'none';
+    workflowSection.appendChild(backToTopBtn);
+
+    // Function to handle scroll event
+    function handleWorkflowScroll() {
+        if (workflowSection.scrollTop > 300) {
+            backToTopBtn.style.display = 'block';
+        } else {
+            backToTopBtn.style.display = 'none';
+        }
+    }
+
+    // Function to scroll to top
+    function scrollToTop() {
+        workflowSection.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+
+    // Add scroll event listener to workflow section
+    workflowSection.addEventListener('scroll', handleWorkflowScroll);
+
+    // Add click event listener to back to top button
+    backToTopBtn.addEventListener('click', scrollToTop);
+
     // Workflow content template
     const workflowContent = `
         <div class="workflow-page">
@@ -53,15 +83,13 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="workflow-video">
                 <h2>Watch the MAG Reconstruction Process</h2>
                 <div class="video-container">
-                    <iframe 
-                        width="560" 
-                        height="315" 
-                        src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
-                        title="MAG Reconstruction Process" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
+                    <video 
+                        controls
+                        class="workflow-video-player"
+                        title="MAG Reconstruction Process">
+                        <source src="images/MAGs.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
             </div>
         </div>
