@@ -84,7 +84,8 @@ body {
     margin-top: 1.5rem;
 }
 
-.start-btn, .gallery-btn, .table-btn {
+/* Main action buttons */
+.start-btn, .gallery-btn, .table-btn, .workflow-btn {
     padding: 1rem 2rem;
     border-radius: 8px;
     font-size: 1.1rem;
@@ -110,13 +111,13 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.gallery-btn, .table-btn {
+.gallery-btn, .table-btn, .workflow-btn {
     background: var(--container-bg);
     color: var(--text-color);
     border: 2px solid var(--accent-color);
 }
 
-.gallery-btn:hover, .table-btn:hover {
+.gallery-btn:hover, .table-btn:hover, .workflow-btn:hover {
     background: var(--accent-color);
     color: white;
     transform: translateY(-2px);
@@ -946,22 +947,27 @@ h2 {
 }
 
 .resource-btn {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.8rem 1.5rem;
+    padding: 1rem 2rem;
     border-radius: 8px;
-    font-size: 1rem;
+    font-size: 1.1rem;
     text-decoration: none;
     transition: all 0.3s ease;
-    min-width: 180px;
+    min-width: 220px;
+    max-width: 220px;
     justify-content: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .resource-btn i {
     font-size: 1.2rem;
 }
 
+/* Specific button colors */
 .docs-btn {
     background-color: #2c3e50;
     color: white;
@@ -975,13 +981,13 @@ h2 {
 }
 
 .github-btn {
-    background-color: #24292e;
+    background-color: #2c3e50;
     color: white;
-    border: 2px solid #24292e;
+    border: 2px solid #2c3e50;
 }
 
 .github-btn:hover {
-    background-color: #2f363d;
+    background-color: #34495e;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -998,12 +1004,72 @@ h2 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Keep workflow-info button consistent in both themes */
+.workflow-info-btn {
+    background-color: #2c3e50 !important;
+    color: white !important;
+    border: 2px solid #2c3e50 !important;
+    transition: all 0.3s ease !important;
+}
+
+.workflow-info-btn:hover {
+    background-color: #34495e !important;
+    border-color: #34495e !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+[data-theme="dark"] .workflow-info-btn {
+    background-color: #2c3e50 !important;
+    color: white !important;
+    border: 2px solid #2c3e50 !important;
+}
+
+[data-theme="dark"] .workflow-info-btn:hover {
+    background-color: #34495e !important;
+    border-color: #34495e !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Workflow Info Section */
+.workflow-info-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-color);
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.workflow-info-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--card-bg);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.workflow-info-header h2 {
+    margin: 0;
+    color: var(--text-primary);
+}
+
+.workflow-info-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
 @media (max-width: 768px) {
     .resource-buttons {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .resource-btn {
         width: 100%;
         max-width: 250px;
@@ -1483,5 +1549,104 @@ h2 {
     .workflow-link {
         width: 100%;
         justify-content: center;
+    }
+}
+
+/* Workflow Info Page Styles */
+.workflow-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.workflow-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.workflow-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.workflow-header p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.workflow-image {
+    width: 100%;
+    max-width: 1000px;
+    margin: 2rem auto;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.workflow-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.workflow-step {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.workflow-step h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.workflow-step p {
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .workflow-page {
+        padding: 1rem;
+    }
+
+    .workflow-steps {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Dark theme adjustments */
+[data-theme="dark"] .gallery-btn,
+[data-theme="dark"] .table-btn,
+[data-theme="dark"] .workflow-btn {
+    background: var(--container-bg);
+    color: var(--text-color);
+    border: 2px solid var(--accent-color);
+}
+
+[data-theme="dark"] .gallery-btn:hover,
+[data-theme="dark"] .table-btn:hover,
+[data-theme="dark"] .workflow-btn:hover {
+    background: var(--accent-color);
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .resource-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .resource-btn, .start-btn, .gallery-btn, .table-btn, .workflow-btn {
+        width: 100%;
+        max-width: 250px;
     }
 }

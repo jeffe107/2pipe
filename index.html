@@ -26,17 +26,21 @@
                 <button id="workflow-btn" class="workflow-btn">Workflows</button>
             </div>
             <div class="resource-buttons">
+                <a href="#" id="general-workflow-btn" class="resource-btn workflow-info-btn">
+                    <i class="fas fa-project-diagram"></i>
+                    General Workflow
+                </a>
                 <a href="https://github.com/jeffe107/2pipe" target="_blank" class="resource-btn docs-btn">
                     <i class="fas fa-book"></i>
                     Documentation
                 </a>
-                <a href="https://github.com/jeffe107/2pipe" target="_blank" class="resource-btn github-btn">
-                    <i class="fab fa-github"></i>
-                    Source Code
-                </a>
                 <a href="https://form.jotform.com/jeffe10789/2pipe-form" target="_blank" class="resource-btn submit-btn">
                     <i class="fas fa-plus-circle"></i>
                     Add your pipeline
+                </a>
+                <a href="https://github.com/jeffe107/2pipe" target="_blank" class="resource-btn github-btn">
+                    <i class="fab fa-github"></i>
+                    Source Code
                 </a>
             </div>
         </div>
@@ -60,6 +64,17 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- Workflow Info Section -->
+    <div id="workflow-info-section" class="workflow-info-section" style="display: none;">
+        <div class="workflow-info-header">
+            <h2>General Metagenomics Workflow</h2>
+            <button id="close-workflow-info-btn" class="close-btn">×</button>
+        </div>
+        <div class="workflow-info-container">
+            <!-- Content will be loaded here -->
         </div>
     </div>
 
@@ -111,6 +126,7 @@
     <script src="gallery.js"></script>
     <script src="table.js"></script>
     <script src="workflow.js"></script>
+    <script src="workflow-info.js"></script>
     <script src="script.js"></script>
 
     <div class="signature">

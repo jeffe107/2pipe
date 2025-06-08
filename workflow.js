@@ -24,19 +24,31 @@ function initWorkflowSection() {
         hideWorkflowSection();
         showGallery();
     });
+
+    // Prevent event propagation to avoid triggering other sections
+    workflowSection.addEventListener('click', (e) => {
+        e.stopPropagation();
+    });
 }
 
 // Show workflow section
-function showWorkflowSection() {
+function showWorkflowSection(e) {
+    e.preventDefault();
+    e.stopPropagation();
     workflowSection.style.display = 'block';
     document.body.style.overflow = 'hidden';
     // Hide other sections if they're visible
     document.getElementById('gallery-section').style.display = 'none';
     document.getElementById('table-section').style.display = 'none';
+    document.getElementById('workflow-info-section').style.display = 'none';
 }
 
 // Hide workflow section
-function hideWorkflowSection() {
+function hideWorkflowSection(e) {
+    if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+    }
     workflowSection.style.display = 'none';
     document.body.style.overflow = 'auto';
     // Clear the workflow display
