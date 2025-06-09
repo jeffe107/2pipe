@@ -4,16 +4,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const closeWorkflowBtn = document.getElementById('close-workflow-info-btn');
 
     if (!workflowBtn || !workflowSection || !closeWorkflowBtn) {
-        console.error('Required elements not found');
+        console.error('Required workflow elements not found');
         return;
     }
 
-    // Create back to top button
-    const backToTopBtn = document.createElement('button');
-    backToTopBtn.className = 'back-to-top-btn';
-    backToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
-    backToTopBtn.style.display = 'none';
-    workflowSection.appendChild(backToTopBtn);
+    // Initialize back to top button
+    const backToTopBtn = initializeBackToTopButton(workflowSection);
 
     // Function to handle scroll event
     function handleWorkflowScroll() {
@@ -42,8 +38,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const workflowContent = `
         <div class="workflow-page">
             <div class="workflow-header">
-                <h1>General MAG reconstruction workflow</h1>
-                <p>The traditional computational workflow to build and annotate Metagenome-Assembled Genomes involves several steps; the figure below introduces the general workflow to recover High-quality MAGs.</p>
+                <h1>General MAG reconstruction process</h1>
+                <p>The traditional computational workflow to build and annotate Metagenome-Assembled Genomes involves several steps; the figure below introduces the general scheme to recover High-Quality MAGs.</p>
             </div>
 
             <img src="images/workflow_2Pipe.png" alt="General Metagenomics Workflow" class="workflow-image">
@@ -77,19 +73,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="workflow-step">
                     <h3><i class="fas fa-chart-bar"></i> Functional Analysis</h3>
                     <p class= "text-workflow">Annotation of genes, prediction of metabolic pathways, and analysis of functional potential.</p>
-                </div>
-            </div>
-
-            <div class="workflow-video">
-                <h2>Watch the MAG Reconstruction Process</h2>
-                <div class="video-container">
-                    <video 
-                        controls
-                        class="workflow-video-player"
-                        title="MAG Reconstruction Process">
-                        <source src="images/MAGs.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
                 </div>
             </div>
         </div>

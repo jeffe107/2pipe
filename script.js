@@ -155,6 +155,39 @@ function updateThemeIcon(theme) {
     themeIcon.className = theme === 'light' ? 'fas fa-sun' : 'fas fa-moon';
 }
 
+// Function to initialize back to top button
+function initializeBackToTopButton(container) {
+    const backToTopBtn = document.createElement('button');
+    backToTopBtn.className = 'back-to-top-btn';
+    backToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+    container.appendChild(backToTopBtn);
+
+    // Function to handle scroll event
+    function handleScroll() {
+        if (container.scrollTop > 300) {
+            backToTopBtn.classList.add('visible');
+        } else {
+            backToTopBtn.classList.remove('visible');
+        }
+    }
+
+    // Function to scroll to top
+    function scrollToTop() {
+        container.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+
+    // Add scroll event listener
+    container.addEventListener('scroll', handleScroll);
+
+    // Add click event listener
+    backToTopBtn.addEventListener('click', scrollToTop);
+
+    return backToTopBtn;
+}
+
 // Functions
 function startQuestionnaire() {
     introSection.style.display = 'none';
@@ -475,7 +508,7 @@ function handleCompletion() {
                 ${matchResult.bestMatches.map((match, index) => `
                     <div class="recommendation-card ${!matchResult.hasTies && index === 1 ? 'secondary' : ''}">
                         <h3>${match.object.name}</h3>
-                        <p>${match.object.description}</p>
+                        <p class= "text-workflow">${match.object.description}</p>
                         <div class="match-details">
                             <p>Match Score: ${match.score}</p>
                             <p>Matching Features:</p>
