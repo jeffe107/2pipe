@@ -20,16 +20,24 @@
             <h2> It starts with a question!</h2>
             <p>We help you to identify the most suitable pipeline for MAG reconstruction according to your needs.</p>
             <div class="intro-buttons">
-                <button id="start-btn" class="start-btn">Get Started</button>
-                <button id="gallery-btn" class="gallery-btn">Pipeline Gallery</button>
-                <button id="table-btn" class="table-btn">Compare Pipelines</button>
-                <button id="workflow-btn" class="workflow-btn">Workflows</button>
+                <div class="intro-row">
+                    <button id="start-btn" class="start-btn">Get Started</button>
+                    <button id="gallery-btn" class="gallery-btn">Pipeline Gallery</button>
+                </div>
+                <div class="intro-row">
+                    <button id="workflow-btn" class="workflow-btn">Pipeline Workflows</button>
+                    <button id="selector-page-btn" class="workflow-btn">Tool Gallery</button>
+                </div>
+                <div class="intro-row">
+                    <button id="table-btn" class="table-btn">Technical Comparison</button>
+                    <button id="tools-table-btn" class="table-btn">Advanced Comparison</button>
+                </div>
+                <div class="intro-row">
+                    <button id="papers-btn" class="gallery-btn">Benchmarks & Literature</button>
+                    <button id="general-workflow-btn" class="workflow-btn">General Workflow</button>
+                </div>
             </div>
             <div class="resource-buttons">
-                <a href="#" id="general-workflow-btn" class="resource-btn workflow-info-btn">
-                    <i class="fas fa-project-diagram"></i>
-                    General Workflow
-                </a>
                 <a href="https://www.preprints.org/manuscript/202506.0703/v1" target="_blank" class="resource-btn docs-btn">
                     <i class="fas fa-book"></i>
                     Documentation
@@ -70,7 +78,7 @@
     <!-- Workflow Info Section -->
     <div id="workflow-info-section" class="workflow-info-section" style="display: none;">
         <div class="workflow-info-header">
-            <h2>Pipeline Workflow</h2>
+            <h2>General Workflow</h2>
             <button id="close-workflow-info-btn" class="close-btn">×</button>
         </div>
         <div class="workflow-info-container">
@@ -90,10 +98,39 @@
     <!-- Table Section -->
     <div id="table-section" class="table-section" style="display: none;">
         <div class="table-header">
-            <h2>Compare Pipelines</h2>
+            <h2>Technical Comparison</h2>
             <button id="close-table-btn" class="close-btn">×</button>
         </div>
         <div id="table-container" class="table-container"></div>
+    </div>
+
+    <!-- Tools Table Section -->
+    <div id="tools-table-section" class="table-section" style="display: none;">
+        <div class="table-header">
+            <h2>Advanced Comparison</h2>
+            <button id="close-tools-table-btn" class="close-btn">×</button>
+        </div>
+        <div id="tools-table-container" class="table-container"></div>
+    </div>
+
+    <!-- Papers Section -->
+    <div id="papers-section" class="gallery-section" style="display: none;">
+        <div class="gallery-header">
+            <h2>Benchmarks & Literature</h2>
+            <button id="close-papers-btn" class="close-btn">×</button>
+        </div>
+        <div id="papers-container" class="gallery-container"></div>
+    </div>
+
+    <!-- Tools Selector Page Section -->
+    <div id="selector-page-section" class="workflow-info-section" style="display: none;">
+        <div class="workflow-info-header">
+            <h2>Tool Gallery</h2>
+            <button id="close-selector-page-btn" class="close-btn">×</button>
+        </div>
+        <div class="workflow-info-container">
+            <div id="selector-page-mount" class="tools-container"></div>
+        </div>
     </div>
 
     <!-- Workflow Section -->
@@ -115,7 +152,13 @@
                         <i class="fas fa-arrow-left"></i> Go to Gallery
                     </button>
                     <button id="back-to-comparison-btn" class="back-to-gallery-btn">
-                        <i class="fas fa-arrow-left"></i> Go to Comparison
+                        <i class="fas fa-arrow-left"></i> Technical Comparison
+                    </button>
+                    <button id="back-to-workflow-info-btn" class="back-to-gallery-btn">
+                        <i class="fas fa-arrow-left"></i> Tool Gallery
+                    </button>
+                    <button id="back-to-tools-table-btn" class="back-to-gallery-btn">
+                        <i class="fas fa-arrow-left"></i> Advanced Comparison
                     </button>
                 </div>
             </div>
@@ -126,10 +169,17 @@
     </div>
 
     <script src="pipelineObjects.js"></script>
+    <script src="githubMetrics.js"></script>
+    <script src="toolsPipelines.js"></script>
+    <script src="papersReview.js"></script>
     <script src="gallery.js"></script>
     <script src="table.js"></script>
+    <script src="toolsTable.js"></script>
+    <script src="papersGallery.js"></script>
     <script src="workflow.js"></script>
     <script src="workflow-info.js"></script>
+    <script src="toolsSelectorPage.js"></script>
+    <script src="toolsSelector.js"></script>
     <script src="script.js"></script>
 
     <div class="signature">

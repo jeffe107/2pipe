@@ -12,7 +12,7 @@ const questions = [
         multiSelect: true
     },
     {
-        text: "2. Do you want to handle multi-sample?",
+        text: "2. Do you want to handle multiple sample?",
         options: [
             "Yes",
             "No",
@@ -20,7 +20,7 @@ const questions = [
         ]
     },
     {
-        text: "3. Do you need a pipeline with the ability to perform co-assembly/co-binning?",
+        text: "3. Do you need a pipeline with the ability to perform co-assembly and/or co-binning?",
         options: [
             "Yes",
             "No",
@@ -88,11 +88,16 @@ const questions = [
             "Ancient DNA",
             "Eukaryotic MAGs",
             "Viral MAGs",
-            "Inverted assembly/binning",
+            "Reads grouped first and assembled in batches",
             "Adaptable resource allocation",
-            "RNA-seq transcriptome analysis",
+            "Metatranscriptome support",
             "Plasmid assembly",
             "Genotype recovery",
+            "Resistance gene prediction",
+            "Strain delineation",
+            "Phylogenetic tree generation",
+            "Pan-genome analysis",
+            "Visualization module",
             "I don't know/It doesn't matter"
         ],
         multiSelect: true

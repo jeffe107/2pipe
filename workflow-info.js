@@ -75,6 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p class= "text-workflow">Annotation of genes, prediction of metabolic pathways, and analysis of functional potential.</p>
                 </div>
             </div>
+            
         </div>
     `;
 
@@ -87,6 +88,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         workflowSection.style.display = 'block';
         document.body.style.overflow = 'hidden';
+
+        // Selector moved to its own page (toolsSelectorPage.js)
     });
 
     // Close workflow section

@@ -6,19 +6,22 @@ document.addEventListener('DOMContentLoaded', function() {
     const closeWorkflowBtn = document.getElementById('close-workflow-btn');
     const backToGalleryBtn = document.getElementById('back-to-gallery-btn');
     const backToComparisonBtn = document.getElementById('back-to-comparison-btn');
+    const backToWorkflowInfoBtn = document.getElementById('back-to-workflow-info-btn');
+    const backToToolsTableBtn = document.getElementById('back-to-tools-table-btn');
     const pipelineSelect = document.getElementById('pipeline-select');
     const workflowDisplay = document.getElementById('workflow-display');
 
     if (!workflowBtn || !workflowSection || !closeWorkflowBtn || !backToGalleryBtn || 
-        !backToComparisonBtn || !pipelineSelect || !workflowDisplay) {
+        !backToComparisonBtn || !backToWorkflowInfoBtn || !backToToolsTableBtn || !pipelineSelect || !workflowDisplay) {
         console.error('Required workflow elements not found');
         return;
     }
 
     // Initialize the workflow section
     function initWorkflowSection() {
-        // Populate the pipeline select dropdown
-        preLoadedObjects.forEach(pipeline => {
+        // Populate the pipeline select dropdown (alphabetically by name)
+        const sortedOptions = [...preLoadedObjects].sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: 'base' }));
+        sortedOptions.forEach(pipeline => {
             const option = document.createElement('option');
             option.value = pipeline.id;
             option.textContent = pipeline.name;
@@ -45,10 +48,45 @@ document.addEventListener('DOMContentLoaded', function() {
         backToComparisonBtn.addEventListener('click', function(e) {
             e.preventDefault();
             hideWorkflowSection();
+            // Ensure other sections are hidden
+            document.getElementById('selector-page-section').style.display = 'none';
+            document.getElementById('tools-table-section').style.display = 'none';
             if (typeof window.showTable === 'function') {
                 window.showTable();
             } else {
                 console.error('showTable function not found');
+            }
+        });
+
+        // Back to Tools Selector page button
+        backToWorkflowInfoBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            hideWorkflowSection();
+            const selectorSection = document.getElementById('selector-page-section');
+            const selectorBtn = document.getElementById('selector-page-btn');
+            if (selectorSection) {
+                const mount = document.getElementById('selector-page-mount');
+                if (mount && mount.innerHTML.trim() === '' && selectorBtn) {
+                    // Trigger the existing loader to render the selector
+                    selectorBtn.click();
+                } else {
+                    selectorSection.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                }
+            }
+        });
+
+        // Back to Tools Table button
+        backToToolsTableBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            hideWorkflowSection();
+            // Ensure other sections are hidden
+            document.getElementById('selector-page-section').style.display = 'none';
+            document.getElementById('table-section').style.display = 'none';
+            if (typeof window.showToolsTable === 'function') {
+                window.showToolsTable();
+            } else {
+                console.error('showToolsTable function not found');
             }
         });
 
@@ -82,6 +120,12 @@ document.addEventListener('DOMContentLoaded', function() {
         workflowDisplay.innerHTML = '';
         // Reset the select dropdown
         pipelineSelect.value = '';
+        // Ensure other sections are also hidden to prevent interference
+        document.getElementById('gallery-section').style.display = 'none';
+        document.getElementById('table-section').style.display = 'none';
+        document.getElementById('workflow-info-section').style.display = 'none';
+        document.getElementById('selector-page-section').style.display = 'none';
+        document.getElementById('tools-table-section').style.display = 'none';
     }
 
     // Handle pipeline selection

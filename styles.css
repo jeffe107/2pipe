@@ -78,9 +78,16 @@ body {
 
 .intro-buttons {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.intro-row {
+    display: flex;
     gap: 1rem;
     justify-content: center;
-    margin-top: 2rem;
     flex-wrap: wrap;
 }
 
@@ -614,6 +621,18 @@ h2 {
     height: 200px;
     object-fit: cover;
     border-bottom: 2px solid var(--border-color);
+}
+
+/* Paper detail image should keep aspect ratio and not be cropped */
+.paper-detail-image {
+    width: 100%;
+    height: auto;
+    max-height: 70vh;
+    object-fit: contain;
+    background: var(--bg-color);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 1rem;
 }
 
 .gallery-content {
@@ -1178,6 +1197,119 @@ h2 {
     }
 }
 
+/* Tools Selector */
+.tools-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-color);
+    z-index: 1000;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.tools-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.tools-header h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: var(--heading-color);
+}
+
+.tools-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.tools-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.tools-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+.tools-select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.tools-select:hover {
+    border-color: var(--accent-color);
+}
+
+.tools-select:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(6, 143, 153, 0.25);
+}
+
+.tools-results {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+}
+
+.tools-recommendation-card {
+    background: var(--container-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1rem;
+}
+
+.tools-recommendation-card h3 {
+    color: var(--heading-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.tools-results-title {
+    margin: 2rem 0 1rem 0;
+    color: var(--accent-color);
+    font-size: 1.6rem;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.tools-group {
+    background: var(--container-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 12px;
+}
+
+@media (max-width: 768px) {
+    .tools-header h2 {
+        font-size: 1.4rem;
+    }
+    .tools-select {
+        font-size: 0.95rem;
+        padding: 10px;
+    }
+}
+
 /* Workflow Info Page Styles */
 .workflow-page {
     max-width: 1200px;
@@ -1500,12 +1632,7 @@ h2 {
 }
 
 @media (max-width: 768px) {
-    .intro-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .start-btn, .gallery-btn, .table-btn {
+    .start-btn, .gallery-btn, .table-btn, .workflow-btn {
         width: 100%;
         max-width: 250px;
     }

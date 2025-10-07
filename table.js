@@ -14,18 +14,23 @@ document.addEventListener('DOMContentLoaded', function() {
     const COLUMNS_PER_PAGE = 7; // Number of columns to show per page (including pipeline name)
     let currentPage = 0;
     const filterValues = {}; // Store filter values for each column
+    let currentTableEl = null; // reference to the currently rendered table element
 
     // Function to reset all filters
     function resetFilters() {
+        if (!currentTableEl) return;
         // Clear all filter inputs
-        const filterInputs = document.querySelectorAll('.pipeline-table .filter-input');
+        const filterInputs = currentTableEl.querySelectorAll('.filter-input');
         filterInputs.forEach(input => {
             input.value = '';
-            filterValues[input.closest('th').dataset.columnIndex] = '';
+            const th = input.closest('th');
+            if (th && th.dataset.columnIndex) {
+                filterValues[th.dataset.columnIndex] = '';
+            }
         });
 
         // Show all rows
-        const rows = document.querySelectorAll('.pipeline-table tbody tr');
+        const rows = currentTableEl.querySelectorAll('tbody tr');
         rows.forEach(row => {
             row.style.display = '';
         });
@@ -46,6 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Create table header
         const table = document.createElement('table');
         table.className = 'pipeline-table';
+        currentTableEl = table;
         
         // Create header row
         const thead = document.createElement('thead');
@@ -55,16 +61,21 @@ document.addEventListener('DOMContentLoaded', function() {
         const columnDefinitions = [
             { header: 'Number', attribute: 'index', noFilter: true },
             { header: 'Pipeline Name', attribute: null },
+            { header: 'Category', attribute: 'category' },
             { header: 'Read Types', attribute: 'readTypes' },
-            { header: 'Multi Sample', attribute: 'multiSample' },
-            { header: 'Co-assembly/\nCo-binning', attribute: 'coAssemblyCoBinning' },
+            { header: 'Multiple Samples', attribute: 'multiSample' },
+            { header: 'Co-assembly and/or \nCo-binning', attribute: 'coAssemblyCoBinning' },
             { header: 'GUI', attribute: 'GUI' },
-            { header: 'Cloud', attribute: 'Cloud' },
+            { header: 'Adapted to cloud\nenviroments', attribute: 'Cloud' },
             { header: 'Workflow Manager', attribute: 'workflowManager' },
             { header: 'Bin Refinement', attribute: 'binRefinement' },
             { header: 'External Resources', attribute: 'externalComputationalResources' },
             { header: 'Execution Options', attribute: 'executionOptions' },
-            { header: 'Special Options', attribute: 'specialOptions' }
+            { header: 'Special Features', attribute: 'specialOptions' },
+            { header: 'Last update', attribute: 'update' },
+            { header: 'License', attribute: 'license' }
+            //{ header: 'Last Commit (GitHub)', attribute: 'lastCommit', custom: true },
+            //{ header: 'Clones (GitHub)', attribute: 'clones', custom: true }
         ];
         
         // Create navigation controls
@@ -119,8 +130,9 @@ document.addEventListener('DOMContentLoaded', function() {
         // Create table body
         const tbody = document.createElement('tbody');
         
-        // Add rows for each pipeline
-        preLoadedObjects.forEach((pipeline, index) => {
+        // Add rows for each pipeline (sorted alphabetically by name)
+        const sortedPipelines = [...preLoadedObjects].sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: 'base' }));
+        sortedPipelines.forEach((pipeline, index) => {
             const row = document.createElement('tr');
             
             // Add cells for each column
@@ -154,6 +166,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     });
                     nameLink.textContent = pipeline.name;
                     cell.appendChild(nameLink);
+                } else if (col.custom) {
+                    // GitHub metrics columns
+                    const metrics = (window.PIPELINE_GITHUB_METRICS || {})[pipeline.name];
+                    if (col.attribute === 'lastCommit') {
+                        cell.textContent = metrics && metrics.lastCommit ? metrics.lastCommit : '-';
+                    } else if (col.attribute === 'clones') {
+                        cell.textContent = metrics && typeof metrics.clones !== 'undefined' ? metrics.clones : '-';
+                    }
                 } else if (col.attribute === 'specialOptions' || col.attribute === 'executionOptions' || col.attribute === 'readTypes') {
                     // Special handling for multi-select options
                     const value = pipeline.attributes[col.attribute] && pipeline.attributes[col.attribute].length > 0 ? 
@@ -186,7 +206,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Function to change page
     function changePage(delta) {
-        const totalColumns = document.querySelectorAll('.pipeline-table th').length;
+        const totalColumns = currentTableEl ? currentTableEl.querySelectorAll('th').length : 0;
         const totalPages = Math.ceil((totalColumns - 2) / (COLUMNS_PER_PAGE - 2)); // Subtract 2 for pipeline name and index columns
         
         currentPage = Math.max(0, Math.min(currentPage + delta, totalPages - 1));
@@ -195,7 +215,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Function to update page display
     function updatePageDisplay() {
-        const totalColumns = document.querySelectorAll('.pipeline-table th').length;
+        const totalColumns = currentTableEl ? currentTableEl.querySelectorAll('th').length : 0;
         const totalPages = Math.ceil((totalColumns - 2) / (COLUMNS_PER_PAGE - 2)); // Subtract 2 for pipeline name and index columns
         
         // Update page info
@@ -207,7 +227,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const endCol = Math.min(startCol + (COLUMNS_PER_PAGE - 2), totalColumns - 1); // Subtract 2 for pipeline name and index columns
         
         // Always show first two columns (index and pipeline name)
-        document.querySelectorAll('.pipeline-table th, .pipeline-table td').forEach(element => {
+        if (!currentTableEl) return;
+        currentTableEl.querySelectorAll('th, td').forEach(element => {
             const colIndex = parseInt(element.dataset.columnIndex);
             if (colIndex <= 1) {
                 element.style.display = '';
@@ -227,8 +248,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         // Update navigation buttons
-        const prevButton = document.querySelector('.nav-control-btn:first-child');
-        const nextButton = document.querySelector('.nav-control-btn:last-child');
+        const prevButton = tableContainer.querySelector('.nav-control-btn:first-child');
+        const nextButton = tableContainer.querySelector('.nav-control-btn:last-child');
         
         prevButton.disabled = currentPage === 0;
         nextButton.disabled = currentPage === totalPages - 1;
@@ -236,13 +257,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Function to filter table
     function filterTable() {
-        const rows = document.querySelectorAll('.pipeline-table tbody tr');
-        const allColumns = Array.from(document.querySelectorAll('.pipeline-table th'))
+        if (!currentTableEl) return;
+        const rows = currentTableEl.querySelectorAll('tbody tr');
+        const allColumns = Array.from(currentTableEl.querySelectorAll('th'))
             .map(th => parseInt(th.dataset.columnIndex));
         
         // Get filter values for all columns, not just visible ones
         const filters = allColumns.map(colIndex => {
-            const filterInput = document.querySelector(`.pipeline-table th[data-column-index="${colIndex}"] .filter-input`);
+            const filterInput = currentTableEl.querySelector(`th[data-column-index="${colIndex}"] .filter-input`);
             if (filterInput) {
                 filterValues[colIndex] = filterInput.value; // Store the filter value
                 return filterInput.value.toLowerCase();

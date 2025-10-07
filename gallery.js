@@ -42,11 +42,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Define the order of categories
     const categoryOrder = [
-        "Short-read centered pipelines",
-        "Long-read focused pipelines",
-        "Hybrid pipelines",
-        "Web-based pipelines",
-        "Special pipelines"
+        "Short-read centered",
+        "Long-read focused",
+        "Dual",
+        "Hybrid",
+        "Web-based",
+        "Special"
     ];
 
     // Function to map pipeline categories to display categories
@@ -108,7 +109,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Group pipelines by category
         const pipelinesByCategory = {};
-        preLoadedObjects.forEach(pipeline => {
+        // Sort alphabetically by name first
+        const sorted = [...preLoadedObjects].sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: 'base' }));
+        sorted.forEach(pipeline => {
             const category = pipeline.category || 'Uncategorized';
             if (!pipelinesByCategory[category]) {
                 pipelinesByCategory[category] = [];
@@ -126,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 categoryHeader.innerHTML = `<h3>${category}</h3>`;
                 galleryContainer.appendChild(categoryHeader);
 
-                // Create gallery items for this category
+                // Create gallery items for this category (already sorted by name)
                 pipelinesByCategory[category].forEach(pipeline => {
                     const galleryItem = document.createElement('div');
                     galleryItem.className = 'gallery-item';
