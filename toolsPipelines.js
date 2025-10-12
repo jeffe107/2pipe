@@ -1015,7 +1015,8 @@ const MAG_PIPELINES = [
                 "Centrifuge",
                 "geNomad",
                 "Tiara",
-                "PyDamage"
+                "PyDamage",
+                "MultiQC"
             ]
         },
         "description": "nf-core/mag pipeline.",
@@ -1051,12 +1052,25 @@ const MAG_PIPELINES = [
             "taxonomy": [],
             "functionalAnnotation": [
                 "Prokka",
-                "KOfamKOALA",
+                "KOfamScan",
                 "KEGGDecoder",
                 "Bakta",
-                "barrnap"
+                "Barrnap",
+                "antiSMASH"
             ],
-            "other": []
+            "other": [
+                "AMRFinderPlus",
+                "CARD-RGI",
+                "BEDTools",
+                "Phigaro",
+                "VFDB",
+                "PlasmidFinder",
+                "MLST",
+                "Platon",
+                "PHASTER",
+                "ARGminer",
+                "ResFinder"
+            ]
         },
         "description": "ngs-preprocess-MpGAP-Bacannot pipeline.",
         "url": "",
@@ -1130,7 +1144,7 @@ const MAG_PIPELINES = [
                 "Prodigal",
                 "MUMmer",
                 "HMMER",
-                "barrnap"
+                "Barrnap"
             ],
             "other": [
                 "POGENOM",
@@ -1396,6 +1410,244 @@ const MAG_PIPELINES = [
             ]
         },
         "description": "IMG/M pipeline.",
+        "url": "",
+        "details": "",
+        "category": "Metagenomic MAG Reconstruction Pipelines"
+    },
+    {
+        "id": "pipeline36",
+        "name": "WGSA2+/LoRA",
+        "attributes": {
+            "qc": [
+                "KneadData",
+                "fastp", 
+                "Kraken2"
+
+            ],
+            "assembly": [
+                "metaSPAdes",
+                "metaFlye",
+                "Minimap2",
+                "Samtools"
+            ],
+            "binning": [
+                "MetaBAT2"
+
+            ],
+            "qualityAssessment": [
+                "CheckM",
+                "CheckM2"
+            ],
+            "refinement": [],
+            "taxonomy": [
+                "GTDB-Tk2"
+            ],
+            "functionalAnnotation": [
+                "Prodigal",
+                "eggNOG-mapper",
+                "MinPath"
+            ],
+            "other": [
+                "SortMeRNA",
+                "Krona",
+                "Trinity"
+            ]
+        },
+        "description": "WGSA2+/LoRA pipeline.",
+        "url": "",
+        "details": "",
+        "category": "Metagenomic MAG Reconstruction Pipelines"
+    },
+    {
+        "id": "pipeline37",
+        "name": "JAMS",
+        "attributes": {
+            "qc": [
+                "Trimmomatic",
+                "Bowtie2"
+
+            ],
+            "assembly": [
+                "SPAdes",
+                "MEGAHIT"
+            ],
+            "binning": [
+
+            ],
+            "qualityAssessment": [
+
+            ],
+            "refinement": [],
+            "taxonomy": [
+                "Kraken2"
+            ],
+            "functionalAnnotation": [
+                "Prokka",
+                "InterProScan"
+            ],
+            "other": [
+                "Samtools",
+                "BEDTools",
+            ]
+        },
+        "description": "JAMS pipeline.",
+        "url": "",
+        "details": "",
+        "category": "Metagenomic MAG Reconstruction Pipelines"
+    },
+    {
+        "id": "pipeline38",
+        "name": "SPIRE",
+        "attributes": {
+            "qc": [
+                "NGLess"
+
+            ],
+            "assembly": [
+                "MEGAHIT",
+                "BWA",
+                "Sammtools"
+            ],
+            "binning": [
+                "MetaBAT2"
+            ],
+            "qualityAssessment": [
+                "CheckM2",
+                "GUNC"
+
+            ],
+            "refinement": [],
+            "taxonomy": [
+                "GTDB-TK2"
+            ],
+            "functionalAnnotation": [
+                "Prodigal",
+                "eggNOG-mapper"
+            ],
+            "other": [
+                "Barrnap",
+                "abricate (MEGARes, VFDB)",
+                "Seqtk",
+                "macrel",
+                "Mash"
+            ]
+        },
+        "description": "SPIRE pipeline.",
+        "url": "",
+        "details": "",
+        "category": "Metagenomic MAG Reconstruction Pipelines"
+    },
+    {
+        "id": "pipeline39",
+        "name": "EURYALE (MEDUSA)",
+        "attributes": {
+            "qc": [
+                "FastQC",
+                "fastp",
+                "Bowtie2",
+                "MultiQC"
+
+            ],
+            "assembly": [
+                "MEGAHIT",
+            ],
+            "binning": [
+
+            ],
+            "qualityAssessment": [
+
+            ],
+            "refinement": [],
+            "taxonomy": [
+                "Kaiju",
+                "Kraken2"
+            ],
+            "functionalAnnotation": [
+                "DIAMOND (NCBI nr)"
+            ],
+            "other": [
+                "Krona"
+            ]
+        },
+        "description": "EURYALE (MEDUSA) pipeline.",
+        "url": "",
+        "details": "",
+        "category": "Metagenomic MAG Reconstruction Pipelines"
+    },
+    {
+        "id": "pipeline40",
+        "name": "nIMP3",
+        "attributes": {
+            "qc": [
+                "BWA",
+                "Samtools",
+                "BBTools",
+                "FastQC",
+                "SortMeRNA"
+            ],
+            "assembly": [
+                "MEGAHIT",
+            ],
+            "binning": [
+
+            ],
+            "qualityAssessment": [
+
+            ],
+            "refinement": [],
+            "taxonomy": [
+                "Kraken2"
+            ],
+            "functionalAnnotation": [
+                "gffquant"
+            ],
+            "other": [
+                "mOTUs",
+                "MultiQC",
+                "MetaPhlAn4",
+                "Salmon",
+                "kallisto"
+            ]
+        },
+        "description": "nIMP3 pipeline.",
+        "url": "",
+        "details": "",
+        "category": "Metagenomic MAG Reconstruction Pipelines"
+    },
+    {
+        "id": "pipeline41",
+        "name": "Mapler",
+        "attributes": {
+            "qc": [
+                "FastQC"
+            ],
+            "assembly": [
+                "metaMDBG",
+                "metaFlye",
+                "hifiasm",
+                "OPERA-MS",
+                "Minimap2"
+            ],
+            "binning": [
+                "MetaBAT2"
+            ],
+            "qualityAssessment": [
+                "CheckM2",
+                "metaQUAST"
+            ],
+            "refinement": [],
+            "taxonomy": [
+                "Kraken2",
+                "GTDB-Tk2"
+            ],
+            "functionalAnnotation": [
+
+            ],
+            "other": [
+                "KAT"
+            ]
+        },
+        "description": "Mapler pipeline.",
         "url": "",
         "details": "",
         "category": "Metagenomic MAG Reconstruction Pipelines"

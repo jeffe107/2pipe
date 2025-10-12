@@ -244,6 +244,76 @@ abstract: "Advances in high-throughput sequencing (HTS) have fostered rapid deve
 link: "https://academic.oup.com/proteincell/article/12/5/315/6724529",
 category: "Reviews"
 },
+{
+id: "paper36",
+name: "Assessment of metagenomic assemblers based on hybrid reads of real and simulated metagenomic sequences",
+abstract: "In metagenomic studies of microbial communities, the short reads come from mixtures of genomes. Read assembly is usually an essential first step for the follow-up studies in metagenomic research. Understanding the power and limitations of various read assembly programs in practice is important for researchers to choose which programs to use in their investigations. Many studies evaluating different assembly programs used either simulated metagenomes or real metagenomes with unknown genome compositions. However, the simulated datasets may not reflect the real complexities of metagenomic samples and the estimated assembly accuracy could be misleading due to the unknown genomes in real metagenomes. Therefore, hybrid strategies are required to evaluate the various read assemblers for metagenomic studies. In this paper, we benchmark the metagenomic read assemblers by mixing reads from real metagenomic datasets with reads from known genomes and evaluating the integrity, contiguity and accuracy of the assembly using the reads from the known genomes. We selected four advanced metagenome assemblers, MEGAHIT, MetaSPAdes, IDBA-UD and Faucet, for evaluation. We showed the strengths and weaknesses of these assemblers in terms of integrity, contiguity and accuracy for different variables, including the genetic difference of the real genomes with the genome sequences in the real metagenomic datasets and the sequencing depth of the simulated datasets. Overall, MetaSPAdes performs best in terms of integrity and continuity at the species-level, followed by MEGAHIT. Faucet performs best in terms of accuracy at the cost of worst integrity and continuity, especially at low sequencing depth. MEGAHIT has the highest genome fractions at the strain-level and MetaSPAdes has the overall best performance at the strain-level. MEGAHIT is the most efficient in our experiments. Availability: The source code is available at https://github.com/ziyewang/MetaAssemblyEval.",
+link: "https://academic.oup.com/bib/article/21/3/777/5371422",
+category: "Assembler benchmarks"
+},
+{
+id: "paper37",
+name: "Critical evaluation of short, long, and hybrid assembly for contextual analysis of antibiotic resistance genes in complex environmental metagenomes",
+abstract: "In the fight to limit the global spread of antibiotic resistance, the assembly of environmental metagenomes has the potential to provide rich contextual information (e.g., taxonomic hosts, carriage on mobile genetic elements) about antibiotic resistance genes (ARG) in the environment. However, computational challenges associated with assembly can impact the accuracy of downstream analyses. This work critically evaluates the impact of assembly leveraging short reads, nanopore MinION long-reads, and a combination of the two (hybrid) on ARG contextualization for ten environmental metagenomes using seven prominent assemblers (IDBA-UD, MEGAHIT, Canu, Flye, Opera-MS, metaSpades and HybridSpades). While short-read and hybrid assemblies produced similar patterns of ARG contextualization, raw or assembled long nanopore reads produced distinct patterns. Based on an in-silico spike-in experiment using real and simulated reads, we show that low to intermediate coverage species are more likely to be incorporated into chimeric contigs across all assemblers and sequencing technologies, while more abundant species produce assemblies with a greater frequency of inversions and insertion/deletions (indels). In sum, our analyses support hybrid assembly as a valuable technique for boosting the reliability and accuracy of assembly-based analyses of ARGs and neighboring genes at environmentally-relevant coverages, provided that sufficient short-read sequencing depth is achieved.",
+link: "https://www.nature.com/articles/s41598-021-83081-8",
+category: "Assembler benchmarks"
+},
+{
+id: "paper38",
+name: "Mock community taxonomic classification performance of publicly available shotgun metagenomics pipelines",
+abstract: "Shotgun metagenomic sequencing comprehensively samples the DNA of a microbial sample. Choosing the best bioinformatics processing package can be daunting due to the wide variety of tools available. Here, we assessed publicly available shotgun metagenomics processing packages/pipelines including bioBakery, Just a Microbiology System (JAMS), Whole metaGenome Sequence Assembly V2 (WGSA2), and Woltka using 19 publicly available mock community samples and a set of five constructed pathogenic gut microbiome samples. Also included is a workflow for labelling bacterial scientific names with NCBI taxonomy identifiers for better resolution in assessing results. The Aitchison distance, a sensitivity metric, and total False Positive Relative Abundance were used for accuracy assessments for all pipelines and mock samples. Overall, bioBakery4 performed the best with most of the accuracy metrics, while JAMS and WGSA2, had the highest sensitivities. Furthermore, bioBakery is commonly used and only requires a basic knowledge of command line usage. This work provides an unbiased assessment of shotgun metagenomics packages and presents results assessing the performance of the packages using mock community sequence data.",
+link: "https://www.nature.com/articles/s41597-023-02877-7",
+category: "Taxonomic classifier benchmarks"
+},
+{
+id: "paper39",
+name: "Unraveling metagenomics through long-read sequencing: a comprehensive review",
+abstract: "The study of microbial communities has undergone significant advancements, starting from the initial use of 16S rRNA sequencing to the adoption of shotgun metagenomics. However, a new era has emerged with the advent of long-read sequencing (LRS), which offers substantial improvements over its predecessor, short-read sequencing (SRS). LRS produces reads that are several kilobases long, enabling researchers to obtain more complete and contiguous genomic information, characterize structural variations, and study epigenetic modifications. The current leaders in LRS technologies are Pacific Biotechnologies (PacBio) and Oxford Nanopore Technologies (ONT), each offering a distinct set of advantages. This review covers the workflow of long-read metagenomics sequencing, including sample preparation (sample collection, sample extraction, and library preparation), sequencing, processing (quality control, assembly, and binning), and analysis (taxonomic annotation and functional annotation). Each section provides a concise outline of the key concept of the methodology, presenting the original concept as well as how it is challenged or modified in the context of LRS. Additionally, the section introduces a range of tools that are compatible with LRS and can be utilized to execute the LRS process. This review aims to present the workflow of metagenomics, highlight the transformative impact of LRS, and provide researchers with a selection of tools suitable for this task.",
+link: "https://translational-medicine.biomedcentral.com/articles/10.1186/s12967-024-04917-1",
+category: "Reviews"
+},
+{
+id: "paper40",
+name: "Evaluating metagenomics tools for genome binning with real metagenomic datasets and CAMI datasets",
+abstract: "In this study, we evaluate 15 genome binning tools containing 12 original binning tools and 3 refining binning tools by comparing the performance of these tools on chicken gut metagenomic datasets and the first CAMI challenge datasets. For chicken gut metagenomic datasets, original genome binner MetaBat, Groopm2 and Autometa performed better than other original binner, and MetaWrap combined the binning results of them generated the most high-quality genome bins. For CAMI datasets, Groopm2 achieved the highest purity (> 0.9) with good completeness (> 0.8), and reconstructed the most high-quality genome bins among original genome binners. Compared with Groopm2, MetaBat2 had similar performance with higher completeness and lower purity. Genome refining binners DASTool predicated the most high-quality genome bins among all genomes binners. Most genome binner performed well for unique strains. Nonetheless, reconstructing common strains still is a substantial challenge for all genome binner.",
+link: "https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-020-03667-3",
+category: "Binner benchmarks"
+},
+{
+id: "paper41",
+name: "Creating reproducible workflows for complex computational pipelines",
+abstract: "A workflow orchestration framework can streamline repeatable tasks and make workflows broadly usable. From several options, we chose Nextflow due to the ease of deploying across platforms, vibrant nfcore community, and ability to manage and monitor workflows with Nextflow Tower.",
+link: "https://research.arcadiascience.com/pub/perspective-reproducible-workflows/release/5/",
+category: "Workflow-managers"
+},
+{
+id: "paper42",
+name: "Automatic Reproduction of Workflows in the Snakemake Workflow Catalog and nf-core Registries",
+abstract: "Workflows make it easier for scientists to assemble computational experiments consisting of many disparate components. However, those disparate components also increase the probability that the computational experiment fails to be reproducible. Even if software is reproducible today, it may become irreproducible tomorrow without the software itself changing at all, because of the constantly changing software environment in which the software is run. To alleviate irreproducibility, workflow engines integrate with container engines. Additionally, communities that sprung up around workflow engines started to host registries for workflows that follow standards. These standards reduce the effort needed to make workflows automatically reproducible. In this paper, we study automatic reproduction of workflows from two registries, focusing on non-crashing executions. The experimental data lets us analyze the upper bound to which workflow engines could achieve reproducibility. We identify lessons learned in achieving reproducibility in practice.",
+link: "https://dl.acm.org/doi/10.1145/3589806.3600037",
+category: "Workflow-managers"
+},
+{
+id: "paper43",
+name: "Using prototyping to choose a bioinformatics workflow management system",
+abstract: "RiboViz is a package to extract biological insight from ribosome profiling data to help advance understanding of protein synthesis. At the heart of RiboViz is an analysis workflow, implemented in a Python script. To conform to best practices for scientific computing which recommend the use of build tools to automate workflows and to reuse code instead of rewriting it, the authors reimplemented this workflow within a workflow management system. To select a workflow management system, a rapid survey of available systems was undertaken, and candidates were shortlisted: Snakemake, cwltool, Toil, and Nextflow. Each candidate was evaluated by quickly prototyping a subset of the RiboViz workflow, and Nextflow was chosen. The selection process took 10 person-days, a small cost for the assurance that Nextflow satisfied the authors’ requirements. The use of prototyping can offer a low-cost way of making a more informed selection of software to use within projects, rather than relying solely upon reviews and recommendations by others.",
+link: "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008622",
+category: "Workflow-managers"
+},
+{
+id: "paper44",
+name: "Empowering bioinformatics communities with Nextflow and nf-core",
+abstract: "Standardized analysis pipelines contribute to making data bioinformatics research compliant with the paradigm of Findability, Accessibility, Interoperability, and Reusability (FAIR), and facilitate collaboration. Nextflow and Snakemake, two popular command-line solutions, are increasingly adopted by users, complementing GUI-based platforms such as Galaxy. We report recent developments of the nf-core framework with the new Nextflow Domain-Specific Language (DSL2). An extensive library of modules and subworkflows enables research communities to adopt common standards progressively, as resources and needs allow. We present an overview of some of the research communities built around nf-core and showcase its adoption by six EuroFAANG farmed animal research consortia.",
+link: "https://genomebiology.biomedcentral.com/articles/10.1186/s13059-025-03673-9",
+category: "Workflow-managers"
+},
+{
+id: "paper45",
+name: "Sustainable data analysis with Snakemake",
+abstract: "Data analysis often entails a multitude of heterogeneous steps, from the application of various command line tools to the usage of scripting languages like R or Python for the generation of plots and tables. It is widely recognized that data analyses should ideally be conducted in a reproducible way. Reproducibility enables technical validation and regeneration of results on the original or even new data. However, reproducibility alone is by no means sufficient to deliver an analysis that is of lasting impact (i.e., sustainable) for the field, or even just one research group. We postulate that it is equally important to ensure adaptability and transparency. The former describes the ability to modify the analysis to answer extended or slightly different research questions. The latter describes the ability to understand the analysis in order to judge whether it is not only technically, but methodologically valid. Here, we analyze the properties needed for data analysis to become reproducible, adaptable, and transparent. We show how the popular workflow management system Snakemake can be used to guarantee this, and how it enables an ergonomic, combined, unified representation of all steps involved in data analysis, ranging from raw data processing, to quality control and fine-grained, interactive exploration and plotting of final results.",
+link: "https://f1000research.com/articles/10-33/v3",
+category: "Workflow-managers"
+},
 ];
 
 // Expose globally for non-module usage

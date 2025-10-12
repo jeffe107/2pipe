@@ -93,11 +93,13 @@ const questions = [
             "Metatranscriptome support",
             "Plasmid assembly",
             "Genotype recovery",
-            "Resistance gene prediction",
+            "Antimicrobial resistance gene prediction",
             "Strain delineation",
             "Phylogenetic tree generation",
             "Pan-genome analysis",
             "Visualization module",
+            "Direct sample comparison",
+            "Virulence factor annotation",
             "I don't know/It doesn't matter"
         ],
         multiSelect: true

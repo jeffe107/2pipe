@@ -73,7 +73,8 @@ document.addEventListener('DOMContentLoaded', function() {
             { header: 'Execution Options', attribute: 'executionOptions' },
             { header: 'Special Features', attribute: 'specialOptions' },
             { header: 'Last update', attribute: 'update' },
-            { header: 'License', attribute: 'license' }
+            { header: 'License', attribute: 'license' },
+            { header: 'Number of citations', attribute: 'citations' }
             //{ header: 'Last Commit (GitHub)', attribute: 'lastCommit', custom: true },
             //{ header: 'Clones (GitHub)', attribute: 'clones', custom: true }
         ];
@@ -111,8 +112,8 @@ document.addEventListener('DOMContentLoaded', function() {
             headerText.textContent = col.header;
             th.appendChild(headerText);
             
-            // Add filter input for all columns except pipeline name and index
-            if (col.attribute !== null && !col.noFilter) {
+            // Add filter input for all columns except index
+            if (!col.noFilter) {
                 const filterInput = document.createElement('input');
                 filterInput.type = 'text';
                 filterInput.className = 'filter-input';
