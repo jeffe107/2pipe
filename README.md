@@ -4,7 +4,7 @@
     <img src="images/2Pipe.png" alt="2Pipe" width="25%">
 </p>
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15608773.svg)](https://doi.org/10.5281/zenodo.15608773)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17334924.svg)](https://doi.org/10.5281/zenodo.17334924)
 
 Welcome to the 2Pipe! This application helps researchers find the most suitable pipeline for MAG reconstruction according to their needs through an interactive questionnaire. The application also includes a page with detailed descriptions for each workflow, a pipeline gallery and a comparison table.
 
@@ -147,4 +147,10 @@ Before submitting your work, please check the current number of pipelines in the
 
 ## Citation
 
-If you find 2Pipe useful, please cite our paper (Upcoming 🚀) or share this tool through platforms such as X and LinkedIn.
+🚀 If you find 2pipe useful, please cite our paper or share this tool through platforms such as X and LinkedIn:
+
+> **2Pipe: It starts with a question. Matching you with the correct pipeline for MAG reconstruction.**
+>
+> Yepes-García J and Falquet L.
+>
+> _Preprints_ 2025. doi: [10.20944/preprints202506.0703.v2](https://doi.org/10.20944/preprints202506.0703.v2).
