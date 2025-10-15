@@ -984,4 +984,29 @@ const preLoadedObjects = [
         details: "Mapler is a pipeline specifically designed to handle PacBio HiFi long reads. Mapler workflow is orchestrated by Snakemake along with Conda for package management, enabling scalable execution on local or cluster systems. Regarding the specific tools encompassed by Mapler, state-of-the-art assemblers such as metaMDBG, hifiasm-meta, metaFlye and OPERA-MS are available, with MetaBAT2 as the binning tool. Later on the workflow, each bin is classified taxonomically via GTDB-Tk or Kraken, and genome quality is evaluated using CheckM2 standards. Mapler aligns reads back to contigs with Minimap to compute novel metrics including the aligned read percentage and aligned base percentage, stratified across quality categories. It is important to mention that Mapler accepts assemblies and bins as input to skip part of the process, and it includes a parallel analysis, where assembled versus unassembled reads are contrasted by evaluating k-mer distributions (KAT), read quality (FastQC), and taxonomic composition (Kraken2 + Krona). As a result, by combining classic bin-based metrics with read-to-contig alignment statistics, Mapler assists in estimating how much of the sequence diversity remains uncaptured.",
         category: "Long-read focused"
     },
+    {
+        id: "pipeline42",
+        name: "ont-assembly-snake/score-assemblies",
+        attributes: {
+            readTypes: ["Short reads", "Oxford Nanopore (ONT) reads"],
+            multiSample: ["Yes"],
+            coAssemblyCoBinning: ["No"],
+            GUI: ["No"],
+            Cloud: ["Yes"],
+            workflowManager: ["Snakemake"],
+            binRefinement: ["No"],
+            externalComputationalResources: ["No"],
+            executionOptions: ["Conda"],
+            specialOptions: ["Visualization module"],
+            update: ["2024"],
+            license: ["MIT License"],
+            category: ["Long-read focused"],
+            citations: ["1"]
+        },
+        description: "ont-assembly-snake and score-assemblies are complementary Snakemake pipelines for Oxford Nanopore bacterial genome assembly and evaluation. They integrate tools like Flye, Raven, Racon, Medaka, QUAST, BUSCO, and DIAMOND for assembly, polishing, and quality assessment, offering modular, reproducible, and containerized workflows for generating and benchmarking high-quality bacterial genome assemblies.",
+        url: "https://gigabytejournal.com/articles/116",
+        details: "ont-assembly-snake and score-assemblies are two complementary Snakemake workflows specifically designed to handle ONT sequencing data. Regarding their workflows, ont-assembly-snake orchestrates read filtering (Filtlong, Rasusa), long-read assembly (Raven, Flye, Miniasm, Canu) or hybrid (Unicycler), and iterative polishing (Racon, Medaka, Pilon, Polypolish, POLCA, Homopolish, Proovframe). Meanwhile, score-assemblies takes the output from ont-assembly-snake to perform quality assessment and annotation through a wide variety of tools: QUAST for contiguity and alignment comparisons, BUSCO for core gene completeness, DNAdiff/NucDiff for genomic differences, Pomoxis for Q-score and error estimates, and an IDEEL module that predicts ORFs (Prodigal) and aligns them to reference proteins (DIAMOND) for assessing gene prediction quality. Optionally, annotation can be carried out with Bakta, and score-assemblies will produce summary tables, plots, and an HTML report. The software is executed through Conda in both pipelines, and its Snakemake wrapping ensures modular reproducibility and flexibility in choosing assembly or evaluation strategies. These pipelines can be used in metagenomics scenarios, although their performance and scalability in large metagenomic or eukaryotic contexts may be more constrained as they were thought primarily for bacterial genome assembly (modest size).",
+        category: "Long-read focused"
+    },
 ]; 
+
