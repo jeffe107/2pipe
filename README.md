@@ -153,4 +153,5 @@ Before submitting your work, please check the current number of pipelines in the
 >
 > Yepes-García J and Falquet L.
 >
-> _Preprints_ 2025. doi: [10.20944/preprints202506.0703.v2](https://doi.org/10.20944/preprints202506.0703.v2).
+> _Preprints_ 2025. doi: [10.20944/preprints202506.0703.v2](https://www.preprints.org/manuscript/202506.0703/v2).
+
