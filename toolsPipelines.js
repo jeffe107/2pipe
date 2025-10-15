@@ -1651,7 +1651,55 @@ const MAG_PIPELINES = [
         "url": "",
         "details": "",
         "category": "Metagenomic MAG Reconstruction Pipelines"
-    }
+    },
+    {
+        "id": "pipeline42",
+        "name": "ont-assembly-snake/score-assemblies",
+        "attributes": {
+            "qc": [
+                "Filtlong",
+                "Rasusa"
+            ],
+            "assembly": [
+                "Raven",
+                "Flye",
+                "Miniasm",
+                "Canu",
+                "Unicycler",
+                "Racon",
+                "Medaka",
+                "Pilon",
+                "Polypolish",
+                "POLCA"
+            ],
+            "binning": [
+
+            ],
+            "qualityAssessment": [
+                "QUAST",
+                "BUSCO",
+                "DNAdiff (MUMmer)",
+                "Pomoxis"
+            ],
+            "refinement": [],
+            "taxonomy": [
+
+            ],
+            "functionalAnnotation": [
+                "Prodigal",
+                "Bakta",
+                "DIAMOND (SwissProt)"
+            ],
+            "other": [
+                "Homopolish",
+                "Proovframe"
+            ]
+        },
+        "description": "ont-assembly-snake/score-assemblies pipeline.",
+        "url": "",
+        "details": "",
+        "category": "Metagenomic MAG Reconstruction Pipelines"
+    },
 ];
 
 // Expose globally for non-module usage in index.html
