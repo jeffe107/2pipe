@@ -1700,6 +1700,56 @@ const MAG_PIPELINES = [
         "details": "",
         "category": "Metagenomic MAG Reconstruction Pipelines"
     },
+    {
+        "id": "pipeline43",
+        "name": "Bactopia",
+        "attributes": {
+            "qc": [
+                "BBTools",
+                "fastp",
+                "FastQC",
+                "NanoPack2",
+                "Rasusa",
+                "Porechop",
+                "fastq-scan"
+            ],
+            "assembly": [
+                "Shovill",
+                "Dragonflye",
+                "Unicycler"
+            ],
+            "binning": [
+
+            ],
+            "qualityAssessment": [
+                "CheckM",
+                "QUAST",
+                "BUSCO"
+            ],
+            "refinement": [],
+            "taxonomy": [
+                "GTDB-Tk2"
+            ],
+            "functionalAnnotation": [
+                "Bakta",
+                "Prokka"
+            ],
+            "other": [
+                "Merlin",
+                "Sourmash",
+                "Mash",
+                "MLST",
+                "AMRFinderPlus",
+                "Kraken2",
+                "Bracken",
+                "FastANI"
+            ]
+        },
+        "description": "Bactopia pipeline.",
+        "url": "",
+        "details": "",
+        "category": "Metagenomic MAG Reconstruction Pipelines"
+    },
 ];
 
 // Expose globally for non-module usage in index.html
