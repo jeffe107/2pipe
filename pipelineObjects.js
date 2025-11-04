@@ -1008,5 +1008,30 @@ const preLoadedObjects = [
         details: "ont-assembly-snake and score-assemblies are two complementary Snakemake workflows specifically designed to handle ONT sequencing data. Regarding their workflows, ont-assembly-snake orchestrates read filtering (Filtlong, Rasusa), long-read assembly (Raven, Flye, Miniasm, Canu) or hybrid (Unicycler), and iterative polishing (Racon, Medaka, Pilon, Polypolish, POLCA, Homopolish, Proovframe). Meanwhile, score-assemblies takes the output from ont-assembly-snake to perform quality assessment and annotation through a wide variety of tools: QUAST for contiguity and alignment comparisons, BUSCO for core gene completeness, DNAdiff/NucDiff for genomic differences, Pomoxis for Q-score and error estimates, and an IDEEL module that predicts ORFs (Prodigal) and aligns them to reference proteins (DIAMOND) for assessing gene prediction quality. Optionally, annotation can be carried out with Bakta, and score-assemblies will produce summary tables, plots, and an HTML report. The software is executed through Conda in both pipelines, and its Snakemake wrapping ensures modular reproducibility and flexibility in choosing assembly or evaluation strategies. These pipelines can be used in metagenomics scenarios, although their performance and scalability in large metagenomic or eukaryotic contexts may be more constrained as they were thought primarily for bacterial genome assembly (modest size).",
         category: "Long-read focused"
     },
+    {
+        id: "pipeline43",
+        name: "Bactopia",
+        attributes: {
+            readTypes: ["Short reads", "Oxford Nanopore (ONT) reads", "Hybrid"],
+            multiSample: ["Yes"],
+            coAssemblyCoBinning: ["No"],
+            GUI: ["No"],
+            Cloud: ["Yes"],
+            workflowManager: ["Nextflow"],
+            binRefinement: ["No"],
+            externalComputationalResources: ["No"],
+            executionOptions: ["Conda", "Docker", "Singularity"],
+            specialOptions: ["Antimicrobial resistance gene prediction", "Pangenome analysis", "Taxonomic profiling", "Strain delineation"],
+            update: ["2025"],
+            license: ["MIT License"],
+            category: ["Hybrid"],
+            citations: ["197"]
+        },
+        description: "Bactopia is a modular, end-to-end pipeline for bacterial and metagenomic analysis built with Nextflow, offering scalability and reproducibility through Conda, Docker, or Singularity. It includes eight core steps—from data gathering and quality control to annotation, resistance detection, and species-specific analyses—and a suite of Bactopia Tools for advanced comparative genomics.",
+        url: "https://journals.asm.org/doi/10.1128/msystems.00190-20",
+        details: "Bactopia is a modular pipeline built with Nextflow, executed with either Conda, Docker, or Singularity. Its workflow is organized into eight main steps: Gather, which collects all input data; QC, performing quality control of the reads; Assembler, which builds contigs from the sequences; Annotator, adding functional and structural annotations; Sketcher, which generates sketches of the assemblies and queries reference databases; Sequence Typing, to identify sequence types; Antibiotic Resistance, to detect resistance genes at the contig and protein levels; and Merlin, an intelligent module that automatically executes species-specific tools based on genomic distance. Beyond these core stages, Bactopia has evolved into a comprehensive suite through its growing collection of Bactopia Tools, enabling advanced analyses such as comparative genomics, pangenome exploration, phylogenetics, ANI estimation, and taxonomic profiling. Its flexible architecture and automated execution make Bactopia a powerful framework for reproducible and large-scale bacterial genomics research, although it is important to keep in mind that Bactopia is thought in principle as a pipeline for single genome analysis.",
+        category: "Hybrid"
+    },
 ]; 
+
 
