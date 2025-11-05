@@ -1032,6 +1032,31 @@ const preLoadedObjects = [
         details: "Bactopia is a modular pipeline built with Nextflow, executed with either Conda, Docker, or Singularity. Its workflow is organized into eight main steps: Gather, which collects all input data; QC, performing quality control of the reads; Assembler, which builds contigs from the sequences; Annotator, adding functional and structural annotations; Sketcher, which generates sketches of the assemblies and queries reference databases; Sequence Typing, to identify sequence types; Antibiotic Resistance, to detect resistance genes at the contig and protein levels; and Merlin, an intelligent module that automatically executes species-specific tools based on genomic distance. Beyond these core stages, Bactopia has evolved into a comprehensive suite through its growing collection of Bactopia Tools, enabling advanced analyses such as comparative genomics, pangenome exploration, phylogenetics, ANI estimation, and taxonomic profiling. Its flexible architecture and automated execution make Bactopia a powerful framework for reproducible and large-scale bacterial genomics research, although it is important to keep in mind that Bactopia is thought in principle as a pipeline for single genome analysis.",
         category: "Hybrid"
     },
+    {
+        id: "pipeline44",
+        name: "Arcadia-Science/metagenomics",
+        attributes: {
+            readTypes: ["Short reads", "Oxford Nanopore (ONT) reads"],
+            multiSample: ["Yes"],
+            coAssemblyCoBinning: ["No"],
+            GUI: ["No"],
+            Cloud: ["Yes"],
+            workflowManager: ["Nextflow"],
+            binRefinement: ["No"],
+            externalComputationalResources: ["No"],
+            executionOptions: ["Conda", "Docker", "Singularity"],
+            specialOptions: ["Taxonomic profiling"],
+            update: ["2023"],
+            license: ["MIT License"],
+            category: ["Dual"],
+            citations: ["Not found"]
+        },
+        description: "Arcadia-Science/metagenomics performs common QC, processing, and profiling steps of metagenomes obtained through either Illumina or Nanopore technologies. The pipeline consists of two separate workflows for processing the Illumina and Nanopore data and producing assemblies. Therefore Illumina or Nanopore samples are processed separately, as this pipeline does not handle hybrid assembly or polishing with short reads.",
+        url: "https://github.com/Arcadia-Science/metagenomics",
+        details: "Arcadia-Science/metagenomics is a robust Nextflow-based workflow designed for profiling metagenomic samples generated with either short-read data or ONT long reads. The pipeline emphasises reproducibility and portability, enabled via containers (Docker or Singularity) or Conda environments. It implements two separate workflows for the assembly, meaning that Illumina or Nanopore samples are processed separately (via metaSPAdes or Flye/medaka), as this pipeline does not handle hybrid assembly or polishing with short reads. Following the assembly,  a unified downstream steps for composition profiling and gene/protein prediction (Prodigal, Sourmash and DIAMOND) is triggered. The workflow builds on modules from the nf-core ecosystem wherever possible, and its modular architecture and container separation of processes facilitate maintenance and extendibility.",
+        category: "Dual"
+    },
 ]; 
+
 
 
