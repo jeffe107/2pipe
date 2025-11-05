@@ -1750,6 +1750,44 @@ const MAG_PIPELINES = [
         "details": "",
         "category": "Metagenomic MAG Reconstruction Pipelines"
     },
+    {
+        "id": "pipeline44",
+        "name": "Arcadia-Science/metagenomics",
+        "attributes": {
+            "qc": [
+                "fastp",
+                "NanoPack2",
+                "Porechop",
+            ],
+            "assembly": [
+                "metaSPADES",
+                "Flye",
+                "medaka"
+            ],
+            "binning": [
+
+            ],
+            "qualityAssessment": [
+                "QUAST"
+            ],
+            "refinement": [],
+            "taxonomy": [
+                "Sourmash (user-provided database)"
+            ],
+            "functionalAnnotation": [
+                "Prodigal",
+                "DIAMOND (user-provided database)"
+            ],
+            "other": [
+                "Bowtie2",
+                "Minimap2"
+            ]
+        },
+        "description": "Arcadia-Science/metagenomics pipeline.",
+        "url": "",
+        "details": "",
+        "category": "Metagenomic MAG Reconstruction Pipelines"
+    },
 ];
 
 // Expose globally for non-module usage in index.html
