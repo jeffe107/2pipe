@@ -1667,7 +1667,7 @@ const MAG_PIPELINES = [
                 "Canu",
                 "Unicycler",
                 "Racon",
-                "Medaka",
+                "medaka",
                 "Pilon",
                 "Polypolish",
                 "POLCA"
