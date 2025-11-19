@@ -390,7 +390,7 @@ const preLoadedObjects = [
         attributes: {
             readTypes: ["Short reads"],
             multiSample: ["Yes"],
-            coAssemblyCoBinning: ["No"],
+            coAssemblyCoBinning: ["Yes"],
             GUI: ["No"],
             Cloud: ["Yes"],
             workflowManager: ["Snakemake"],
