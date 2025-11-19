@@ -50,6 +50,8 @@ const questions = [
             "Snakemake",
             "COMP Superscalar",
             "Workflow Definition Language (WDL)",
+            "GenoPype",
+            "AWS environment",
             "I don't know/It doesn't matter"
         ]
     },
@@ -536,6 +538,14 @@ function handleCompletion() {
     // Add event listener for restart button
     document.getElementById('restart-btn').addEventListener('click', restartQuestionnaire);
     
+    // Ensure the user sees the beginning of the results instead of the bottom of the page
+    requestAnimationFrame(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
     // Log the results for debugging
     console.log('User Answers:', userAnswers);
     console.log('Match Results:', matchResult);

@@ -477,7 +477,7 @@ const preLoadedObjects = [
         },
         description: "metagWGS is a bioinformatics pipeline designed for the analysis of whole-genome shotgun (WGS) metagenomic data, focusing on microbial community profiling and functional analysis. It typically encompasses steps for quality control of raw reads, assembly of metagenomic sequences, gene prediction on the assembled contigs, taxonomic classification of both reads and contigs, and functional annotation of the predicted genes.",
         url: "https://www.biorxiv.org/content/10.1101/2024.09.13.612854v1",
-        details: "metagWGS is one of the most recently released pipelines whose main differential is related with the possibility to assemble either short reads or long sequences (PacBio). This Nextflow pipeline is built off Singularity with consequent benefits this kind of setup brings. It incorporates a wide variety of tools as it must ensure a proper workflow for both types of sequencing technologies in a traditional end-to-end framework divided into 8 steps. The first step aims at cleaning and performing quality control with proper tools according to the input, while the second step allows the assembly of the sequences using either metaSPAdes/MEGAHIT for short sequences and hifiasm/metaFlye for PacBio reads. Following with the process, this pipeline filters the contigs and performs structural annotation during steps 3 and 4, respectively; step 5 is designed to estimate contig abundance by mapping them against the reads. Afterwards, a complete subworkflow for functional annotation is undergone with EggNOG mapper at its core (step 6), and contig taxonomic affiliation is achieved through home-made scripts (step 7) to conclude with step 8, where the contigs are binned with MaxBin2, MetaBAT2 and CONCOCT. Remarkably, metaWGS utilizes BINETTE, a state-of-the-art binning refinement tool designed to construct high-quality MAGs from the output of multiple binning tools. As a special remark, metaWGS performs read taxonomic profiling via Kaiju, as well as contig annotation that includes an in-house algorithm and mapping against the reads.",
+        details: "metagWGS is one of the most recently released pipelines whose main differential is related with the possibility to assemble either short reads or long sequences (PacBio). This Nextflow pipeline is built off Singularity with consequent benefits this kind of setup brings. It incorporates a wide variety of tools as it must ensure a proper workflow for both types of sequencing technologies in a traditional end-to-end framework divided into 8 steps. The first step aims at cleaning and performing quality control with proper tools according to the input, while the second step allows the assembly of the sequences using either metaSPAdes/MEGAHIT for short sequences and hifiasm/metaFlye for PacBio reads. Following with the process, this pipeline filters the contigs and performs structural annotation during steps 3 and 4, respectively; step 5 is designed to estimate contig abundance by mapping them against the reads. Afterwards, a complete subworkflow for functional annotation is undergone with EggNOG mapper at its core (step 6), and contig taxonomic affiliation is achieved through home-made scripts (step 7) to conclude with step 8, where the contigs are binned with MaxBin2, MetaBAT2 and CONCOCT. Remarkably, metagWGS utilizes BINETTE, a state-of-the-art binning refinement tool designed to construct high-quality MAGs from the output of multiple binning tools. As a special remark, metagWGS performs read taxonomic profiling via Kaiju, as well as contig annotation that includes an in-house algorithm and mapping against the reads.",
         category: "Dual"
     },
     {
@@ -604,7 +604,7 @@ const preLoadedObjects = [
         id: "pipeline26",
         name: "nf-core/mag",
         attributes: {
-            readTypes: ["Short reads", "Hybrid"],
+            readTypes: ["Short reads", "Hybrid", "Oxford Nanopore (ONT) reads",  "Hi-Fi (PacBio) reads"],
             multiSample: ["Yes"],
             coAssemblyCoBinning: ["Yes"],
             GUI: ["No"],
@@ -729,7 +729,7 @@ const preLoadedObjects = [
             coAssemblyCoBinning: ["Yes"],
             GUI: ["No"],
             Cloud: ["No"],
-            workflowManager: ["Genopype"],
+            workflowManager: ["GenoPype"],
             binRefinement: ["No"],
             externalComputationalResources: ["No"],
             executionOptions: ["Conda"],
@@ -849,7 +849,7 @@ const preLoadedObjects = [
             coAssemblyCoBinning: ["No"],
             GUI: ["Yes"],
             Cloud: ["Yes"],
-            workflowManager: [],
+            workflowManager: ["AWS environment"],
             binRefinement: ["No"],
             externalComputationalResources: ["Yes"],
             executionOptions: [],
