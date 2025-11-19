@@ -73,7 +73,7 @@ const questions = [
         multiSelect: true
     },
     {
-        text: "9. Do you want to use external computational resources?",
+        text: "9. Do you want to run the pipeline using external computational resources (i.e. services provided by Galaxy or MGnify)?",
         options: [
             "Yes",
             "No",
