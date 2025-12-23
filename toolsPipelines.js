@@ -1788,6 +1788,84 @@ const MAG_PIPELINES = [
         "details": "",
         "category": "Metagenomic MAG Reconstruction Pipelines"
     },
+    {
+        "id": "pipeline45",
+        "name": "baargin",
+        "attributes": {
+            "qc": [
+                "fastp"
+            ],
+            "assembly": [
+                "SPAdes",
+                "Unicycler"
+            ],
+            "binning": [
+            ],
+            "qualityAssessment": [
+                "QUAST",
+                "BUSCO"
+            ],
+            "refinement": [],
+            "taxonomy": [
+                "Kraken2"
+            ],
+            "functionalAnnotation": [
+                "Prokka",
+                "Bakta"
+            ],
+            "other": [
+                "AMRFinderPlus",
+                "CARD RGI",
+                "PlasmidFinder",
+                "MLST",
+                "Platon",
+                "Roary"
+            ]
+        },
+        "description": "baargin",
+        "url": "",
+        "details": "",
+        "category": "Metagenomic MAG Reconstruction Pipelines"
+    },
+    {
+        "id": "pipeline46",
+        "name": "nf-core/metatdenovo",
+        "attributes": {
+            "qc": [
+                "TrimGalore",
+                "BBTools",
+                "Seqtk"
+            ],
+            "assembly": [
+                "rnaSPAdes",
+                "MEGAHIT"
+            ],
+            "binning": [
+            ],
+            "qualityAssessment": [
+            ],
+            "refinement": [],
+            "taxonomy": [
+                "EUKulele",
+                "DIAMOND (user-provided database)"
+            ],
+            "functionalAnnotation": [
+                "TransDecoder",
+                "Prodigal",
+                "Prokka",
+                "Bakta",
+                "eggNOG-mapper",
+                "HMMER",
+            ],
+            "other": [
+                "MultiQC",
+            ]
+        },
+        "description": "nf-core/metatdenovo",
+        "url": "",
+        "details": "",
+        "category": "Metagenomic MAG Reconstruction Pipelines"
+    },
 ];
 
 // Expose globally for non-module usage in index.html
