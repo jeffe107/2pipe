@@ -1815,7 +1815,7 @@ const MAG_PIPELINES = [
             ],
             "other": [
                 "AMRFinderPlus",
-                "CARD RGI",
+                "CARD-RGI",
                 "PlasmidFinder",
                 "MLST",
                 "Platon",
