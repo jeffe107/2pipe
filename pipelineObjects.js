@@ -1056,7 +1056,52 @@ const preLoadedObjects = [
         details: "Arcadia-Science/metagenomics is a robust Nextflow-based workflow designed for profiling metagenomic samples generated with either short-read data or ONT long reads. The pipeline emphasises reproducibility and portability, enabled via containers (Docker or Singularity) or Conda environments. It implements two separate workflows for the assembly, meaning that Illumina or Nanopore samples are processed separately (via metaSPAdes or Flye/medaka), as this pipeline does not handle hybrid assembly or polishing with short reads. Following the assembly,  a unified downstream steps for composition profiling and gene/protein prediction (Prodigal, Sourmash and DIAMOND) is triggered. The workflow builds on modules from the nf-core ecosystem wherever possible, and its modular architecture and container separation of processes facilitate maintenance and extendibility.",
         category: "Dual"
     },
+    {
+        id: "pipeline45",
+        name: "baargin",
+        attributes: {
+            readTypes: ["Short reads", "Hybrid"],
+            multiSample: ["Yes"],
+            coAssemblyCoBinning: ["No"],
+            GUI: ["No"],
+            Cloud: ["Yes"],
+            workflowManager: ["Nextflow"],
+            binRefinement: ["No"],
+            externalComputationalResources: ["No"],
+            executionOptions: ["Conda", "Docker", "Singularity"],
+            specialOptions: ["Taxonomic profiling", "Antimicrobial resistance gene prediction", "Pangenome analysis"],
+            update: ["2023"],
+            license: ["MIT License"],
+            category: ["Hybrid"],
+            citations: ["5"]
+        },
+        description: "baargin is a Nextflow-based pipeline for reproducible, high-throughput bacterial genomics with a focus on antimicrobial resistance. It processes raw sequencing data through quality control, assembly, taxonomic decontamination, AMR gene and mutation detection, annotation, and pangenome analysis, using containerized execution for portability and scalability.",
+        url: "https://joss.theoj.org/papers/10.21105/joss.05397",
+        details: "baargin (Bacterial Assembly and Antimicrobial Resistance Genes detection In Nextflow) is a Nextflow-based workflow that automates comprehensive bacterial genomics analysis with a strong emphasis on antimicrobial resistance (AMR) detection. It is designed to process multiple bacterial isolates, and it leverages containerization through Docker or Singularity. The workflow accepts raw short reads or hybrid short/long reads and performs quality control and adapter trimming, de novo assembly, and taxonomic assignment to decontaminate assemblies for the target species. Both raw and decontaminated contigs undergo evaluation for assembly quality before being subjected to sequence typing and plasmid identification. baargin detects AMR genes and resistance-conferring mutations using multiple curated databases and tools, enabling robust characterization of resistance determinants. Genome annotation is conducted on the decontaminated contigs, and once all isolates are processed, the workflow performs pangenome analysis, providing a foundation for downstream phylogenetic and comparative studies. While designed in principle for bacterial genomics datasets from multiple isolates, baargin is especially useful when targeting specific species related to AMR within a microbial community.",
+        category: "Hybrid"
+    },
+    {
+        id: "pipeline46",
+        name: "nf-core/metatdenovo",
+        attributes: {
+            readTypes: ["Short reads"],
+            multiSample: ["Yes"],
+            coAssemblyCoBinning: ["No"],
+            GUI: ["No"],
+            Cloud: ["Yes"],
+            workflowManager: ["Nextflow"],
+            binRefinement: ["No"],
+            externalComputationalResources: ["No"],
+            executionOptions: ["Conda", "Docker", "Singularity"],
+            specialOptions: ["Metatranscriptome support"],
+            update: ["2025"],
+            license: ["MIT License"],
+            category: ["Short-read centered"],
+            citations: ["0"]
+        },
+        description: "nf-core/metatdenovo is a Nextflow-based pipeline for reproducible de novo analysis of metagenomic and metatranscriptomic data. It integrates quality control, assembly, gene prediction, quantification, and functional and taxonomic annotation using containerized, modular workflows, enabling scalable, reference-free characterization of complex microbial communities.",
+        url: "https://peerj.com/articles/20328/",
+        details: "nf-core/metatdenovo is a Nextflow-based pipeline providing a best-practice framework for de novo assembly and analysis of metagenomic and metatranscriptomic data. As most of the nf-core pipelines, metatdenovo uses Docker, Singularity, or Conda environments, and follows the strict nf-core guidelines for continuous testing, documentation, and standardized outputs. The workflow begins with read quality control and preprocessing using tools such as FastQC and fastp, followed by optional filtering and normalization. De novo assembly is performed with assemblers adapted to different data types, including MEGAHIT for both metagenomes and metatranscriptomes and rnaSPAdes for metatranscriptomes. Gene prediction is carried out using tools such as TransDecoder, Prodigal and Prokka. The pipeline integrates quantification of genes identified in assemblies with BBTools, and functional annotation is carried via Prokka, eggNOG-mapper, KofamScan and fast homology searches through HMMER; the taxonomic classification is performed with EUKulele and DIAMOND (user-provided database).",
+        category: "Short-read centered"
+    },
 ]; 
-
-
-
