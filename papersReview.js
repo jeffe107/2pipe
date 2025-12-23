@@ -314,6 +314,48 @@ abstract: "Data analysis often entails a multitude of heterogeneous steps, from 
 link: "https://f1000research.com/articles/10-33/v3",
 category: "Workflow-managers"
 },
+{
+id: "paper46",
+name: "Comparison of Metagenomics and Metatranscriptomics Tools: A Guide to Making the Right Choice",
+abstract: "The study of microorganisms is a field of great interest due to their environmental (e.g., soil contamination) and biomedical (e.g., parasitic diseases, autism) importance. The advent of revolutionary next-generation sequencing techniques, and their application to the hypervariable regions of the 16S, 18S or 23S ribosomal subunits, have allowed the research of a large variety of organisms more in-depth, including bacteria, archaea, eukaryotes and fungi. Additionally, together with the development of analysis software, the creation of specific databases (e.g., SILVA or RDP) has boosted the enormous growth of these studies. As the cost of sequencing per sample has continuously decreased, new protocols have also emerged, such as shotgun sequencing, which allows the profiling of all taxonomic domains in a sample. The sequencing of hypervariable regions and shotgun sequencing are technologies that enable the taxonomic classification of microorganisms from the DNA present in microbial communities. However, they are not capable of measuring what is actively expressed. Conversely, we advocate that metatranscriptomics is a “new” technology that makes the identification of the mRNAs of a microbial community possible, quantifying gene expression levels and active biological pathways. Furthermore, it can be also used to characterise symbiotic interactions between the host and its microbiome. In this manuscript, we examine the three technologies above, and discuss the implementation of different software and databases, which greatly impact the obtaining of reliable results. Finally, we have developed two easy-to-use pipelines leveraging Nextflow technology. These aim to provide everything required for an average user to perform a metagenomic analysis of marker genes with QIMME2 and a metatranscriptomic study using Kraken2/Bracken.",
+link: "https://www.mdpi.com/2073-4425/13/12/2280",
+category: "Taxonomic classifier benchmarks"
+},
+{
+id: "paper47",
+name: "Ten simple rules for defining a computational biology project",
+abstract: "If you are working in the field of computational biology, then hopefully you are familiar with the excitement associated with coming up with a new idea and thinking about how to follow up on it. Maybe the idea came from a talk you heard at a conference, a paper you read, or a conversation with a colleague. Regardless, your brain is now abuzz with how this idea will be implemented and what data you’ll need to validate it. Ultimately, if your idea pans out, perhaps it will lead to profound scientific insights, a high-impact paper, and a widely used software tool. But for now, it’s just an idea in your head. How do you begin to bring your new idea to fruition? This is, of course, the core of the scientific method–transforming an idea (or hypothesis) into discoveries. Hence, your success as a scientist depends strongly on your ability to efficiently and effectively carry out such transformations.",
+link: "https://doi.org/10.1371/journal.pcbi.1010786",
+category: "Key-concepts"
+},
+{
+id: "paper48",
+name: "A Quick Guide to Organizing Computational Biology Projects",
+abstract: "The purpose of this article is to describe one good strategy for carrying out computational experiments. I will not describe profound issues such as how to formulate hypotheses, design experiments, or draw conclusions. Rather, I will focus on relatively mundane issues such as organizing files and directories and documenting progress. These issues are important because poor organizational choices can lead to significantly slower research progress. I do not claim that the strategies I outline here are optimal. These are simply the principles and practices that I have developed over 12 years of bioinformatics research, augmented with various suggestions from other researchers with whom I have discussed these issues.",
+link: "https://doi.org/10.1371/journal.pcbi.1000424",
+category: "Key-concepts"
+},
+{
+id: "paper49",
+name: "Introducing the FAIR Principles for research software",
+abstract: "Research software is a fundamental and vital part of research, yet significant challenges to discoverability, productivity, quality, reproducibility, and sustainability exist. Improving the practice of scholarship is a common goal of the open science, open source, and FAIR (Findable, Accessible, Interoperable and Reusable) communities and research software is now being understood as a type of digital object to which FAIR should be applied. This emergence reflects a maturation of the research community to better understand the crucial role of FAIR research software in maximising research value. The FAIR for Research Software (FAIR4RS) Working Group has adapted the FAIR Guiding Principles to create the FAIR Principles for Research Software (FAIR4RS Principles). The contents and context of the FAIR4RS Principles are summarised here to provide the basis for discussion of their adoption. Examples of implementation by organisations are provided to share information on how to maximise the value of research outputs, and to encourage others to amplify the importance and impact of this work.",
+link: "https://doi.org/10.1038/s41597-022-01710-x",
+category: "Key-concepts"
+},
+{
+id: "paper50",
+name: "The nf-core framework for community-curated bioinformatics pipelines",
+abstract: "To the Editor — The standardization, portability and reproducibility of analysis pipelines are key issues within the bioinformatics community. Most bioinformatics pipelines are designed for use on-premises; as a result, the associated software dependencies and execution logic are likely to be tightly coupled with proprietary computing environments. This can make it difficult or even impossible for others to reproduce the ensuing results, which is a fundamental requirement for the validation of scientific findings. Here, we introduce the nf-core framework as a means for the development of collaborative, peer-reviewed, best-practice analysis pipelines (Fig. 1). All nf-core pipelines are written in Nextflow and so inherit the ability to be executed on most computational infrastructures, as well as having native support for container technologies such as Docker and Singularity. The nf-core community (Supplementary Fig. 1) has developed a suite of tools that automate pipeline creation, testing, deployment and synchronization. Our goal is to provide a framework for high-quality bioinformatics pipelines that can be used across all institutions and research facilities.",
+link: "https://doi.org/10.1038/s41587-020-0439-x",
+category: "Workflow-managers"
+},
+{
+id: "paper51",
+name: "Enhancing genome recovery across metagenomic samples using MAGmax",
+abstract: "The number of metagenome-assembled genomes (MAGs) is rapidly increasing with the growing scale of metagenomic studies, driving fast progress in microbiome research. Sample-wise assembly has become the standard due to its computational efficiency and strain-level resolution. It requires dereplication, the removal of near-identical genomes assembled in different metagenomic samples. We present MAGmax, an efficient dereplication tool that enhances both the quantity and quality of MAGs through a strategy of bin merging and reassembly. Unlike dRep, which selects a single representative bin per genome cluster, MAGmax merges multiple bins within a cluster and reassembles them to increase coverage. MAGmax produces more dereplicated, higher-quality MAGs than dRep at 1.6x its speed and using three times less memory.",
+link: "https://doi.org/10.1093/bioinformatics/btaf538",
+category: "Bin-refinement benchmarks"
+},
 ];
 
 // Expose globally for non-module usage
