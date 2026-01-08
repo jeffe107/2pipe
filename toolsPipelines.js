@@ -1866,6 +1866,54 @@ const MAG_PIPELINES = [
         "details": "",
         "category": "Metagenomic MAG Reconstruction Pipelines"
     },
+    {
+        "id": "pipeline47",
+        "name": "mmlong2",
+        "attributes": {
+            "qc": [
+
+            ],
+            "assembly": [
+                "metaFlye",
+                "Medaka",
+            ],
+            "binning": [
+                "VAMB",
+                "SemiBin2",
+                "MetaBAT2",
+                "COMEBin",
+            ],
+            "qualityAssessment": [
+                "CheckM2",
+                "CheckM",
+                "GUNC",
+                "QUAST",
+                "CoverM"
+            ],
+            "refinement": [
+                "Binette"
+            ],
+            "taxonomy": [
+                "GTDB-Tk",
+                "Metabuli"
+            ],
+            "functionalAnnotation": [
+                "Bakta"
+            ],
+            "other": [
+                "Cramino",
+                "Jellyfish",
+                "Tiara",
+                "Longshot",
+                "NanoQ",
+                "USEARCH"
+            ]
+        },
+        "description": "mmlong2",
+        "url": "",
+        "details": "",
+        "category": "Metagenomic MAG Reconstruction Pipelines"
+    },
 ];
 
 // Expose globally for non-module usage in index.html
