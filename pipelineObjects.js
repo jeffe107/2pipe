@@ -1104,4 +1104,29 @@ const preLoadedObjects = [
         details: "nf-core/metatdenovo is a Nextflow-based pipeline providing a best-practice framework for de novo assembly and analysis of metagenomic and metatranscriptomic data. As most of the nf-core pipelines, metatdenovo uses Docker, Singularity, or Conda environments, and follows the strict nf-core guidelines for continuous testing, documentation, and standardized outputs. The workflow begins with read quality control and preprocessing using tools such as FastQC and fastp, followed by optional filtering and normalization. De novo assembly is performed with assemblers adapted to different data types, including MEGAHIT for both metagenomes and metatranscriptomes and rnaSPAdes for metatranscriptomes. Gene prediction is carried out using tools such as TransDecoder, Prodigal and Prokka. The pipeline integrates quantification of genes identified in assemblies with BBTools, and functional annotation is carried via Prokka, eggNOG-mapper, KofamScan and fast homology searches through HMMER; the taxonomic classification is performed with EUKulele and DIAMOND (user-provided database).",
         category: "Short-read centered"
     },
+    {
+        id: "pipeline47",
+        name: "mmlong2",
+        attributes: {
+            readTypes: ["Oxford Nanopore (ONT) reads", "Hi-Fi (PacBio) reads"],
+            multiSample: ["Yes"],
+            coAssemblyCoBinning: ["Yes"],
+            GUI: ["No"],
+            Cloud: ["Yes"],
+            workflowManager: ["Snakemake"],
+            binRefinement: ["Yes"],
+            externalComputationalResources: ["No"],
+            executionOptions: ["Conda", "Singularity"],
+            specialOptions: ["Microdiversity assessment"],
+            update: ["2025"],
+            license: ["GNU GPL v3"],
+            category: ["Long-read focused"],
+            citations: ["3"]
+        },
+        description: "mmlong2 is a Snakemake-based long-read metagenomics pipeline designed to recover high-quality MAGs from complex terrestrial environments. It integrates long-read assembly, polishing, eukaryotic contig filtering, and iterative ensemble binning to generate highly contiguous genomes, enabling large-scale discovery of novel microbial diversity.",
+        url: "https://github.com/Serka-M/mmlong2",
+        details: "mmlong2 is a custom long-read metagenomics workflow developed to maximize the MAG recovery from highly complex terrestrial environmental samples such as soil and sediments. The workflow integrates metagenome assembly (metaFlye), polishing (Medaka), and eukaryotic contig removal (Tiara), followed by binning, including differential coverage, ensemble binning with multiple binning tools (VAMB, SemiBin2, MetaBAT2, COMEBin), and iterative binning to improve genome recovery. mmlong2 also includes extraction of circular MAGs and multi-coverage support by incorporating mapping information from multiple samples, allowing more complete and contiguous genome reconstructions. The pipeline is implemented as a Snakemake workflow, making it modular and reproducible. Moreover, mmlong2 features variant detection in MAGs for microdiversity assessment (Longshot), and leverages Jellyfish and Cramino for read k-mer count and general contig statistics, respectively.",
+        category: "Long-read focused"
+    },
 ]; 
+
