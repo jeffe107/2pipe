@@ -1233,7 +1233,7 @@ const MAG_PIPELINES = [
             "functionalAnnotation": [
                 "Prodigal",
                 "DIAMOND (UniRef50/90, MIBiG, VFDB, CAZy)",
-                "HMMER (Pfam, NCBIfam-AMR, AntiFam, KOfamKOALA",
+                "HMMER (Pfam, NCBIfam-AMR, AntiFam, KOfamKOALA)",
                 "MicrobeAnnotator"
             ],
             "other": [
