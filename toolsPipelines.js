@@ -1215,7 +1215,7 @@ const MAG_PIPELINES = [
                 "SemiBin2"
             ],
             "qualityAssessment": [
-                "CheckM",
+                "CheckM2",
                 "Tiara",
                 "CheckV",
                 "BUSCO",
