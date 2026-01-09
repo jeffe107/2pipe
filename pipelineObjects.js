@@ -388,7 +388,7 @@ const preLoadedObjects = [
         id: "pipeline17",
         name: "Metagenome-Atlas",
         attributes: {
-            readTypes: ["Short reads"],
+            readTypes: ["Short reads", "Hi-Fi (PacBio) reads", "Oxford Nanopore (ONT) reads", "Hybrid"],
             multiSample: ["Yes"],
             coAssemblyCoBinning: ["Yes"],
             GUI: ["No"],
@@ -400,13 +400,13 @@ const preLoadedObjects = [
             specialOptions: [],
             update: ["2024"],
             license: ["BSD-3-Clause-Clear License"],
-            category: ["Short-read centered"],
+            category: ["Hybrid"],
             citations: ["159"]
         },
         description: "Metagenome-Atlas is an end-to-end, Snakemake-based pipeline designed for the reconstruction and annotation of MAGs from metagenomic data. It supports Illumina short reads and provides modular workflows covering all major steps.",
         url: "https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-020-03585-4",
         details: "Metagenome-Atlas is an end-to-end, Snakemake-based and Conda-executed pipeline supporting Illumina short reads and providing a modular workflow. It is divided into four modules, namely Quality Control, Assembly, Genomic Binning and Annotation. The initial module removes host, common contaminants and PCR duplicates, and if necessary, trims low-quality sequences according to user pre-specified parameters. The Assembly module corrects sequence errors based on kmer coverage, merges paired-end sequences, assembles them using MEGAHIT and/or metaSPAdes along with a contig-length filtering. The following module uses MetaBAT2, MaxBin2, and optionally VAMB and SemiBin2 to bin the contigs; CheckM2, BUSCO and GUNC are run to measure the bin quality, as well as DASTool and dRep for bin refinement and dereplication. For the last module, Metagenome-Atlas taxonomically and functionally annotates the MAGs using GTDB-Tk2 and DRAM, respectively, and it finally produces a gene catalog through mapping the predicted coding sequences using EggNOG mapper. Among the main advantages of Metagenome-Atlas, it is possible to describe the possibility of running individual modules and its energetic supporting community and developers. Moreover, the Snakemake wrapper allows for flexibility, multi-sample handling, and adaptability to medium to large projects running on local servers or High-Performance Cluster (HPC) environments.",
-        category: "Short-read centered"
+        category: "Hybrid"
     },
     {
         id: "pipeline18",
@@ -1129,4 +1129,5 @@ const preLoadedObjects = [
         category: "Long-read focused"
     },
 ]; 
+
 
