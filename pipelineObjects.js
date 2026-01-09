@@ -421,7 +421,7 @@ const preLoadedObjects = [
             binRefinement: ["Yes"],
             externalComputationalResources: ["No"],
             executionOptions: ["Conda"],
-            specialOptions: ["Plasmid assembly", "Metabolic modeling", "Adaptable resource allocation"],
+            specialOptions: ["Plasmid assembly", "Metabolic modeling", "Adaptable resource allocation", "Visualization module"],
             update: ["2025"],
             license: ["GNU AGPL v3"],
             category: ["Dual"],
@@ -1129,5 +1129,6 @@ const preLoadedObjects = [
         category: "Long-read focused"
     },
 ]; 
+
 
 
