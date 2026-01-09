@@ -663,7 +663,7 @@ const MAG_PIPELINES = [
             "binning": [
                 "MetaBAT2",
                 "MetaCoAG",
-                "Metabinner"
+                "MetaBinner"
                 
             ],
             "qualityAssessment": [
