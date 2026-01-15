@@ -613,7 +613,7 @@ const preLoadedObjects = [
             binRefinement: ["Yes"],
             externalComputationalResources: ["No"],
             executionOptions: ["Conda", "Docker", "Singularity", "Other"],
-            specialOptions: ["Taxonomic profiling", "Ancient DNA identification"],
+            specialOptions: ["Ancient DNA identification"],
             update: ["2025"],
             license: ["MIT License"],
             category: ["Hybrid"],
@@ -1129,6 +1129,7 @@ const preLoadedObjects = [
         category: "Long-read focused"
     },
 ]; 
+
 
 
 
