@@ -356,6 +356,181 @@ abstract: "The number of metagenome-assembled genomes (MAGs) is rapidly increasi
 link: "https://doi.org/10.1093/bioinformatics/btaf538",
 category: "Bin-refinement benchmarks"
 },
+  {
+id: "paper52",
+name: "Nextflow enables reproducible computational workflows",
+abstract: "The increasing complexity of readouts for omics analyses goes hand-in-hand with concerns about the reproducibility of experiments that analyze 'big data'. When analyzing very large data sets, the main source of computational irreproducibility arises from a lack of good practice pertaining to software and database usage. Small variations across computational platforms also contribute to computational irreproducibility by producing numerical instability, which is especially relevant to high-performance computational (HPC) environments that are routinely used for omics analyses. We present a solution to this instability named Nextflow, a workflow management system that uses Docker technology for the multi-scale handling of containerized computation.",
+link: "https://doi.org/10.1038/nbt.3820",
+category: "Workflow-managers"
+},
+{
+id: "paper53",
+name: "Identifying and Overcoming Threats to Reproducibility, Replicability, Robustness, and Generalizability in Microbiome Research",
+abstract: "The “reproducibility crisis” in science affects microbiology as much as any other area of inquiry, and microbiologists have long struggled to make their research reproducible. We need to respect that ensuring that our methods and results are sufficiently transparent is difficult. This difficulty is compounded in interdisciplinary fields such as microbiome research. There are many reasons why a researcher is unable to reproduce a previous result, and even if a result is reproducible, it may not be correct. Furthermore, failures to reproduce previous results have much to teach us about the scientific process and microbial life itself. This Perspective delineates a framework for identifying and overcoming threats to reproducibility, replicability, robustness, and generalizability of microbiome research. Instead of seeing signs of a crisis in others’ work, we need to appreciate the technical and social difficulties that limit reproducibility in the work of others as well as our own.",
+link: "https://doi.org/10.1128/mbio.00525-18",
+category: "Reproducibility"
+},
+{
+id: "paper54",
+name: "Introducing the FAIR Principles for research software",
+abstract: "Research software is a fundamental and vital part of research, yet significant challenges to discoverability, productivity, quality, reproducibility, and sustainability exist. Improving the practice of scholarship is a common goal of the open science, open source, and FAIR (Findable, Accessible, Interoperable and Reusable) communities and research software is now being understood as a type of digital object to which FAIR should be applied. This emergence reflects a maturation of the research community to better understand the crucial role of FAIR research software in maximising research value. The FAIR for Research Software (FAIR4RS) Working Group has adapted the FAIR Guiding Principles to create the FAIR Principles for Research Software (FAIR4RS Principles). The contents and context of the FAIR4RS Principles are summarised here to provide the basis for discussion of their adoption. Examples of implementation by organisations are provided to share information on how to maximise the value of research outputs, and to encourage others to amplify the importance and impact of this work.",
+link: "https://doi.org/10.1038/s41597-022-01710-x",
+category: "Reproducibility"
+},
+{
+id: "paper55",
+name: "The FAIR Guiding Principles for scientific data management and stewardship",
+abstract: "There is an urgent need to improve the infrastructure supporting the reuse of scholarly data. A diverse set of stakeholders—representing academia, industry, funding agencies, and scholarly publishers—have come together to design and jointly endorse a concise and measureable set of principles that we refer to as the FAIR Data Principles. The intent is that these may act as a guideline for those wishing to enhance the reusability of their data holdings. Distinct from peer initiatives that focus on the human scholar, the FAIR Principles put specific emphasis on enhancing the ability of machines to automatically find and use the data, in addition to supporting its reuse by individuals. This Comment is the first formal publication of the FAIR Principles, and includes the rationale behind them, and some exemplar implementations in the community.",
+link: "https://doi.org/10.1038/sdata.2016.18",
+category: "Reproducibility"
+},
+{
+id: "paper56",
+name: "The five pillars of computational reproducibility: bioinformatics and beyond",
+abstract: "Computational reproducibility is a simple premise in theory, but is difficult to achieve in practice. Building upon past efforts and proposals to maximize reproducibility and rigor in bioinformatics, we present a framework called the five pillars of reproducible computational research. These include (1) literate programming, (2) code version control and sharing, (3) compute environment control, (4) persistent data sharing and (5) documentation. These practices will ensure that computational research work can be reproduced quickly and easily, long into the future. This guide is designed for bioinformatics data analysts and bioinformaticians in training, but should be relevant to other domains of study.",
+link: "https://doi.org/10.1093/bib/bbad375",
+category: "Reproducibility"
+},
+{
+id: "paper57",
+name: "Reproducible Research in Computational Science",
+abstract: "Computational science has led to exciting new developments, but the nature of the work has exposed limitations in our ability to evaluate published findings. Reproducibility has the potential to serve as a minimum standard for judging scientific claims when full independent replication of a study is not possible.",
+link: "https://doi.org/10.1126/science.1213847",
+category: "Reproducibility"
+},
+{
+id: "paper58",
+name: "Good enough practices in scientific computing",
+abstract: "Computers are now essential in all branches of science, but most researchers are never taught the equivalent of basic lab skills for research computing. As a result, data can get lost, analyses can take much longer than necessary, and researchers are limited in how effectively they can work with software and data. Computing workflows need to follow the same practices as lab projects and notebooks, with organized data, documented steps, and the project structured for reproducibility, but researchers new to computing often don't know where to start. This paper presents a set of good computing practices that every researcher can adopt, regardless of their current level of computational skill. These practices, which encompass data management, programming, collaborating with colleagues, organizing projects, tracking work, and writing manuscripts, are drawn from a wide variety of published sources from our daily lives and from our work with volunteer organizations that have delivered workshops to over 11,000 people since 2010.",
+link: "https://doi.org/10.1371/journal.pcbi.1005510",
+category: "Reproducibility"
+},
+{
+id: "paper59",
+name: "Ten Simple Rules for Reproducible Computational Research",
+abstract: "Replication is the cornerstone of a cumulative science. However, new tools and technologies, massive amounts of data, interdisciplinary approaches, and the complexity of the questions being asked are complicating replication efforts, as are increased pressures on scientists to advance their research. As full replication of studies on independently collected data is often not feasible, there has recently been a call for reproducible research as an attainable minimum standard for assessing the value of scientific claims. This requires that papers in experimental science describe the results and provide a sufficiently clear protocol to allow successful repetition and extension of analyses based on original data.",
+link: "https://doi.org/10.1371/journal.pcbi.1003285",
+category: "Reproducibility"
+},
+{
+id: "paper60",
+name: "Analysis of metagenomic data",
+abstract: "Metagenomics has revolutionized our understanding of microbial communities, offering unprecedented insights into their genetic and functional diversity across Earth’s diverse ecosystems. Beyond their roles as environmental constituents, microbiomes act as symbionts, profoundly influencing the health and function of their host organisms. Given the inherent complexity of these communities and the diverse environments where they reside, the components of a metagenomics study must be carefully tailored to yield accurate results that are representative of the populations of interest. This Primer examines the methodological advancements and current practices that have shaped the field, from initial stages of sample collection and DNA extraction to the advanced bioinformatics tools employed for data analysis, with a particular focus on the profound impact of next-generation sequencing on the scale and accuracy of metagenomics studies. We critically assess the challenges and limitations inherent in metagenomics experimentation, available technologies and computational analysis methods. Beyond technical methodologies, we explore the application of metagenomics across various domains, including human health, agriculture and environmental monitoring. Looking ahead, we advocate for the development of more robust computational frameworks and enhanced interdisciplinary collaborations. This Primer serves as a comprehensive guide for advancing the precision and applicability of metagenomic studies, positioning them to address the complexities of microbial ecology and their broader implications for human health and environmental sustainability.",
+link: "https://doi.org/10.1038/s43586-024-00376-6",
+category: "Reproducibility"
+},
+{
+id: "paper61",
+name: "Investigating reproducibility and tracking provenance – A genomic workflow case study",
+abstract: "Computational bioinformatics workflows are extensively used to analyse genomics data, with different approaches available to support implementation and execution of these workflows. Reproducibility is one of the core principles for any scientific workflow and remains a challenge, which is not fully addressed. This is due to incomplete understanding of reproducibility requirements and assumptions of workflow definition approaches. Provenance information should be tracked and used to capture all these requirements supporting reusability of existing workflows. We have implemented a complex but widely deployed bioinformatics workflow using three representative approaches to workflow definition and execution. Through implementation, we identified assumptions implicit in these approaches that ultimately produce insufficient documentation of workflow requirements resulting in failed execution of the workflow. This study proposes a set of recommendations that aims to mitigate these assumptions and guides the scientific community to accomplish reproducible science, hence addressing reproducibility crisis.",
+link: "https://doi.org/10.1186/s12859-017-1747-0",
+category: "Reproducibility"
+},
+{
+id: "paper62",
+name: "Critical Assessment of Metagenome Interpretation—a benchmark of metagenomics software",
+abstract: "Methods for assembly, taxonomic profiling and binning are key to interpreting metagenome data, but a lack of consensus about benchmarking complicates performance assessment. The Critical Assessment of Metagenome Interpretation (CAMI) challenge has engaged the global developer community to benchmark their programs on highly complex and realistic data sets, generated from ∼700 newly sequenced microorganisms and ∼600 novel viruses and plasmids and representing common experimental setups. Assembly and genome binning programs performed well for species represented by individual genomes but were substantially affected by the presence of related strains. Taxonomic profiling and binning programs were proficient at high taxonomic ranks, with a notable performance decrease below family level. Parameter settings markedly affected performance, underscoring their importance for program reproducibility. The CAMI results highlight current challenges but also provide a roadmap for software selection to answer specific research questions.",
+link: "https://doi.org/10.1038/nmeth.4458",
+category: "Binner benchmarks"
+},
+{
+id: "paper63",
+name: "Critical Assessment of Metagenome Interpretation: the second round of challenges",
+abstract: "Evaluating metagenomic software is key for optimizing metagenome interpretation and focus of the Initiative for the Critical Assessment of Metagenome Interpretation (CAMI). The CAMI II challenge engaged the community to assess methods on realistic and complex datasets with long- and short-read sequences, created computationally from around 1,700 new and known genomes, as well as 600 new plasmids and viruses. Here we analyze 5,002 results by 76 program versions. Substantial improvements were seen in assembly, some due to long-read data. Related strains still were challenging for assembly and genome recovery through binning, as was assembly quality for the latter. Profilers markedly matured, with taxon profilers and binners excelling at higher bacterial ranks, but underperforming for viruses and Archaea. Clinical pathogen detection results revealed a need to improve reproducibility. Runtime and memory usage analyses identified efficient programs, including top performers with other metrics. The results identify challenges and guide researchers in selecting methods for analyses.",
+link: "https://doi.org/10.1038/s41592-022-01431-4",
+category: "Binner benchmarks"
+},
+{
+id: "paper64",
+name: "CAMI Benchmarking Portal: online evaluation and ranking of metagenomic software",
+abstract: "Finding appropriate software and parameter settings to process shotgun metagenome data is essential for meaningful metagenomic analyses. To enable objective and comprehensive benchmarking of metagenomic software, the community-led initiative for the Critical Assessment of Metagenome Interpretation (CAMI) promotes standards and best practices. Since 2015, CAMI has provided comprehensive datasets, benchmarking guidelines, and challenges. However, benchmarking had to be conducted offline, requiring substantial time and technical expertise and leading to gaps in results between challenges. We introduce the CAMI Benchmarking Portal—a central repository of CAMI resources and web server for the evaluation and ranking of metagenome assembly, binning, and taxonomic profiling software. The portal simplifies evaluation, enabling users to easily compare their results with previous and other users’ submissions through a variety of metrics and visualizations. As a demonstration, we benchmark software performance on the marine dataset of the CAMI II challenge. The portal currently hosts 28 675 results and is freely available at https://cami-challenge.org/.",
+link: "https://doi.org/10.1093/nar/gkaf369",
+category: "Binner benchmarks"
+},
+{
+id: "paper65",
+name: "Developing and reusing bioinformatics data analysis pipelines using scientific workflow systems",
+abstract: "Data analysis pipelines are now established as an effective means for specifying and executing bioinformatics data analysis and experiments. While scripting languages, particularly Python, R and notebooks, are popular and sufficient for developing small-scale pipelines that are often intended for a single user, it is now widely recognized that they are by no means enough to support the development of large-scale, shareable, maintainable and reusable pipelines capable of handling large volumes of data and running on high performance computing clusters. This review outlines the key requirements for building large-scale data pipelines and provides a mapping of existing solutions that fulfill them. We then highlight the benefits of using scientific workflow systems to get modular, reproducible and reusable bioinformatics data analysis pipelines. We finally discuss current workflow reuse practices based on an empirical study we performed on a large collection of workflows.",
+link: "https://doi.org/10.1016/j.csbj.2023.03.003",
+category: "Workflow managers"
+},
+{
+id: "paper66",
+name: "Recent Microbial Evolutionary Insights From Metagenomics",
+abstract: "Microorganisms have profoundly shaped Earth's biological and geological history, from the origins of oxygenic photosynthesis to present-day global biogeochemical cycles. Metagenomics—through its ability to recover genomic information directly from environmental samples—has revolutionized our understanding of microbial evolution by uncovering unbeknownst lineages, revealing functional adaptations, and reshaping our view of the Tree of Life. By bypassing the need for cultivation, shotgun metagenomics and metabarcoding approaches have enabled researchers to investigate microbial diversity, ecology, and evolutionary processes across aquatic, terrestrial, extreme, and host-associated environments. This review highlights recent advances in evolutionary biology driven by metagenomics, including studies on deep evolutionary branching events, microbial adaptation to extreme environments, the evolution of host-associated microbiomes, and the emergence and spread of pathogens and antimicrobial resistance. The integration of ancient DNA has expanded our ability to reconstruct past ecosystems and disease dynamics, offering insights into long-term microbial evolution. In parallel, studies of microbial domestication and urban settings reveal how human practices have shaped microbial genomes over millennia. Despite significant progress, key challenges remain—including improving bioinformatic tools for degraded ancient DNA, resolving deep phylogenetic relationships, identifying adaptive variants, and linking genomic shifts to ecosystem-level processes. The future of microbial evolutionary research will depend on combining longitudinal metagenomic data, experimental evolution, functional assays, and predictive modeling to better understand microbial responses to climate change and anthropogenic pressures. Together, these approaches will deepen our understanding of microbial evolution and its consequences for life on Earth—past, present, and future.",
+link: "https://doi.org/10.1093/gbe/evag029",
+category: "Reviews"
+},
+{
+id: "paper67",
+name: "Discovery and cultivation of prokaryotic taxa in the age of metagenomics and artificial intelligence",
+abstract: "Despite advances in sequencing, microbial genomics, and cultivation techniques, the vast majority of prokaryotic species remain uncultured, which is a persistent bottleneck in microbiology and microbial ecology. This perspective outlines a conceptual framework to improve the transition from genome-resolved metagenomics to the targeted isolation of yet-uncultured prokaryotic taxa. The proposed framework integrates the induced reshaping of microbiomes, genome-based inferences of physiological and phenotypic traits, culture media design, and targeted culturomics, enabling hypothesis-driven cultivation. In addition, this manuscript addresses the critical limitations in the field, including the sequence-to-function gap, and emphasizes the synergistic potential of experimental microbiology, microbial ecology, metagenomics, and artificial intelligence–based predictions to enhance rational and actionable roadmaps for discovering and cultivating novel prokaryotic lineages.",
+link: "https://doi.org/10.1093/ismejo/wrag012",
+category: "Reviews"
+},
+{
+id: "paper68",
+name: "Computational Metagenomics: State of the Art",
+abstract: "Computational metagenomics has revolutionized our understanding of the human microbiome, enabling the characterization of microbial diversity, the prediction of functional capabilities, and the identification of associations with human health outcomes. This review provides a concise yet comprehensive overview of state-of-the-art computational approaches in metagenomics, alongside widely used methods and tools employed in amplicon-based metagenomics. It is intended as an introductory resource for new researchers, outlining key methodologies, challenges, and future directions in the field. We discuss recent advances in bioinformatics pipelines, machine learning (ML) models, and integrative frameworks that are transforming our understanding of the microbiome’s role in health and disease. By addressing current limitations and proposing innovative solutions, this review aims to outline a roadmap for future research and clinical translation in computational metagenomics.",
+link: "https://doi.org/10.3390/ijms26189206",
+category: "Reviews"
+},
+{
+id: "paper69",
+name: "MAGdb: a comprehensive high quality MAGs repository for exploring microbial metagenome-assemble genomes",
+abstract: "Metagenomic analyses of microbial communities have unveiled a substantial level of interspecies and intraspecies genetic diversity by reconstructing metagenome-assembled genomes (MAGs). The MAG database (MAGdb) boasts an impressive collection of 74 representative research papers, spanning clinical, environmental, and animal categories and comprising 13,702 paired-end run accessions of metagenomic sequencing and 99,672 high quality MAGs with manually curated metadata. MAGdb provides a user-friendly interface that users can browse, search, and download MAGs and their corresponding metadata information. It represents a valuable resource for researchers in discovering potential novel microbial lineages and understanding their ecological roles. MAGdb is publicly available at https://magdb.nanhulab.ac.cn/.",
+link: "https://doi.org/10.1186/s13059-025-03711-6",
+category: "Databases"
+},
+{
+id: "paper70",
+name: "gcMeta 2025: a global repository of metagenome-assembled genomes enabling cross-ecosystem microbial discovery and function research",
+abstract: "The rapid growth of metagenomic sequencing has generated an unprecedented wealth of metagenome-assembled genomes (MAGs), transforming opportunities for microbial discovery and functional characterization. Yet, full utilization of these resources has been constrained by heterogeneous data generation practices and inconsistent analytical pipelines. The gcMeta database addresses this gap by compiling MAGs through both public acquisition and de novo assembly. This release integrates over 2.7 million MAGs from 104 266 samples spanning various biomes, covering human, animal, plant, marine, freshwater, and extreme environments. It establishes 50 biome-specific MAG catalogues comprising 109 586 species-level clusters, of which 63% (69 248) represents previously uncharacterized taxa, and annotates >74.9 million novel genes. By linking functional traits with microbial co-occurrence networks, gcMeta identifies keystone taxa central to biogeochemical cycling and environmental adaptation. The platform further supports cross-ecosystem functional comparisons, revealing niche-specific metabolic pathways and stress-response genes. Moreover, gcMeta provides standardized, AI-ready datasets encompassing microbial enzymes, anti-phage defense systems, and other functional modules, enabling advanced machine learning applications. By bridging microbial “sequence discovery” with “functional utilization,” gcMeta establishes a foundation for ecological research, industrial biotechnology, and novel gene mining. The platform is freely accessible at https://gcmeta.wdcm.org/.",
+link: "https://doi.org/10.1093/nar/gkaf1115",
+category: "Databases"
+},
+{
+id: "paper71",
+name: "SPIRE: a Searchable, Planetary-scale mIcrobiome REsource",
+abstract: "Meta'omic data on microbial diversity and function accrue exponentially in public repositories, but derived information is often siloed according to data type, study or sampled microbial environment. Here we present SPIRE, a Searchable Planetary-scale mIcrobiome REsource that integrates various consistently processed metagenome-derived microbial data modalities across habitats, geography and phylogeny. SPIRE encompasses 99 146 metagenomic samples from 739 studies covering a wide array of microbial environments and augmented with manually-curated contextual data. Across a total metagenomic assembly of 16 Tbp, SPIRE comprises 35 billion predicted protein sequences and 1.16 million newly constructed metagenome-assembled genomes (MAGs) of medium or high quality. Beyond mapping to the high-quality genome reference provided by proGenomes3 (http://progenomes.embl.de), these novel MAGs form 92 134 novel species-level clusters, the majority of which are unclassified at species level using current tools. SPIRE enables taxonomic profiling of these species clusters via an updated, custom mOTUs database (https://motu-tool.org/) and includes several layers of functional annotation, as well as crosslinks to several (micro-)biological databases. The resource is accessible, searchable and browsable via http://spire.embl.de.",
+link: "https://doi.org/10.1093/nar/gkad943",
+category: "Databases"
+},
+{
+id: "paper72",
+name: "MGnify Genomes: A Resource for Biome-specific Microbial Genome Catalogues",
+abstract: "An increasingly common output arising from the analysis of shotgun metagenomic datasets is the generation of metagenome-assembled genomes (MAGs), with tens of thousands of MAGs now described in the literature. However, the discovery and comparison of these MAG collections is hampered by the lack of uniformity in their generation, annotation and storage. To address this, we have developed MGnify Genomes, a growing collection of biome-specific non-redundant microbial genome catalogues generated using MAGs and publicly available isolate genomes. Genomes within a biome-specific catalogue are organised into species clusters. For species that contain multiple conspecific genomes, the highest quality genome is selected as the representative, always prioritising an isolate genome over a MAG. The species representative sequences and annotations can be visualised on the MGnify website and the full catalogue and associated analysis outputs can be downloaded from MGnify servers. A suite of online search tools is provided allowing users to compare their own sequences, ranging from a gene to sets of genomes, against the catalogues. Seven biomes are available currently, comprising over 300,000 genomes that represent 11,048 non-redundant species, and include 36 taxonomic classes not currently represented by cultured genomes. MGnify Genomes is available at https://www.ebi.ac.uk/metagenomics/browse/genomes/.",
+link: "https://doi.org/10.1016/j.jmb.2023.168016",
+category: "Databases"
+},
+{
+id: "paper73",
+name: "The mOTUs online database provides web-accessible genomic context to taxonomic profiling of microbial communities",
+abstract: "Determining the taxonomic composition (taxonomic profiling) is a fundamental task in studying environmental and host-associated microbial communities. However, genome-resolved microbial diversity on Earth remains undersampled, and accessing the genomic context of taxa detected during taxonomic profiling remains a challenging task. Here, we present the mOTUs online database (mOTUs-db), which is consistent with and interfaces with the mOTUs taxonomic profiling tool. It comprises 2.83 million metagenome-assembled genomes (MAGs) and 919 090 single-cell and isolate genomes from 124 295 species-level taxonomic units. In addition to being one of the largest prokaryotic genome resources to date, all MAGs in the mOTUs-db were reconstructed de novo in 117 902 individual samples by abundance correlation of scaffolds across multiple samples for improved quality metrics. The database complements the Genome Taxonomy Database, with over 50% of its species-level taxonomic groups being unique. It also offers interactive querying, enabling users to explore and download genomes at various taxonomic levels. The mOTUs-db is accessible at https://motus-db.org.",
+link: "https://doi.org/10.1093/nar/gkae1004",
+category: "Databases"
+},
+{
+id: "paper74",
+name: "GlobDB: a comprehensive species-dereplicated microbial genome resource",
+abstract: "Over the past years, substantial numbers of microbial species' genomes have been deposited outside of conventional INSDC databases. The GlobDB aggregates 14 independent genomic catalogues to provide a comprehensive database of species-dereplicated microbial genomes, with consistent taxonomy, annotations, and additional analysis resources. The GlobDB more than doubles the number of microbial species represented by genomes relative to the field standard genome taxonomy database. The GlobDB is available at https://globdb.org/.",
+link: "https://doi.org/10.1093/bioadv/vbaf280",
+category: "Databases"
+},
+{
+id: "paper75",
+name: "The MicrobeAtlas database: Global trends and insights into Earth's microbial ecosystems",
+abstract: "Environmental DNA sequencing has revolutionized our understanding of microbial diversity and ecology. Microbiomes have now been sequenced across the entire planet—from the deep subsurface to the mountaintops—covering a myriad of hosts, biomes, and conditions. Yet, the diversity of sequencing and processing strategies hampers universal insights. MicrobeAtlas unifies more than two million microbiome samples in a single resource, harmonized to facilitate discoveries across technologies. Communities are hierarchically quantified at adjustable small subunit rRNA marker gene resolution and feature detailed metadata, including rich geographic information. Connections to the genome, phenotype, and ecological resources enable multimodal insights. Microbial lineages can be reliably tracked across environments, including a “long tail” of rare, uncharacterized species. Recurring community structures and geographic preferences become apparent, and global, taxonomy-specific generalism trends emerge. With MicrobeAtlas (www.microbeatlas.org), known and newly described species and communities can readily be placed into their ecological context, taking full advantage of earlier work.",
+link: "https://doi.org/10.1016/j.cell.2026.01.021",
+category: "Databases"
+},
+{
+id: "paper76",
+name: "A genomic catalog of Earth's microbiomes",
+abstract: "The reconstruction of bacterial and archaeal genomes from shotgun metagenomes has enabled insights into the ecology and evolution of environmental and host-associated microbiomes. Here we applied this approach to >10,000 metagenomes collected from diverse habitats covering all of Earth’s continents and oceans, including metagenomes from human and animal hosts, engineered environments, and natural and agricultural soils, to capture extant microbial, metabolic and functional potential. This comprehensive catalog includes 52,515 metagenome-assembled genomes representing 12,556 novel candidate species-level operational taxonomic units spanning 135 phyla. The catalog expands the known phylogenetic diversity of bacteria and archaea by 44% and is broadly available for streamlined comparative analyses, interactive exploration, metabolic modeling and bulk download. We demonstrate the utility of this collection for understanding secondary-metabolite biosynthetic potential and for resolving thousands of new host linkages to uncultivated viruses. This resource underscores the value of genome-centric approaches for revealing genomic properties of uncultivated microorganisms that affect ecosystem processes.",
+link: "https://doi.org/10.1038/s41587-020-0718-6",
+category: "Databases"
+},
 ];
 
 // Expose globally for non-module usage
