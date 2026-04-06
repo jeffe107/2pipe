@@ -417,7 +417,7 @@ id: "paper60",
 name: "Analysis of metagenomic data",
 abstract: "Metagenomics has revolutionized our understanding of microbial communities, offering unprecedented insights into their genetic and functional diversity across Earth’s diverse ecosystems. Beyond their roles as environmental constituents, microbiomes act as symbionts, profoundly influencing the health and function of their host organisms. Given the inherent complexity of these communities and the diverse environments where they reside, the components of a metagenomics study must be carefully tailored to yield accurate results that are representative of the populations of interest. This Primer examines the methodological advancements and current practices that have shaped the field, from initial stages of sample collection and DNA extraction to the advanced bioinformatics tools employed for data analysis, with a particular focus on the profound impact of next-generation sequencing on the scale and accuracy of metagenomics studies. We critically assess the challenges and limitations inherent in metagenomics experimentation, available technologies and computational analysis methods. Beyond technical methodologies, we explore the application of metagenomics across various domains, including human health, agriculture and environmental monitoring. Looking ahead, we advocate for the development of more robust computational frameworks and enhanced interdisciplinary collaborations. This Primer serves as a comprehensive guide for advancing the precision and applicability of metagenomic studies, positioning them to address the complexities of microbial ecology and their broader implications for human health and environmental sustainability.",
 link: "https://doi.org/10.1038/s43586-024-00376-6",
-category: "Reproducibility"
+category: "Reviews"
 },
 {
 id: "paper61",
@@ -452,7 +452,7 @@ id: "paper65",
 name: "Developing and reusing bioinformatics data analysis pipelines using scientific workflow systems",
 abstract: "Data analysis pipelines are now established as an effective means for specifying and executing bioinformatics data analysis and experiments. While scripting languages, particularly Python, R and notebooks, are popular and sufficient for developing small-scale pipelines that are often intended for a single user, it is now widely recognized that they are by no means enough to support the development of large-scale, shareable, maintainable and reusable pipelines capable of handling large volumes of data and running on high performance computing clusters. This review outlines the key requirements for building large-scale data pipelines and provides a mapping of existing solutions that fulfill them. We then highlight the benefits of using scientific workflow systems to get modular, reproducible and reusable bioinformatics data analysis pipelines. We finally discuss current workflow reuse practices based on an empirical study we performed on a large collection of workflows.",
 link: "https://doi.org/10.1016/j.csbj.2023.03.003",
-category: "Workflow managers"
+category: "Workflow-managers"
 },
 {
 id: "paper66",
