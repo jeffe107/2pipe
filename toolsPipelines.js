@@ -1760,7 +1760,7 @@ const MAG_PIPELINES = [
                 "Porechop",
             ],
             "assembly": [
-                "metaSPADES",
+                "metaSPAdes",
                 "Flye",
                 "medaka"
             ],
