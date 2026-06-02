@@ -531,6 +531,41 @@ abstract: "The reconstruction of bacterial and archaeal genomes from shotgun met
 link: "https://doi.org/10.1038/s41587-020-0718-6",
 category: "Databases"
 },
+  {
+id: "paper77",
+name: "End-to-end evaluation of pipelines for metagenome-assembled genomes reveals hidden performance gaps",
+abstract: "The generation of Metagenome Assembled Genomes (MAGs) has become a standard and basic step in the analysis of metagenomic data. This multi-step process, which includes assembly, binning, refinement, and quality control, has many alternative approaches, algorithms, and parameters. Determining the ideal approach for a given ecosystem and study, or highlighting algorithmic gaps in need of additional research and development, requires rigorous benchmarking. We present MAG-E (MAG pipeline Evaluator), a generalizable and expandable framework for end-to-end evaluation of entire MAG pipelines: from assembly, through binning, to quality control and filtering. MAG-E relies on simulations that are built to match an ecosystem of interest and provide a ground truth for accurate evaluation. To demonstrate the capabilities of MAG-E, we benchmark two assemblers, six binning algorithms, three binning modes, and three quality control and refinement methods in the context of the human gut microbiome. Our findings offer multiple insights into optimal MAG generation in this context. We find that metaSPAdes consistently outperforms MEGAHIT in terms of recall (completeness), and that COMEBin overall outperforms alternative binning algorithms, but has lower precision than SemiBin2. While multi-sample binning results in higher precision, as previously shown, single-sample binning has higher recall and leads to better overall performance with modern binners. Binning refinement, which combines bins from multiple different algorithms, leads to reduced performance. We further show that CheckM2 systematically overestimates completeness and underestimates contamination, and that this is partially ameliorated when using GUNC. Finally, we analyze performance at the contig level, and demonstrate that binning algorithms systematically underperform for prophages and fail to bin contigs that are shared between genomes. Overall, MAG-E offers deep insights into successes and gaps in this important analytic process.",
+link: "https://doi.org/10.64898/2026.04.06.712906",
+category: "Pipeline benchmarks"
+},
+{
+id: "paper78",
+name: "Benchmarking bacterial taxonomic classification using nanopore metagenomics data of several mock communities",
+abstract: "Taxonomic classification is crucial in identifying organisms within diverse microbial communities when using metagenomics shotgun sequencing. While second-generation Illumina sequencing still dominates, third-generation nanopore sequencing promises improved classification through longer reads. However, extensive benchmarking studies on nanopore data are lacking. We systematically evaluated performance of bacterial taxonomic classification for metagenomics nanopore sequencing data for several commonly used classifiers, using standardized reference sequence databases, on the largest collection of publicly available data for defined mock communities thus far (nine samples), representing different research domains and application scopes. Our results categorize classifiers into three categories: low precision/high recall; medium precision/medium recall, and high precision/medium recall. Most fall into the first group, although precision can be improved without excessively penalizing recall with suitable abundance filtering. No definitive ‘best’ classifier emerges, and classifier selection depends on application scope and practical requirements. Although few classifiers designed for long reads exist, they generally exhibit better performance. Our comprehensive benchmarking provides concrete recommendations, supported by publicly available code for reassessment and fine-tuning by other scientists.",
+link: "https://doi.org/10.1038/s41597-024-03672-8",
+category: "Taxonomic classifier benchmarks"
+},
+{
+id: "paper79",
+name: "A systematic review and benchmarking of modern metagenomic tools for taxonomic classification",
+abstract: "Advancements in metagenomics have been driven by the continuous development of bioinformatic tools, particularly taxonomic classification software, which are central to the accurate characterization of microbial communities. However, establishing direct comparisons between these tools remains challenging due to variations in evaluation metrics, reference databases, and input data types. In this study, we present a systematic review of recently developed metagenomic taxonomic classification tools. Of the 31 identified tools, nine satisfied all functional and methodological criteria for the benchmark analysis. We evaluated their accuracy and computational performance using a standardized dataset derived from the NCBI RefSeq database. Our analysis revealed that most of these tools are domain-specific, each excelling in particular areas. Tools like TAMA, CAMITAX and PhyloFlash achieved higher accuracy for prokaryotic organisms, while ViWrap and PhaBOX achieved higher accuracy for viral classifications. SqueezeMeta achieved high F1 scores across most domains, though its assembly-based architecture limits effectiveness on highly diverse samples. MegaPath-Nano was least affected by increased mutation rates. The execution time varied widely among the tools, with domain-specific and machine learning-based tools generally being faster, while tools like BASTA had longer runtimes and lower accuracy. This review synthesizes performance results for current tools, providing an overview of their strengths and computational methodologies.",
+link: "https://doi.org/10.1016/j.compbiomed.2026.111600",
+category: "Taxonomic classifier benchmarks"
+},
+{
+id: "paper80",
+name: "Multi-dimensional metagenomics",
+abstract: "The ‘human metagenome’ comprises the collective genomes of the microorganisms living in or on the human body. Since about the mid-2010s, the application of culture-independent, high-throughput genetic sequencing technologies has driven the expansion of the human microbiome database and the exponential growth in metagenomics data; moreover, together with substantial advances in bioinformatics tools, it has fuelled increased recognition of the microbial variation in human health and disease. However, the functions microorganisms can perform are still largely unknown, and the potential of metagenomics data to reveal microbial functionality has not been fully unlocked. At the same time, advances in artificial intelligence in structural biology have revolutionized the prediction of protein structures and functions. In this Review, we present an overview of metagenomics data analysis, highlighting emerging opportunities and future directions. These investigations include 1D species identification and abundance profiling, 2D assessments of strain-level genetic variations, 3D analysis for protein structures and annotation, and 4D studies of spatial–temporal dynamics.",
+link: "https://doi.org/10.1038/s44222-025-00346-x",
+category: "Reviews"
+},
+{
+id: "paper81",
+name: "Impact of microbial genome completeness on metagenomic functional inference",
+abstract: "Inferring the functional capabilities of bacteria from metagenome-assembled genomes (MAGs) is becoming a central process in microbiology. Here we show that the completeness of genomes has a significant impact on the recovered functional signal, spanning all domains of metabolic functions. We identify factors that affect this relationship between genome completeness and function fullness, and provide baseline knowledge to guide efforts to correct for this overlooked bias in metagenomic functional inference.",
+link: "https://doi.org/10.1038/s43705-023-00221-z",
+category: "Key-concepts"
+},
 ];
 
 // Expose globally for non-module usage
