@@ -1518,7 +1518,7 @@ const MAG_PIPELINES = [
             ],
             "refinement": [],
             "taxonomy": [
-                "GTDB-TK2"
+                "GTDB-Tk2"
             ],
             "functionalAnnotation": [
                 "Prodigal",
