@@ -1128,9 +1128,76 @@ const preLoadedObjects = [
         details: "mmlong2 is a custom long-read metagenomics workflow developed to maximize the MAG recovery from highly complex terrestrial environmental samples such as soil and sediments. The workflow integrates metagenome assembly (metaFlye), polishing (Medaka), and eukaryotic contig removal (Tiara), followed by binning, including differential coverage, ensemble binning with multiple binning tools (VAMB, SemiBin2, MetaBAT2, COMEBin), and iterative binning to improve genome recovery. mmlong2 also includes extraction of circular MAGs and multi-coverage support by incorporating mapping information from multiple samples, allowing more complete and contiguous genome reconstructions. The pipeline is implemented as a Snakemake workflow, making it modular and reproducible. Moreover, mmlong2 features variant detection in MAGs for microdiversity assessment (Longshot), and leverages Jellyfish and Cramino for read k-mer count and general contig statistics, respectively.",
         category: "Long-read focused"
     },
+    {
+        id: "pipeline48",
+        name: "metaMAG",
+        attributes: {
+            readTypes: ["Short reads"],
+            multiSample: ["Yes"],
+            coAssemblyCoBinning: ["Yes"],
+            GUI: ["No"],
+            Cloud: ["No"],
+            workflowManager: [],
+            binRefinement: ["Yes"],
+            externalComputationalResources: ["No"],
+            executionOptions: ["Conda"],
+            specialOptions: ["Database augmentation"],
+            update: ["2025"],
+            license: ["MIT License"],
+            category: ["Short-read centered"],
+            citations: ["0"]
+        },
+        description: "MetaMAG Explorer is a modular metagenomics pipeline offering end-to-end preprocessing, assembly, binning, annotation, and publication-ready visualization. It automates the discovery of novel MAGs, dereplicates them against curated repositories, and dynamically augments Kraken2 classification databases. This unique framework streamlines complex workflows and enhances data interpretation for scientific papers.",
+        url: "https://doi.org/10.64898/2026.04.27.721001",
+        details: "MetaMAG orchestrates a modular, seven-phase metagenomic workflow optimized for high-performance computing clusters via SLURM. It initiates data preprocessing using FastQC and fastp for quality control and trimming, followed by host read removal through BWA-mem and SAMtools. For sequence assembly, this pipeline uses IDBA-UD for single-sample runs, MEGAHIT for co-assembly, and MetaQUAST for validation. Metagenome-assembled genomes (MAGs) are reconstructed via MetaWRAP—integrating MetaBAT2, MaxBin2, and CONCOCT—before refinement with DAS Tool and quality assessment via CheckM2. To achieve database augmentation, this pipeline uses GTDB-Tk for taxonomic classification, identifying novel candidate genomes and dereplicating them against external repositories using dRep and fastANI to dynamically update a customized Kraken2 reference database. Downstream functional annotation is driven by Prodigal, eggNOG-mapper, and dbCAN3. Finally, this pipeline uses Kraken2 and Bracken for taxonomic abundance estimation, utilizing GTDB-Tk, ggtree, matplotlib, seaborn, plotly, and NetworkX to perform phylogenetic profiling, statistical analyses, and generate publication-ready figures.",
+        category: "Short-read centered"
+    },
+    {
+        id: "pipeline49",
+        name: "MAGFlow",
+        attributes: {
+            readTypes: ["Short reads"],
+            multiSample: ["Yes"],
+            coAssemblyCoBinning: ["No"],
+            GUI: ["No"],
+            Cloud: ["No"],
+            workflowManager: ["Snakemake"],
+            binRefinement: ["No"],
+            externalComputationalResources: ["No"],
+            executionOptions: ["Conda"],
+            specialOptions: [],
+            update: ["2022"],
+            license: [],
+            category: ["Short-read centered"],
+            citations: ["0"]
+        },
+        description: "MAGFlow is a streamlined program designed to facilitate the binning and assembly of metagenomes. It trims metagenomic reads, performs assembly with metaSPADES, bins contigs with metabat2, concoct, and maxbin2, generates consensus bins with DASTools, and evaluates bins with CheckM while enabling users to specify custom resource allocations for each task.",
+        url: "https://github.com/thrash-lab/MAGFlow",
+        details: "MAGFlow reconstructs microbial genomes from complex metagenomic samples through a series of sequential and parallel processing steps. Raw interleaved FASTQ files first undergo quality trimming with Sickle to remove low-quality bases and reads. The cleaned reads are then assembled into contigs using metaSPAdes, a de Bruijn graph-based assembler optimized for metagenomic data. To enable coverage-based binning, trimmed reads are mapped back to the assembled contigs using Bowtie2, with SAMtools handling BAM file conversion, sorting, and indexing. Coverage depth profiles are then calculated per contig using MetaBAT2's jgi_summarize_bam_contig_depths utility. Three complementary binning algorithms — MetaBAT2, CONCOCT, and MaxBin2 — run in parallel, each leveraging different combinations of tetranucleotide frequency and coverage information to cluster contigs into draft genomes (bins). Because each tool has distinct strengths and failure modes, their outputs are reconciled by DASTool, which identifies the highest-scoring non-redundant set of bins through a consensus approach. Finally, CheckM evaluates the quality of the consensus bins using lineage-specific marker genes, producing a summary table of completeness and contamination estimates for each recovered MAG.",
+        category: "Short-read centered"
+    },
+    {
+        id: "pipeline50",
+        name: "metaFUN",
+        attributes: {
+            readTypes: ["Short reads"],
+            multiSample: ["Yes"],
+            coAssemblyCoBinning: ["No"],
+            GUI: ["No"],
+            Cloud: ["Yes"],
+            workflowManager: ["Nextflow"],
+            binRefinement: ["Yes"],
+            externalComputationalResources: ["No"],
+            executionOptions: ["Singularity", "Conda"],
+            specialOptions: ["Functional profiling", "Visualization module", "Virulence factor annotation", "Microdiversity assessment", "Pangenome analysis", "Comparative genomic analysis"],
+            update: ["2025"],
+            license: ["MIT License"]],
+            category: ["Short-read centered"],
+            citations: ["0"]
+        },
+        description: "metaFun is an open-source, end-to-end pipeline that integrates quality control, taxonomic profiling, functional profiling, de novo assembly, binning, genome assessment, comparative genomic analysis, pangenome annotation, network analysis, and strain-level microdiversity analysis into a unified framework. Interactive modules support standardized data interpretation and exploratory visualization. The pipeline is implemented with Nextflow and containerized with Apptainer, ensuring environment reproducibility and scalability. metaFUN incorporates optimized parameters derived from controlled benchmarks.",
+        url: "https://doi.org/10.1080/19490976.2025.2611544",
+        details: "metaFun integrates analyses of metagenomic reads and MAGs using the GTDB classification system. This workflow consists of seven analytical modules and four interactive analysis modules, processing short metagenomic sequences and assembled genomes with metadata. This pipeline can process quality control of raw metagenomic data, de novo assembly, binning, quality assessment and taxonomic assignment of genomes, genomic comparison, taxonomic and functional profiling of metagenomic reads, population microdiversity analysis, and network analysis. Interactive modules were designed for microbiome structure analysis, microbiome network analysis, strain-level diversity analysis, and comparative genomic analysis. All programs were containerized into Apptainer container images. A Conda environment was constructed and deposited into the Bioconda channel for easy installation and execution of the pipeline. Module components were selected based on performance evaluations in previous benchmark studies, update status, and computational efficiency. We evaluated various programs and parameters using simulated data, with focus on de novo assembly, taxonomic composition profiling of metagenomes, and comparative genomic analysis.",
+        category: "Short-read centered"
+    },
 ]; 
-
-
-
-
-
