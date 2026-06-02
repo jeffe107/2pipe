@@ -1189,7 +1189,7 @@ const preLoadedObjects = [
             binRefinement: ["Yes"],
             externalComputationalResources: ["No"],
             executionOptions: ["Singularity", "Conda"],
-            specialOptions: ["Functional profiling", "Visualization module", "Virulence factor annotation", "Microdiversity assessment", "Pangenome analysis", "Comparative genomic analysis"],
+            specialOptions: ["Functional profiling", "Visualization module", "Virulence factor annotation", "Microdiversity assessment", "Pangenome analysis", "Comparative genomic analysis", "Antimicrobial resistance gene prediction"],
             update: ["2025"],
             license: ["MIT License"]],
             category: ["Short-read centered"],
