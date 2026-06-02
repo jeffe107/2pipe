@@ -633,7 +633,7 @@ const MAG_PIPELINES = [
             ],
             "functionalAnnotation": [
                 "Prodigal",
-                "eggNOG",
+                "eggNOG-mapper",
                 "DRAM"
             ],
             "other": ["dRep"]
@@ -878,7 +878,7 @@ const MAG_PIPELINES = [
             ],
             "functionalAnnotation": [
                 "eggNOG-mapper",
-                "DIAMOND (eggNOg, CAZy)"
+                "DIAMOND (eggNOG, CAZy)"
             ],
             "other": []
         },
@@ -1323,7 +1323,7 @@ const MAG_PIPELINES = [
             "functionalAnnotation": [
                 "Prodigal",
                 "DIAMOND (KEGG, CAZy, eggNOG)",
-                "eggNOG"
+                "eggNOG-mapper"
             ],
             "other": [
                 "mOTUs2",
