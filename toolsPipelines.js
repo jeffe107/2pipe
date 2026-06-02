@@ -1875,7 +1875,7 @@ const MAG_PIPELINES = [
             ],
             "assembly": [
                 "metaFlye",
-                "Medaka",
+                "medaka",
             ],
             "binning": [
                 "VAMB",
