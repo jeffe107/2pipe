@@ -1914,6 +1914,136 @@ const MAG_PIPELINES = [
         "details": "",
         "category": "Metagenomic MAG Reconstruction Pipelines"
     },
+    {
+        "id": "pipeline48",
+        "name": "MetaMAG",
+        "attributes": {
+            "qc": [
+                "FastQC",
+                "fastp",
+                "BWA",
+                "Samtools"
+            ],
+            "assembly": [
+                "IDBA-UD",
+                "MEGAHIT",
+            ],
+            "binning": [
+                "MetaBAT2",
+                "MaxBin2",
+                "CONCOCT",
+            ],
+            "qualityAssessment": [
+                "CheckM2",
+            ],
+            "refinement": [
+                "DASTool",
+            ],
+            "taxonomy": [
+                "GTDB-Tk2",
+                "Metabuli"
+            ],
+            "functionalAnnotation": [
+                "eggNOG-mapper",
+                "dbCAN3",
+                "Prodigal"
+            ],
+            "other": [
+                "dRep",
+                "FastANI",
+                "Kraken2"
+            ]
+        },
+        "description": "MetaMAG",
+        "url": "",
+        "details": "",
+        "category": "Metagenomic MAG Reconstruction Pipelines"
+    },
+    {
+        "id": "pipeline49",
+        "name": "MAGFlow",
+        "attributes": {
+            "qc": [
+                "Sickle",
+            ],
+            "assembly": [
+                "metaSPAdes",
+            ],
+            "binning": [
+                "MetaBAT2",
+                "MaxBin2",
+                "CONCOCT",
+            ],
+            "qualityAssessment": [
+                "CheckM",
+            ],
+            "refinement": [
+                "DASTool",
+            ],
+            "taxonomy": [
+
+            ],
+            "functionalAnnotation": [
+                
+            ],
+            "other": [
+                "Bowtie2",
+            ]
+        },
+        "description": "MAGFlow",
+        "url": "",
+        "details": "",
+        "category": "Metagenomic MAG Reconstruction Pipelines"
+    },
+    {
+        "id": "pipeline50",
+        "name": "metaFUN",
+        "attributes": {
+            "qc": [
+                "FastQC",
+                "fastp",
+                "MultiQC",
+                "Bowtie2"
+            ],
+            "assembly": [
+                "MEGAHIT",
+            ],
+            "binning": [
+                "MetaBAT2",
+                "SemiBin2",
+            ],
+            "qualityAssessment": [
+                "CheckM2",
+                "GUNC"
+            ],
+            "refinement": [
+                "DASTool",
+            ],
+            "taxonomy": [
+                "GTDB-Tk2"
+            ],
+            "functionalAnnotation": [
+                "Prokka",
+                "KOfamScan",
+                "eggNOG-mapper",
+                "dbCAN3",
+                "DIAMOND (VFDB)"
+            ],
+            "other": [
+                "skani",
+                "HUMAnN3",
+                "inStrain",
+                "Kraken2",
+                "Bracken",
+                "sylph",
+                "CARD-RGI"
+            ]
+        },
+        "description": "metaFUN",
+        "url": "",
+        "details": "",
+        "category": "Metagenomic MAG Reconstruction Pipelines"
+    },
 ];
 
 // Expose globally for non-module usage in index.html
