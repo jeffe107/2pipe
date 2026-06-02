@@ -679,7 +679,7 @@ const MAG_PIPELINES = [
             "functionalAnnotation": [
                 "Prodigal",
                 "Prokka",
-                "RGI"
+                "CARD-RGI"
             ],
             "other": [
                 "CarveMe",
