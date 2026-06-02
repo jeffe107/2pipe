@@ -1506,7 +1506,7 @@ const MAG_PIPELINES = [
             "assembly": [
                 "MEGAHIT",
                 "BWA",
-                "Sammtools"
+                "Samtools"
             ],
             "binning": [
                 "MetaBAT2"
