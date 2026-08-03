@@ -978,25 +978,32 @@ const MAG_PIPELINES = [
                 "Porechop",
                 "Filtlong",
                 "NanoPack2",
+                "Minimap2",
+                "Seqtk"
             ],
             "assembly": [
                 "MEGAHIT",
                 "SPAdes",
                 "hybridSPAdes",
                 "Flye",
-                "metaMDBG"
+                "metaMDBG",
+                "pypolca"
             ],
             "binning": [
                 "MetaBAT2",
                 "CONCOCT",
-                "MaxBin2"
+                "MaxBin2",
+                "MetaBinner",
+                "SemiBin2",
+                "COMEBin"
             ],
             "qualityAssessment": [
                 "BUSCO",
                 "CheckM",
                 "CheckM2",
                 "GUNC",
-                "QUAST"
+                "QUAST",
+                "ALE"
             ],
             "refinement": [
                 "DASTool"
@@ -1011,8 +1018,6 @@ const MAG_PIPELINES = [
                 "MetaEuk"
             ],
             "other": [
-                "Kraken2",
-                "Centrifuge",
                 "geNomad",
                 "Tiara",
                 "PyDamage",
